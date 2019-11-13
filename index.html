@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curry Language</title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" integrity="sha384-P1ywvnMmN+Azcym7yWmx9nlcYa3XTTEVcybwaNJY2szVm1rK0cjaxC+21s+4ag+p" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue" integrity="sha384-8t+aLluUVnn5SPPG/NbeZCH6TWIvaXIm/gDbutRvtEeElzxxWaZN+G/ZIEdI/f+y" crossorigin="anonymous" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <nav class="flex flex-wrap items-center justify-between bg-white p-4">
+        <div class="flex flex-shrink-0 items-center text-red-700 mr-6">
+          <div class="h-8 w-8 bg-gray-800 mr-2"></div>
+          <span class="font-semibold text-xl">Curry</span>
+        </div>
+        <div class="block md:hidden">
+          <button class="flex items-center px-3 py-2 border border-red-700 rounded text-red-700 hover:bg-red-700 hover:text-white" @click="toggleNav">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+          </button>
+        </div>
+        <div :class="showNav ? 'block' : 'hidden'" class="w-full flex-grow md:w-auto md:flex md:items-center">
+          <div class="text-sm md:flex md:justify-end md:flex-grow">
+            <a v-for="link in navLinks" v-bind:href="link.url" class="block mt-4 mr-0 md:inline-block md:mt-0 text-red-700 underline md:mr-4 text-right">{{ link.title }}</a>
+          </div>
+          <div class="text-sm flex justify-end md:block">
+            <a href="#" class="inline-block leading-none px-4 py-2 border rounded text-white border-red-700 bg-red-700 hover:bg-blue-700 hover:border-blue-700 mt-4 md:mt-0">Downloads</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="w-full max-w-screen-xl relative mx-auto px-6 py-16">
+        <div class="text-center max-w-2xl md:max-w-3xl mx-auto">
+          <h1 class="text-4xl sm:text-4xl md:text-6xl xl:text-6xl font-bold leading-tight">{{ title }}</h1>
+          <span class="text-2xl sm:text-3xl md:text-4xl block text-red-700 font-normal">{{ subtitle }}</span>
+        </div>
+      </section>
+      <section class="w-full flex justify-center flex-col px-6 bg-gray-800">
+        <div class="font-mono mx-auto">
+          <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span>
+          <br>
+          <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span>
+          <br>
+          <span class="keyword">&nbsp;&nbsp;where</span>
+          <br>
+          <span class="ident">&nbsp;&nbsp;&nbsp;&nbsp;x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
+        </div>
+      </section>
+      <section class="w-full px-6">
+        <div class="text-center max-w-2xl md:max-w-3xl mx-auto">
+          <p class="leading-relaxed sm:text-lg md:text-xl xl:text-lg text-gray-600">{{ description }}</p>
+          <div class="flex mt-6 justify-center">
+            <a href="#" class="rounded-lg px-4 py-3 border border-red-700 md:text-lg xl:text-base text-red-700 hover:text-white font-semibold leading-tight hover:bg-red-700">Downloads</a>
+            <a href="#" class="rounded-lg px-4 py-3 ml-4 border border-blue-700 bg-white hover:bg-blue-700 md:text-lg xl:text-base text-blue-700 hover:text-white font-semibold leading-tight">Try It!</a>
+          </div>
+        </div>
+      </section>
+      <section class="flex justify-center flex-col w-full px-6 bg-red-700">
+        <div class="inline-block mx-auto">
+          <h1 class="relative text-4xl font-semibold text-center text-white">Lorem Ipsum</h1>
+          <div class="relative bg-blue-700" style="height: 24px;top: -24px;left: -10px;width: 120%;max-width: 90vw;line-height: 1.6;z-index: -1;"></div>
+        </div>
+        <div class="flex flex-row flex-wrap justify-center">
+          <div v-for="feat in features" class="max-w-sm overflow-hidden m-2">
+            <div class="px-6 py-4">
+              <div class="font-bold text-2xl mb-2 text-white text-center">{{ feat.title }}</div>
+              <p class="text-white text-base text-center">{{ feat.text }}</p>
+            </div>
+            <div class="w-full px-6 py-4">
+              <a v-bind:href="feat.learnMore" class="inline-block text-center w-full rounded-lg px-4 py-2 bg-blue-700 border-blue-700 hover:border-white border-2 hover:border-solid md:text-lg xl:text-base text-white font-semibold">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="w-full px-6">
+        <div class="text-center max-w-2xl md:max-w-3xl mx-auto">
+          <p class="leading-relaxed sm:text-lg md:text-xl xl:text-lg text-gray-600">{{ description }}</p>
+        </div>
+      </section>
+      <section class="flex justify-center flex-col w-full px-6 bg-blue-700">
+        <div class="inline-block mx-auto">
+          <h1 class="relative text-4xl font-semibold text-center text-white">Lorem Ipsum</h1>
+          <div class="relative bg-red-700" style="height: 24px;top: -24px;left: -10px;width: 120%;max-width: 90vw;line-height: 1.6;z-index: -1;"></div>
+        </div>
+        <div class="flex flex-row flex-wrap justify-center">
+          <div v-for="feat in features" class="max-w-sm overflow-hidden m-2">
+            <div class="px-6 py-4">
+              <div class="font-bold text-2xl mb-2 text-white text-center">{{ feat.title }}</div>
+              <p class="text-white text-base text-center">{{ feat.text }}</p>
+            </div>
+            <div class="w-full px-6 py-4">
+              <a v-bind:href="feat.learnMore" class="inline-block text-center w-full rounded-lg px-4 py-2 bg-red-700 border-red-700 hover:border-white border-2 hover:border-solid md:text-lg xl:text-base text-white font-semibold">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="w-full text-center px-6 pb-6 bg-gray-800">
+      <p class="text-white">© 1995–2019 Curry Language</p>
+    </footer>
+  </div>
+</body>
+</html>

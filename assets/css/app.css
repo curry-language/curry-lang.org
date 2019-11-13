@@ -1,0 +1,52 @@
+:root {
+  --pragma-color: hsl(0, 0%, 60%);
+  --comment-color: hsl(0, 0%, 60%);
+  --keyword-color: hsl(300, 66%, 70%);
+  --symbol-color: hsl(0, 66%, 70%);
+  --type-color: hsl(60, 66%, 70%);
+  --cons-color: hsl(330, 66%, 70%);
+  --label-color: hsl(240, 66%, 70%);
+  --func-color: hsl(200, 66%, 70%);
+  --ident-color: hsl(0, 0%, 85%);
+  --module-color: hsl(20, 66%, 70%);
+  --number-color: hsl(180, 66%, 70%);
+  --string-color: hsl(120, 66%, 70%);
+  --char-color: hsl(120, 66%, 70%);
+}
+
+.pragma  { color: var(--pragma-color)  }
+.comment { color: var(--comment-color) }
+.keyword { color: var(--keyword-color) }
+.symbol  { color: var(--symbol-color)  }
+.type    { color: var(--type-color)    }
+.cons    { color: var(--cons-color)    }
+.label   { color: var(--label-color)   }
+.func    { color: var(--func-color)    }
+.ident   { color: var(--ident-color)   }
+.module  { color: var(--module-color)  }
+.number  { color: var(--number-color)  }
+.string  { color: var(--string-color)  }
+.char    { color: var(--char-color)    }
+
+section:first-child {
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 0% 100%);
+  -moz-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 0% 100%);
+}
+
+section:not(:first-child) {
+  clip-path: polygon(0% 40px, 100% 0%, 100% calc(100% - 40px), 0% 100%);
+  -moz-clip-path: polygon(0% 40px, 100% 0%, 100% calc(100% - 40px), 0% 100%);
+  -webkit-clip-path: polygon(0% 40px, 100% 0%, 100% calc(100% - 40px), 0% 100%);
+  margin-top: -40px;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
+
+footer {
+  clip-path: polygon(0% 40px, 100% 0%, 100% 100%, 0% 100%);
+  -moz-clip-path: polygon(0% 40px, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 40px, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -40px;
+  padding-top: 3rem;
+}
