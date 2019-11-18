@@ -50,3 +50,7 @@ footer {
   margin-top: -40px;
   padding-top: 4rem;
 }
+
+header {
+  z-index: 100!important;
+}
