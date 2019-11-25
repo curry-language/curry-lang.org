@@ -12,8 +12,13 @@
   --number-color: hsl(180, 66%, 70%);
   --string-color: hsl(120, 66%, 70%);
   --char-color: hsl(120, 66%, 70%);
+  --curry-blue-color: #181f6f;
+  --curry-red-color: hsl(0, 100%, 33%);
+  --primary-bg-color: hsl(215, 25%, 25%);
+  --secondary-bg-color: hsl(215, 10%, 40%);
 }
 
+/* Code highlighting */
 .pragma  { color: var(--pragma-color)  }
 .comment { color: var(--comment-color) }
 .keyword { color: var(--keyword-color) }
@@ -28,6 +33,62 @@
 .string  { color: var(--string-color)  }
 .char    { color: var(--char-color)    }
 
+.bg-blue {
+  background-color: var(--curry-blue-color);
+}
+
+.bg-red {
+  background-color: var(--curry-red-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-bg-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-bg-color);
+}
+
+.hover\:bg-blue:hover {
+  background-color: var(--curry-blue-color);
+}
+
+.hover\:bg-red:hover {
+  background-color: var(--curry-red-color);
+}
+
+.border-blue {
+  border-color: var(--curry-blue-color);
+}
+
+.border-red {
+  border-color: var(--curry-red-color);
+}
+
+.hover\:border-blue:hover {
+  border-color: var(--curry-blue-color);
+}
+
+.hover\:border-red:hover {
+  border-color: var(--curry-red-color);
+}
+
+.text-blue {
+  color: var(--curry-blue-color);
+}
+
+.text-red {
+  color: var(--curry-red-color);
+}
+
+.hover\:text-blue:hover {
+  color: var(--curry-blue-color);
+}
+
+.hover\:text-red:hover {
+  color: var(--curry-red-color);
+}
+
 section:first-child {
   clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 0% 100%);
   -moz-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 40px), 0% 100%);
@@ -39,8 +100,8 @@ section:not(:first-child) {
   -moz-clip-path: polygon(0% 40px, 100% 0%, 100% calc(100% - 40px), 0% 100%);
   -webkit-clip-path: polygon(0% 40px, 100% 0%, 100% calc(100% - 40px), 0% 100%);
   margin-top: -40px;
-  padding-bottom: 4rem;
-  padding-top: 4rem;
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 footer {
@@ -48,9 +109,5 @@ footer {
   -moz-clip-path: polygon(0% 40px, 100% 0%, 100% 100%, 0% 100%);
   -webkit-clip-path: polygon(0% 40px, 100% 0%, 100% 100%, 0% 100%);
   margin-top: -40px;
-  padding-top: 4rem;
-}
-
-header {
-  z-index: 100!important;
+  padding-top: 60px;
 }
