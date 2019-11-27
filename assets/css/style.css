@@ -1,0 +1,185 @@
+:root {
+  --pragma-color: hsl(0, 0%, 60%);
+  --comment-color: hsl(0, 0%, 60%);
+  --keyword-color: hsl(300, 66%, 70%);
+  --symbol-color: hsl(0, 66%, 70%);
+  --type-color: hsl(60, 66%, 70%);
+  --cons-color: hsl(330, 66%, 70%);
+  --label-color: hsl(240, 66%, 70%);
+  --func-color: hsl(200, 66%, 70%);
+  --ident-color: hsl(0, 0%, 85%);
+  --module-color: hsl(20, 66%, 70%);
+  --number-color: hsl(180, 66%, 70%);
+  --string-color: hsl(120, 66%, 70%);
+  --char-color: hsl(120, 66%, 70%);
+  --curry-blue-color: #181f6f;
+  --curry-red-color: hsl(0, 100%, 33%);
+  --primary-color: hsl(215, 25%, 25%);
+  --secondary-color: hsl(215, 10%, 40%);
+}
+
+/* Code highlighting */
+.pragma  { color: var(--pragma-color)  }
+.comment { color: var(--comment-color) }
+.keyword { color: var(--keyword-color) }
+.symbol  { color: var(--symbol-color)  }
+.type    { color: var(--type-color)    }
+.cons    { color: var(--cons-color)    }
+.label   { color: var(--label-color)   }
+.func    { color: var(--func-color)    }
+.ident   { color: var(--ident-color)   }
+.module  { color: var(--module-color)  }
+.number  { color: var(--number-color)  }
+.string  { color: var(--string-color)  }
+.char    { color: var(--char-color)    }
+
+.bg-blue {
+  background-color: var(--curry-blue-color);
+}
+
+.bg-red {
+  background-color: var(--curry-red-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.hover\:bg-blue:hover {
+  background-color: var(--curry-blue-color);
+}
+
+.hover\:bg-red:hover {
+  background-color: var(--curry-red-color);
+}
+
+.hover\:bg-primary:hover {
+  background-color: var(--primary-color);
+}
+
+.hover\:bg-secondary:hover {
+  background-color: var(--secondary-color);
+}
+
+.border-blue {
+  border-color: var(--curry-blue-color);
+}
+
+.border-red {
+  border-color: var(--curry-red-color);
+}
+
+.border-primary {
+  border-color: var(--primary-color);
+}
+
+.border-secondary {
+  border-color: var(--secondary-color);
+}
+
+.hover\:border-blue:hover {
+  border-color: var(--curry-blue-color);
+}
+
+.hover\:border-red:hover {
+  border-color: var(--curry-red-color);
+}
+
+.hover\:.border-primary:hover {
+  border-color: var(--primary-color);
+}
+
+.hover\:.border-secondary:hover {
+  border-color: var(--secondary-color);
+}
+
+.text-blue {
+  color: var(--curry-blue-color);
+}
+
+.text-red {
+  color: var(--curry-red-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.hover\:text-blue:hover {
+  color: var(--curry-blue-color);
+}
+
+.hover\:text-red:hover {
+  color: var(--curry-red-color);
+}
+
+.hover\:.text-primary:hover {
+  color: var(--primary-color);
+}
+
+.hover\:.text-secondary:hover {
+  color: var(--secondary-color);
+}
+
+body {
+  min-width: 320px;
+}
+
+section:first-child {
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 30px), 0% 100%);
+  -moz-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 30px), 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 30px), 0% 100%);
+  padding-bottom: 50px;
+}
+
+section:not(:first-child) {
+  clip-path: polygon(0% 30px, 100% 0%, 100% calc(100% - 30px), 0% 100%);
+  -moz-clip-path: polygon(0% 30px, 100% 0%, 100% calc(100% - 30px), 0% 100%);
+  -webkit-clip-path: polygon(0% 30px, 100% 0%, 100% calc(100% - 30px), 0% 100%);
+  margin-top: -30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer {
+  clip-path: polygon(0% 30px, 100% 0%, 100% 100%, 0% 100%);
+  -moz-clip-path: polygon(0% 30px, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 30px, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -30px;
+  padding-top: 50px;
+}
+
+.marker {
+  height: 1.5rem;
+  left: -10%;
+  position: relative;
+  top: -1.5rem;
+  width: 130%;
+  z-index: -1;
+}
+
+.features {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
