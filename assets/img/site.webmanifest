@@ -1,6 +1,7 @@
 {
-  "name": "curry",
-  "short_name": "curry",
+  "name": "Curry",
+  "short_name": "Curry",
+  "description": "A Truly Integrated Functional Logic Programming Language",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
