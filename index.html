@@ -24,6 +24,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/curry-16x16.png">
   <link rel="manifest" href="assets/img/site.webmanifest">
   <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="black">
+  <meta name="msapplication-TileColor" content="white">
+  <meta name="theme-color" content="white">
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10" integrity="sha384-8t+aLluUVnn5SPPG/NbeZCH6TWIvaXIm/gDbutRvtEeElzxxWaZN+G/ZIEdI/f+y" crossorigin="anonymous" defer></script>
@@ -34,7 +36,7 @@
     <header class="fixed top-0 w-full z-10 shadow">
       <nav class="flex flex-wrap items-center justify-between bg-white p-3">
         <div class="flex items-center mr-6">
-          <img class="mr-2" width="32px" height="32px" src="assets/img/curry.svg">
+          <img class="mr-1" width="32" height="32" src="assets/img/curry.svg">
           <span class="font-semibold text-xl">{{ title }}</span>
         </div>
         <div class="block md:hidden">
@@ -46,10 +48,10 @@
         </div>
         <div :class="showNav ? 'block' : 'hidden'" class="w-full flex-grow md:w-auto md:flex md:items-center">
           <div class="text-sm md:flex md:justify-end md:flex-grow">
-            <a v-for="link in navLinks" v-bind:href="link.url" class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4">{{ link.title }}</a>
+            <a v-for="link in navLinks" class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" :href="link.url">{{ link.title }}</a>
           </div>
           <div class="flex justify-end text-sm md:block">
-            <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" v-bind:href="downloadsUrl">Downloads</a>
+            <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" :href="downloadsUrl">Downloads</a>
           </div>
         </div>
       </nav>
@@ -71,15 +73,15 @@
           <br>
           <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span>
           <br>
-          <span class="block keyword">&nbsp;&nbsp;where</span>
-          <span class="ident">&nbsp;&nbsp;&nbsp;&nbsp;x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
+          <span class="block whitespace-pre keyword">  where</span>
+          <span class="whitespace-pre ident">    x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
         </div>
       </section>
       <section class="px-6">
         <div class="max-w-2xl mx-auto text-center md:max-w-3xl">
           <p class="text-gray-600 leading-relaxed text-lg">{{ description }}</p>
           <div class="flex mt-4 justify-center">
-            <a class="rounded-lg px-4 py-3 border border-red text-red font-semibold leading-tight hover:bg-red hover:text-white md:text-lg xl:text-base" v-bind:href="downloadsUrl">Downloads</a>
+            <a class="rounded-lg px-4 py-3 border border-red text-red font-semibold leading-tight hover:bg-red hover:text-white md:text-lg xl:text-base" :href="downloadsUrl">Downloads</a>
             <a class="rounded-lg px-4 py-3 ml-4 border border-blue text-blue font-semibold leading-tight hover:bg-blue hover:text-white md:text-lg xl:text-base" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
           </div>
         </div>
@@ -121,7 +123,9 @@
       </section>
     </main>
     <footer class="w-full px-6 pb-6 bg-secondary text-center">
-      <p class="text-white">© 1995–2019 Curry Team | <a class="hover:underline" href="#">Data Privacy</a></p>
+      <p class="text-white">
+        <a class="hover:underline" href="#">© 1995–2019 Curry Programming Language<a> | <a class="hover:underline" href="#">Imprint</a> | <a class="hover:underline" href="#">Data Privacy</a>
+      </p>
     </footer>
   </div>
 </body>
