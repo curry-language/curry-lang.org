@@ -5,14 +5,6 @@ var features = [...Array(4).keys()].map(number => ({
   linkText: 'Learn More'
 }));
 
-var footerLinks = [...Array(4).keys()].map(number => ({
-  title: 'Lorem ipsum',
-  links: [...Array(4).keys()].map(number => ({
-    url: 'https://www-ps.informatik.uni-kiel.de/currywiki/',
-    linkText: 'Learn More'
-  }))
-}));
-
 var app = new Vue({
   el: '#app',
   data: {
@@ -47,7 +39,6 @@ var app = new Vue({
     downloadsUrl: 'https://www-ps.informatik.uni-kiel.de/currywiki/',
     languageFeatures: features,
     ecosystem: features,
-    footerLinks: footerLinks
   },
   methods: {
     toggleNav() {

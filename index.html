@@ -127,11 +127,100 @@
     </main>
     <footer class="footer bg-secondary px-6 pb-6">
       <div class="footer-grid text-white md:max-w-2xl lg:max-w-4xl mx-auto mb-12">
-        <div v-for="linkGroup in footerLinks">
-          <h2 class="text-center md:text-left font-bold text-lg">{{ linkGroup.title }}</h2>
+        <div>
+          <h2 class="text-center underline md:text-left font-bold text-lg">Documentation</h2>
           <ul>
-            <li v-for="link in linkGroup.links" class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" :href="link.url">{{ link.linkText }}</a>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/documentation/learn_more/">Learn More</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/style/">Style Guide</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-center underline md:text-left font-bold text-lg">Implementations</h2>
+          <ul>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/overview/">Overview</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://danae.uni-muenster.de/curry/">MCC</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/kics/">KiCS</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-center underline md:text-left font-bold text-lg">Libraries</h2>
+          <ul>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/lib/">PAKCS Libraries</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/lib/">KiCS2 Libraries</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle API Search</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Curry Packages</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-center underline md:text-left font-bold text-lg">Tools</h2>
+          <ul>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/editors/">Editor Support</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cpm/">CPM</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currydoc">CurryDoc</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/spicey">Spicey</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cass/">CASS</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/COOSy/">COOSy</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currybrowser/">CurryBrowser</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-center underline md:text-left font-bold text-lg">Miscellaneous</h2>
+          <ul>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/research/papers/">Research Papers</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/applications/">Applications</a>
+            </li>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/logo/">Curry Logos</a>
             </li>
           </ul>
         </div>
