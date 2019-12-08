@@ -134,35 +134,35 @@ body {
 }
 
 section:first-child {
-  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 30px), 0% 100%);
-  -moz-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 30px), 0% 100%);
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 30px), 0% 100%);
-  padding-bottom: 50px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  -moz-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  padding-bottom: 3.5rem;
 }
 
 section:not(:first-child) {
-  clip-path: polygon(0% 30px, 100% 0%, 100% calc(100% - 30px), 0% 100%);
-  -moz-clip-path: polygon(0% 30px, 100% 0%, 100% calc(100% - 30px), 0% 100%);
-  -webkit-clip-path: polygon(0% 30px, 100% 0%, 100% calc(100% - 30px), 0% 100%);
-  margin-top: -30px;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  -moz-clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  -webkit-clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  margin-top: -2rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
 }
 
 footer {
-  clip-path: polygon(0% 30px, 100% 0%, 100% 100%, 0% 100%);
-  -moz-clip-path: polygon(0% 30px, 100% 0%, 100% 100%, 0% 100%);
-  -webkit-clip-path: polygon(0% 30px, 100% 0%, 100% 100%, 0% 100%);
-  margin-top: -30px;
-  padding-top: 50px;
+  clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
+  -moz-clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -2rem;
+  padding-top: 3.5rem;
 }
 
 .marker {
   height: 1.5rem;
-  left: -10%;
+  left: -1rem;
   position: relative;
   top: -1.5rem;
-  width: 130%;
+  width: calc(100% + 3rem);
   z-index: -1;
 }
 
@@ -172,14 +172,37 @@ footer {
   grid-template-columns: 1fr;
 }
 
+.grid-container {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: 1fr;
+}
+
 @media (min-width: 640px) {
-  .features {
+  .features,
+  .grid-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media (min-width: 1024px) {
   .features {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.text-7xl {
+  font-size: 5rem;
+}
+
+@media (min-width: 640px) {
+  .sm\:text-10xl {
+    font-size: 8rem;
   }
 }
