@@ -46,10 +46,14 @@
         </button>
         <div :class="showNav ? 'block' : 'hidden'" class="w-full flex-grow md:flex md:items-center md:w-auto">
           <div class="text-sm md:flex md:justify-end md:flex-grow">
-            <a v-for="link in navLinks" class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" :href="link.url">{{ link.title }}</a>
+            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
+            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
+            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle</a>
+            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Packages</a>
+            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
           </div>
           <div class="flex justify-end text-sm md:block">
-            <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" :href="downloadsUrl">Downloads</a>
+            <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" href="#">Downloads</a>
           </div>
         </div>
       </nav>
@@ -64,7 +68,7 @@
           <span class="block text-center text-red leading-tight text-2xl sm:text-4xl">A Truly Integrated Functional Logic</span>
           <span class="block text-center text-red leading-tight text-2xl sm:text-4xl">Programming Language</span>
           <div class="flex justify-center mt-8">
-            <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight hover:bg-red hover:text-white px-4 py-3 md:text-lg" :href="downloadsUrl">Downloads</a>
+            <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight hover:bg-red hover:text-white px-4 py-3 md:text-lg" href="#">Downloads</a>
             <a class="flex items-center text-blue text-center border border-blue rounded-lg font-semibold leading-tight hover:bg-blue hover:text-white px-4 py-3 ml-4 md:text-lg" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
           </div>
         </div>
@@ -213,6 +217,9 @@
         <div>
           <h2 class="text-center underline md:text-left font-bold text-lg">Miscellaneous</h2>
           <ul>
+            <li class="flex justify-center md:justify-start">
+              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
+            </li>
             <li class="flex justify-center md:justify-start">
               <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/research/papers/">Research Papers</a>
             </li>
