@@ -46,7 +46,7 @@ var app = new Vue({
     ],
     downloadsUrl: 'https://www-ps.informatik.uni-kiel.de/currywiki/',
     languageFeatures: features,
-    toolsAndLibs: features,
+    ecosystem: features,
     footerLinks: footerLinks
   },
   methods: {
