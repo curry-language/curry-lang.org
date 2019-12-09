@@ -28,215 +28,278 @@
   <meta name="theme-color" content="white">
 
   <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10" integrity="sha384-8t+aLluUVnn5SPPG/NbeZCH6TWIvaXIm/gDbutRvtEeElzxxWaZN+G/ZIEdI/f+y" crossorigin="anonymous" defer></script>
   <script src="assets/js/app.js" defer></script>
 </head>
 <body>
-  <div id="app">
-    <header class="fixed top-0 w-full shadow z-10">
-      <nav class="flex flex-wrap items-center justify-between bg-white p-3">
-        <div class="flex items-center mr-6">
-          <img class="h-8 w-8 mr-1" src="assets/img/curry.svg">
-          <span class="font-semibold text-xl">Curry</span>
+  <header class="fixed top-0 w-full shadow z-10">
+    <nav class="flex flex-wrap items-center justify-between bg-white p-3">
+      <div class="flex items-center mr-6">
+        <img class="h-8 w-8 mr-1" src="assets/img/curry.svg">
+        <span class="font-semibold text-xl">Curry</span>
+      </div>
+      <button id="navToggle" class="flex items-center px-3 py-2 border border-primary rounded text-primary hover:bg-primary hover:text-white md:hidden" aria-hidden="true">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z">
+        </svg>
+      </button>
+      <div id="navMenu" class="hidden w-full flex-grow md:flex md:items-center md:w-auto">
+        <div class="text-sm md:flex md:justify-end md:flex-grow">
+          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
+          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
+          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle</a>
+          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Packages</a>
+          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
         </div>
-        <button class="flex items-center px-3 py-2 border border-primary rounded text-primary hover:bg-primary hover:text-white md:hidden" @click="toggleNav" aria-hidden="true">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z">
-          </svg>
-        </button>
-        <div :class="showNav ? 'block' : 'hidden'" class="w-full flex-grow md:flex md:items-center md:w-auto">
-          <div class="text-sm md:flex md:justify-end md:flex-grow">
-            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
-            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
-            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle</a>
-            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Packages</a>
-            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
-          </div>
-          <div class="flex justify-end text-sm md:block">
-            <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" href="#">Downloads</a>
-          </div>
+        <div class="flex justify-end text-sm md:block">
+          <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" href="#">Downloads</a>
         </div>
-      </nav>
-    </header>
-    <main class="pt-16">
-      <section class="flex justify-center px-6 pt-4 md:pt-6">
-        <div class="md:max-w-3xl">
-          <div class="flex flex-col justify-center sm:flex-row">
-            <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="assets/img/curry.svg">
-            <h1 class="flex justify-center items-center font-bold leading-tight text-7xl sm:text-10xl">Curry</h1>
-          </div>
-          <span class="block text-center text-red leading-tight text-2xl mx-auto sm:text-4xl md:max-w-2xl">A Truly Integrated Functional Logic Programming Language</span>
-          <div class="flex justify-center mt-8">
-            <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight hover:bg-red hover:text-white px-4 py-3 md:text-lg" href="#">Downloads</a>
-            <a class="flex items-center text-blue text-center border border-blue rounded-lg font-semibold leading-tight hover:bg-blue hover:text-white px-4 py-3 ml-4 md:text-lg" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
-          </div>
+      </div>
+    </nav>
+  </header>
+  <main class="pt-16">
+    <section class="flex justify-center px-6 pt-4 md:pt-6">
+      <div class="md:max-w-3xl">
+        <div class="flex flex-col justify-center sm:flex-row">
+          <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="assets/img/curry.svg">
+          <h1 class="flex justify-center items-center font-bold leading-tight text-7xl sm:text-10xl">Curry</h1>
         </div>
-      </section>
-      <section class="flex justify-center bg-primary px-6">
-        <div class="font-mono text-xs sm:text-base">
-          <span class="comment">-- | Returns the last element.</span><br>
-          <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
-          <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span><br>
-          <span class="whitespace-pre keyword">  where</span><br>
-          <span class="whitespace-pre ident">    x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
+        <span class="block text-center text-red leading-tight text-2xl mx-auto sm:text-4xl md:max-w-2xl">A Truly Integrated Functional Logic Programming Language</span>
+        <div class="flex justify-center mt-8">
+          <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight hover:bg-red hover:text-white px-4 py-3 md:text-lg" href="#">Downloads</a>
+          <a class="flex items-center text-blue text-center border border-blue rounded-lg font-semibold leading-tight hover:bg-blue hover:text-white px-4 py-3 ml-4 md:text-lg" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
         </div>
-      </section>
-      <section class="flex justify-center px-6">
-        <div class="md:max-w-3xl">
-          <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">Curry is a <span class="font-bold">universal programming language</span> which combines the most important declarative programming paradigms, namely <span class="font-bold">functional programming</span> and <span class="font-bold">logic programming</span>. Moreover, it also covers the most important operational principles developed in the area of integrated functional logic languages: residuation and narrowing.</p>
-          <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">The development of Curry is an international initiative intended to provide a common platform for the research, teaching and application of integrated functional logic languages. The design of Curry is mainly discussed in the Curry mailing list. A detailed report describing the language is also available. To get an idea of Curry, you may have a look into the short list of Curry's features or a tutorial on Curry.</p>
-          <div class="flex flex-col justify-center sm:flex-row">
-            <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto px-4 py-3 hover:bg-primary hover:text-white sm:mx-0 md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
-            <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0 md:text-lg" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
-            <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0 md:text-lg" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
-          </div>
+      </div>
+    </section>
+    <section class="flex justify-center bg-primary px-6">
+      <div class="font-mono text-xs sm:text-base">
+        <span class="comment">-- | Returns the last element.</span><br>
+        <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
+        <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span><br>
+        <span class="whitespace-pre keyword">  where</span><br>
+        <span class="whitespace-pre ident">    x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
+      </div>
+    </section>
+    <section class="flex justify-center px-6">
+      <div class="md:max-w-3xl">
+        <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">Curry is a <span class="font-bold">universal programming language</span> which combines the most important declarative programming paradigms, namely <span class="font-bold">functional programming</span> and <span class="font-bold">logic programming</span>. Moreover, it also covers the most important operational principles developed in the area of integrated functional logic languages: residuation and narrowing.</p>
+        <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">The development of Curry is an international initiative intended to provide a common platform for the research, teaching and application of integrated functional logic languages. The design of Curry is mainly discussed in the Curry mailing list. A detailed report describing the language is also available. To get an idea of Curry, you may have a look into the short list of Curry's features or a tutorial on Curry.</p>
+        <div class="flex flex-col justify-center sm:flex-row">
+          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto px-4 py-3 hover:bg-primary hover:text-white sm:mx-0 md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
+          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0 md:text-lg" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
+          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0 md:text-lg" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
         </div>
-      </section>
-      <section class="flex flex-col justify-center bg-primary px-8">
-        <div class="inline-block mx-auto mb-4">
-          <h1 class="text-center text-4xl font-bold text-white">Features</h1>
-          <div class="marker bg-blue"></div>
-        </div>
-        <div class="features">
-          <div v-for="feat in languageFeatures">
-            <h2 class="text-center text-2xl font-semibold text-white mb-2">{{ feat.title }}</h2>
-            <p class="text-center text-white">{{ feat.text }}</p>
-            <div class="flex justify-center mx-4 mt-4">
-              <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" v-bind:href="feat.url">{{ feat.linkText }}</a>
+      </div>
+    </section>
+    <section class="flex flex-col justify-center bg-primary px-8">
+      <div class="inline-block mx-auto mb-4">
+        <h1 class="text-center text-4xl font-bold text-white">Features</h1>
+        <div class="marker bg-blue"></div>
+      </div>
+      <div class="features">
+        <div>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">Functional</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
+            <div>
+              <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
+              <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="flex justify-center px-6">
-        <div class="md:max-w-3xl">
-          <p class="text-center text-lg text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-      </section>
-      <section class="flex flex-col justify-center bg-primary px-8">
-        <div class="inline-block mx-auto mb-4">
-          <h1 class="text-center text-4xl font-bold text-white">Ecosystem</h1>
-          <div class="marker bg-red"></div>
-        </div>
-        <div class="features">
-          <div v-for="feat in ecosystem">
-            <h2 class="text-center text-2xl font-semibold text-white mb-2">{{ feat.title }}</h2>
-            <p class="text-center text-white">{{ feat.text }}</p>
-            <div class="flex justify-center mx-4 mt-4">
-              <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" v-bind:href="feat.url">{{ feat.linkText }}</a>
-            </div>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
           </div>
         </div>
-      </section>
-    </main>
-    <footer class="footer bg-secondary px-6 pb-6">
-      <div class="footer-grid text-white md:max-w-2xl lg:max-w-4xl mx-auto mb-12">
         <div>
-          <h2 class="text-center underline md:text-left font-bold text-lg">Documentation</h2>
-          <ul>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/documentation/learn_more/">Learn More</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/style/">Style Guide</a>
-            </li>
-          </ul>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">Type Inference</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
+            <div>
+              <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
+              <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span>
+            </div>
+          </div>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
+          </div>
         </div>
         <div>
-          <h2 class="text-center underline md:text-left font-bold text-lg">Implementations</h2>
-          <ul>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/overview/">Overview</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://danae.uni-muenster.de/curry/">MCC</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/kics/">KiCS</a>
-            </li>
-          </ul>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">Nondeterminism</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
+            <div>
+              <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
+              <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span>
+            </div>
+          </div>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
+          </div>
         </div>
         <div>
-          <h2 class="text-center underline md:text-left font-bold text-lg">Libraries</h2>
-          <ul>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/lib/">PAKCS Libraries</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/lib/">KiCS2 Libraries</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle API Search</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Curry Packages</a>
-            </li>
-          </ul>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">Free Variables</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
+            <div>
+              <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
+              <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span>
+            </div>
+          </div>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex justify-center px-6">
+      <div class="md:max-w-3xl">
+        <p class="text-center text-lg text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </section>
+    <section class="flex flex-col justify-center bg-primary px-8">
+      <div class="inline-block mx-auto mb-4">
+        <h1 class="text-center text-4xl font-bold text-white">Ecosystem</h1>
+        <div class="marker bg-red"></div>
+      </div>
+      <div class="features">
+        <div>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">Compilers</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/overview/">Learn More</a>
+          </div>
         </div>
         <div>
-          <h2 class="text-center underline md:text-left font-bold text-lg">Tools</h2>
-          <ul>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/editors/">Editor Support</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cpm/">CPM</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currydoc">CurryDoc</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/spicey">Spicey</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cass/">CASS</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/COOSy/">COOSy</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currybrowser/">CurryBrowser</a>
-            </li>
-          </ul>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">Package Manager</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cpm/">Learn More</a>
+          </div>
         </div>
         <div>
-          <h2 class="text-center underline md:text-left font-bold text-lg">Miscellaneous</h2>
-          <ul>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/research/papers/">Research Papers</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/applications/">Applications</a>
-            </li>
-            <li class="flex justify-center md:justify-start">
-              <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/logo/">Curry Logos</a>
-            </li>
-          </ul>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">CurryDoc</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currydoc/">Learn More</a>
+          </div>
         </div>
+        <div>
+          <h2 class="text-center text-2xl font-semibold text-white mb-2">Curr(y)gle API Search</h2>
+          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="flex justify-center mx-4 mt-4">
+            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white md:text-lg" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer bg-secondary px-6 pb-6">
+    <div class="footer-grid text-white md:max-w-2xl lg:max-w-4xl mx-auto mb-12">
+      <div>
+        <h2 class="text-center underline md:text-left font-bold text-lg">Documentation</h2>
+        <ul>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/documentation/learn_more/">Learn More</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/style/">Style Guide</a>
+          </li>
+        </ul>
       </div>
       <div>
-        <p class="text-white text-center text-sm">
-          <a class="hover:underline" href="#">© 1995–2019 Curry Team<a> | <a class="hover:underline" href="#">Imprint</a> | <a class="hover:underline" href="#">Data Privacy</a>
-        </p>
+        <h2 class="text-center underline md:text-left font-bold text-lg">Implementations</h2>
+        <ul>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/overview/">Overview</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://danae.uni-muenster.de/curry/">MCC</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/kics/">KiCS</a>
+          </li>
+        </ul>
       </div>
-    </footer>
-  </div>
+      <div>
+        <h2 class="text-center underline md:text-left font-bold text-lg">Libraries</h2>
+        <ul>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/lib/">PAKCS Libraries</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/lib/">KiCS2 Libraries</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle API Search</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Curry Packages</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-center underline md:text-left font-bold text-lg">Tools</h2>
+        <ul>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/editors/">Editor Support</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cpm/">CPM</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currydoc/">CurryDoc</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/spicey/">Spicey</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cass/">CASS</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/COOSy/">COOSy</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currybrowser/">CurryBrowser</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-center underline md:text-left font-bold text-lg">Miscellaneous</h2>
+        <ul>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/research/papers/">Research Papers</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/applications/">Applications</a>
+          </li>
+          <li class="flex justify-center md:justify-start">
+            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/logo/">Curry Logos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <p class="text-white text-center text-sm">
+        <a class="hover:underline" href="#">© 1995–2019 Curry Team<a> | <a class="hover:underline" href="#">Imprint</a> | <a class="hover:underline" href="#">Data Privacy</a>
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
