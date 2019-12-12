@@ -14,5 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.add('hidden')
       navMenu.classList.remove('block')
     }
+
+    navToggle.setAttribute('aria-expanded', showNav)
   });
 });

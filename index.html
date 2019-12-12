@@ -34,11 +34,11 @@
   <header class="fixed top-0 w-full shadow z-10">
     <nav class="flex flex-wrap items-center justify-between bg-white p-3">
       <div class="flex items-center mr-6">
-        <img class="h-8 w-8 mr-1" src="assets/img/curry.svg">
+        <img class="h-8 w-8 mr-1" src="assets/img/curry.svg" alt="Curry Logo">
         <span class="font-semibold text-xl">Curry</span>
       </div>
-      <button id="navToggle" class="flex items-center px-3 py-2 border border-primary rounded text-primary hover:bg-primary hover:text-white md:hidden" aria-hidden="true">
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <button id="navToggle" class="flex items-center px-3 py-2 border border-primary rounded text-primary hover:bg-primary hover:text-white md:hidden" aria-expanded="false" aria-label="Menu">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z">
         </svg>
       </button>
@@ -60,7 +60,7 @@
     <section class="flex justify-center px-6 pt-4 md:pt-6">
       <div class="md:max-w-3xl">
         <div class="flex flex-col justify-center sm:flex-row">
-          <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="assets/img/curry.svg">
+          <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="assets/img/curry.svg" alt="Curry Logo">
           <h1 class="flex justify-center items-center font-bold leading-tight text-7xl sm:text-10xl">Curry</h1>
         </div>
         <span class="block text-center text-red leading-tight text-2xl mx-auto sm:text-4xl md:max-w-2xl">A Truly Integrated Functional Logic Programming Language</span>
@@ -85,8 +85,8 @@
         <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">The development of Curry is an international initiative intended to provide a common platform for the research, teaching and application of integrated functional logic languages. The design of Curry is mainly discussed in the Curry mailing list. A detailed report describing the language is also available. To get an idea of Curry, you may have a look into the short list of Curry's features or a tutorial on Curry.</p>
         <div class="flex flex-col justify-center sm:flex-row">
           <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto px-4 py-3 hover:bg-primary hover:text-white sm:mx-0 md:text-lg" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
-          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0 md:text-lg" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
           <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0 md:text-lg" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
+          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0 md:text-lg" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
         </div>
       </div>
     </section>
