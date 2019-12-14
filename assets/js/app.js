@@ -1,13 +1,13 @@
-let showNav = false;
+let showNavMenu = false;
 
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
 
-  navToggle.addEventListener('click', function() {
-    showNav = !showNav
+  navToggle.addEventListener('click', () => {
+    showNavMenu = !showNavMenu
 
-    if (showNav) {
+    if (showNavMenu) {
       navMenu.classList.add('block')
       navMenu.classList.remove('hidden')
     } else {
@@ -15,6 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navMenu.classList.remove('block')
     }
 
-    navToggle.setAttribute('aria-expanded', showNav)
+    navToggle.setAttribute('aria-expanded', showNavMenu)
   });
 });

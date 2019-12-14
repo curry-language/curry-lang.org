@@ -19,6 +19,10 @@
   --char-color: hsl(120, 66%, 70%);
 }
 
+body {
+  min-width: 320px;
+}
+
 /* Code highlighting */
 .pragma  { color: var(--pragma-color)  }
 .comment { color: var(--comment-color) }
@@ -33,26 +37,6 @@
 .number  { color: var(--number-color)  }
 .string  { color: var(--string-color)  }
 .char    { color: var(--char-color)    }
-
-body {
-  min-width: 320px;
-}
-
-section:first-child {
-  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
-  -moz-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
-  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
-  padding-bottom: 3.5rem;
-}
-
-section:not(:first-child) {
-  clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
-  -moz-clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
-  -webkit-clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
-  margin-top: -2rem;
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
 
 .bg-blue,
 .hover\:bg-blue:hover {
@@ -100,14 +84,6 @@ section:not(:first-child) {
   grid-template-columns: 1fr;
 }
 
-.footer {
-  clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
-  -moz-clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
-  -webkit-clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
-  margin-top: -2rem;
-  padding-top: 3.5rem;
-}
-
 .footer-grid {
   display: grid;
   grid-gap: 3rem;
@@ -121,6 +97,27 @@ section:not(:first-child) {
   top: -1.5rem;
   width: calc(100% + 3rem);
   z-index: -1;
+}
+
+.slanted {
+  clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  -webkit-clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  margin-top: -2rem;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.slanted-bottom {
+  clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
+  padding-bottom: 3.5rem;
+}
+
+.slanted-top {
+  clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 2rem, 100% 0%, 100% 100%, 0% 100%);
+  margin-top: -2rem;
+  padding-top: 3.5rem;
 }
 
 .text-blue,
