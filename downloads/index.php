@@ -7,11 +7,97 @@
     <section class="slanted flex justify-center bg-primary px-6">
       <h1 class="text-center text-4xl font-bold text-white sm:text-6xl md:max-w-3xl"><?php echo $title; ?></h1>
     </section>
-    <section class="slanted flex justify-center px-6">
-      <div class="md:max-w-3xl">
-        <p class="text-center text-lg text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="text-center text-lg text-gray-600 leading-relaxed mt-4">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p class="text-center text-lg text-gray-600 leading-relaxed mt-4">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <section class="slanted px-6">
+      <div class="flex justify-center mx-auto md:max-w-3xl">
+        <table class="table-auto table-colored">
+          <caption class="mb-4">
+            <h1 class="text-center text-4xl font-bold leading-tight">PAKCS</h1>
+            <h2 class="text-center text-xl font-semibold">Portland Aachen Kiel Curry System</h2>
+          </caption>
+          <thead>
+            <tr>
+              <th class="border px-4 py-2">Version</th>
+              <th class="border px-4 py-2">Assets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">Latest</td>
+              <td class="border px-4 py-2">
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-src.tar.gz">Source Code (requires GHC)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-manual.pdf">Manual</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">v2.2.0 (30/10/19)</td>
+              <td class="border px-4 py-2">
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-src.tar.gz">Source Code (requires GHC)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-manual.pdf">Manual</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">v2.1.2 (23/09/19)</td>
+              <td class="border px-4 py-2">
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.2-src.tar.gz">Source Code (requires GHC)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.2-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.2-manual.pdf">Manual</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">v2.1.1 (11/02/19)</td>
+              <td class="border px-4 py-2">
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.1-src.tar.gz">Source Code (requires GHC)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.1-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
+                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.1-manual.pdf">Manual</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="flex justify-center mt-6">
+        <a class="font-semibold leading-tight hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/download.html">Older PAKCS Releases …</a>
+      </div>
+      <div class="flex justify-center mx-auto md:max-w-3xl mt-12">
+        <table class="table-auto table-colored">
+          <caption class="mb-4">
+            <h1 class="text-center text-4xl font-bold leading-tight">KiCS2</h1>
+            <h2 class="text-center text-xl font-semibold">Kiel Curry System Version 2</h2>
+          </caption>
+          <thead>
+            <tr>
+              <th class="border px-4 py-2">Version</th>
+              <th class="border px-4 py-2">Assets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border px-4 py-2">Latest</td>
+              <td class="border px-4 py-2">
+                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0.tar.gz">Source Code (requires GHC)</a>
+                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0-manual.pdf">Manual</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">v2.2.0 (30/10/19)</td>
+              <td class="border px-4 py-2">
+                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0.tar.gz">Source Code (requires GHC)</a>
+                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0-manual.pdf">Manual</a>
+              </td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">v2.0.0 (23/11/18)</td>
+              <td class="border px-4 py-2">
+                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.0.0.tar.gz">Source Code (requires GHC)</a>
+                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.0.0-manual.pdf">Manual</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="flex justify-center mt-6">
+        <a class="font-semibold leading-tight hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download.html">Older KiCS2 Releases …</a>
       </div>
     </section>
   </main>
