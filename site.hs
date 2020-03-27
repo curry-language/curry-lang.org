@@ -22,19 +22,36 @@ main = hakyll $ do
     match "versions/*/*.version" $ do
         compile getResourceBody
 
+    match "versions/packs_versions.html" $ do
+        compile getResourceBody
+
+
+    match "versions/kics2_versions.html" $ do
+        compile getResourceBody
+
     match "downloads/*" $ do
         route   idRoute
         compile $ do
-           packs_versions <- recentFirst =<< loadAll "versions/packs/*.version"
-           kics2_versions <- recentFirst =<< loadAll "versions/kicks2/*.version*"
-           let indexCtx =
-                    listField "packs_versions" defaultContext (return packs_versions) `mappend`
-                    listField "kics2_versions" defaultContext (return kics2_versions) `mappend`
+            packs <- load "versions/packs_versions.html"
+            packs_versions <- recentFirst =<< loadAll "versions/packs/*.version"
+            let packsCtx =
+                    listField "versions" defaultContext (return packs_versions) `mappend`
                     defaultContext
 
-           getResourceBody
-               >>= applyAsTemplate indexCtx
-               >>= relativizeUrls
+            kics2 <- load "versions/kics2_versions.html"
+            kics2_versions <- recentFirst =<< loadAll "versions/kics2/*.version"
+            let kics2Ctx =
+                    listField "versions" defaultContext (return kics2_versions) `mappend`
+                    defaultContext
+
+            let indexCtx =
+                    listField "packs" packsCtx (return [packs]) `mappend`
+                    listField "kics2" kics2Ctx (return [kics2]) `mappend`
+                    defaultContext
+
+            getResourceBody
+                >>= applyAsTemplate indexCtx
+                >>= relativizeUrls
 
     match "imprint/*" $ do
         route   idRoute
@@ -64,5 +81,3 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
-
-

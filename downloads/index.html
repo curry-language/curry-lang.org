@@ -9,50 +9,12 @@ $partial("templates/head.html")$
   <main class="pt-24">
     $partial("templates/title_section.html")$
     <section class="slanted px-6">
-      <div class="flex justify-center mx-auto md:max-w-3xl">
-        <table class="table-auto table-colored">
-          <caption class="mb-4">
-            <h1 class="text-center text-4xl font-bold leading-tight">PAKCS</h1>
-            <h2 class="text-center text-xl font-semibold">Portland Aachen Kiel Curry System</h2>
-          </caption>
-          <thead>
-            <tr>
-              <th class="border px-4 py-2">Version</th>
-              <th class="border px-4 py-2">Assets</th>
-            </tr>
-          </thead>
-          <tbody>
-            $for(packs_versions)$
-              $partial("templates/version_entry.html")$
-            $endfor$
-          </tbody>
-        </table>
-      </div>
-      <div class="flex justify-center mt-6">
-        <a class="font-semibold leading-tight hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/download.html">Older PAKCS Releases …</a>
-      </div>
-      <div class="flex justify-center mx-auto md:max-w-3xl mt-12">
-        <table class="table-auto table-colored">
-          <caption class="mb-4">
-            <h1 class="text-center text-4xl font-bold leading-tight">KiCS2</h1>
-            <h2 class="text-center text-xl font-semibold">Kiel Curry System Version 2</h2>
-          </caption>
-          <thead>
-            <tr>
-              <th class="border px-4 py-2">Version</th>
-              <th class="border px-4 py-2">Assets</th>
-            </tr>
-          </thead>
-          <tbody>
-            $for(kics2_versions)$
-              $partial("templates/version_entry.html")$
-            $endfor$
-          </tbody>
-        </table>
-      </div>
-      <div class="flex justify-center mt-6">
-        <a class="font-semibold leading-tight hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download.html">Older KiCS2 Releases …</a>
-      </div>
+      $for(packs)$
+        $partial("templates/version_list.html")$
+      $endfor$
+      $for(kics2)$
+        $partial("templates/version_list.html")$
+      $endfor$
     </section>
   </main>
   $partial("templates/footer.html")$
