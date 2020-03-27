@@ -99,6 +99,11 @@ body {
   z-index: -1;
 }
 
+.eco-column {
+  height: 200px;
+  color: #fff;
+}
+
 .slanted {
   clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
   -webkit-clip-path: polygon(0% 2rem, 100% 0%, 100% calc(100% - 2rem), 0% 100%);
