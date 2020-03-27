@@ -49,52 +49,30 @@ $partial("templates/head.html")$
       <div class="features">
         <div>
           <h2 class="text-center text-2xl font-semibold text-white mb-2">Purely Functional</h2>
-          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
-            <div>
-              <span class="func">square</span> <span class="symbol">::</span> <span class="type">Int</span> <span class="symbol">-&gt;</span> <span class="type">Int</span><br>
-              <span class="func">square</span> <span class="ident">x</span> <span class="symbol">=</span> <span class="ident">x</span> <span class="func">*</span> <span class="ident">x</span>
-            </div>
-          </div>
+          <p class="features-column">Curry is called a pure language, because functions in Curry are functions in the mathematical sense. Operations with side-effects are explictly marked as "IO" operations, and thus, a description of what to do, produced by pure code. Functions are constructed by expressions only, there are no statements or instructions, and every bindings to variables are immutable.</p>
           <div class="flex justify-center mx-4 mt-4">
             <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
           </div>
         </div>
         <div>
           <h2 class="text-center text-2xl font-semibold text-white mb-2">Type Inference</h2>
-          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
-            <div>
-              <span class="func">square</span> <span class="symbol">::</span> <span class="type">Int</span> <span class="symbol">-&gt;</span> <span class="type">Int</span><br>
-              <span class="func">square</span> <span class="ident">x</span> <span class="symbol">=</span> <span class="ident">x</span> <span class="func">*</span> <span class="ident">x</span>
-            </div>
-          </div>
+	  <p class="features-column">Type annotations of functions need not be written by the programmer, they are automatically inferred by the compiler using a type inference algorithm. Nevertheless, it is a good style to write down the types of functions in order to provide at least a minimal documentation of the intended use of functions.
+	  </p>
           <div class="flex justify-center mx-4 mt-4">
             <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
           </div>
         </div>
         <div>
           <h2 class="text-center text-2xl font-semibold text-white mb-2">Nondeterminism</h2>
-          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
-            <div>
-              <span class="func">square</span> <span class="symbol">::</span> <span class="type">Int</span> <span class="symbol">-&gt;</span> <span class="type">Int</span><br>
-              <span class="func">square</span> <span class="ident">x</span> <span class="symbol">=</span> <span class="ident">x</span> <span class="func">*</span> <span class="ident">x</span>
-            </div>
-          </div>
-          <div class="flex justify-center mx-4 mt-4">
+          <p class="features-column">Non-deterministic operations are not functions in the mathematical sense because they can return different values for the same input. Non-deterministic operations support a programming style similar to that of logic programs, while preserving some advantages of functional programs such as expression nesting and lazy evaluation.</p>
+
+	<div class="flex justify-center mx-4 mt-4">
             <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
           </div>
         </div>
         <div>
           <h2 class="text-center text-2xl font-semibold text-white mb-2">Free Variables</h2>
-          <p class="text-center text-white">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="flex justify-center font-mono text-xs sm:text-base mt-4">
-            <div>
-              <span class="func">square</span> <span class="symbol">::</span> <span class="type">Int</span> <span class="symbol">-&gt;</span> <span class="type">Int</span><br>
-              <span class="func">square</span> <span class="ident">x</span> <span class="symbol">=</span> <span class="ident">x</span> <span class="func">*</span> <span class="ident">x</span>
-            </div>
-          </div>
+          <p class="features-column">Free variables denote “unknown” values. They are instantiated (i.e., replaced by some concrete values) so that the instantiated expression is evaluable. REPls of Curry systems show bindings (i.e., instantiations) of the free variables it has compute to evalute an expression.</p>
           <div class="flex justify-center mx-4 mt-4">
             <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
           </div>
