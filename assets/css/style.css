@@ -1,8 +1,8 @@
 :root {
   --curry-blue-color: #181f6f;
   --curry-red-color: hsl(0, 100%, 33%);
-  --primary-color: hsl(215, 25%, 25%);
-  --secondary-color: hsl(215, 10%, 40%);
+  --primary-color: hsl(215, 15%, 60%);
+  --secondary-color: hsl(215, 10%, 100%);
 
   --pragma-color: hsl(0, 0%, 60%);
   --comment-color: hsl(0, 0%, 60%);
