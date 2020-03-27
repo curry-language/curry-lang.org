@@ -22,38 +22,9 @@ $partial("templates/head.html")$
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="border px-4 py-2">Latest</td>
-              <td class="border px-4 py-2">
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-src.tar.gz">Source Code (requires GHC)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-manual.pdf">Manual</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">v2.2.0 (30/10/19)</td>
-              <td class="border px-4 py-2">
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-src.tar.gz">Source Code (requires GHC)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.0-manual.pdf">Manual</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">v2.1.2 (23/09/19)</td>
-              <td class="border px-4 py-2">
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.2-src.tar.gz">Source Code (requires GHC)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.2-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.2-manual.pdf">Manual</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">v2.1.1 (11/02/19)</td>
-              <td class="border px-4 py-2">
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.1-src.tar.gz">Source Code (requires GHC)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.1-amd64-Linux.tar.gz">Linux / x86_64 (64-bit)</a>
-                <a class="block underline" href="https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.1.1-manual.pdf">Manual</a>
-              </td>
-            </tr>
+            $for(packs_versions)$
+              $partial("templates/version_entry.html")$
+            $endfor$
           </tbody>
         </table>
       </div>
@@ -73,27 +44,9 @@ $partial("templates/head.html")$
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="border px-4 py-2">Latest</td>
-              <td class="border px-4 py-2">
-                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0.tar.gz">Source Code (requires GHC)</a>
-                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0-manual.pdf">Manual</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">v2.2.0 (30/10/19)</td>
-              <td class="border px-4 py-2">
-                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0.tar.gz">Source Code (requires GHC)</a>
-                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.2.0-manual.pdf">Manual</a>
-              </td>
-            </tr>
-            <tr>
-              <td class="border px-4 py-2">v2.0.0 (23/11/18)</td>
-              <td class="border px-4 py-2">
-                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.0.0.tar.gz">Source Code (requires GHC)</a>
-                <a class="block underline" href="https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-2.0.0-manual.pdf">Manual</a>
-              </td>
-            </tr>
+            $for(kics2_versions)$
+              $partial("templates/version_entry.html")$
+            $endfor$
           </tbody>
         </table>
       </div>
