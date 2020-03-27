@@ -1,0 +1,25 @@
+<header class="fixed top-0 w-full shadow z-10">
+  <nav class="flex flex-wrap items-center justify-between bg-white p-3">
+    <a class="flex items-center mr-6" href="/">
+      <img class="h-8 w-8 mr-1" src="/assets/img/curry.svg" alt="Curry Logo">
+      <span class="font-semibold text-xl">Curry</span>
+    </a>
+    <button id="navToggle" class="flex items-center px-3 py-2 border border-primary rounded text-primary hover:bg-primary hover:text-white md:hidden" aria-expanded="false" aria-label="Menu">
+      <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z">
+      </svg>
+    </button>
+    <div id="navMenu" class="hidden w-full flex-grow md:flex md:items-center md:w-auto">
+      <div class="text-sm md:flex md:justify-end md:flex-grow">
+        <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
+        <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
+        <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle</a>
+        <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Packages</a>
+        <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
+      </div>
+      <div class="flex justify-end text-sm md:block">
+        <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" href="/downloads/">Downloads</a>
+      </div>
+    </div>
+  </nav>
+</header>

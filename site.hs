@@ -21,15 +21,30 @@ main = hakyll $ do
 
     match "downloads/*" $ do
         route   idRoute
-        compile copyFileCompiler
+        compile $ do
+           let indexCtx =  defaultContext
+
+           getResourceBody
+               >>= applyAsTemplate indexCtx
+               >>= relativizeUrls
 
     match "imprint/*" $ do
         route   idRoute
-        compile copyFileCompiler
+        compile $ do
+           let indexCtx =  defaultContext
+
+           getResourceBody
+               >>= applyAsTemplate indexCtx
+               >>= relativizeUrls
 
     match "privacy/*" $ do
         route   idRoute
-        compile copyFileCompiler
+        compile $ do
+           let indexCtx =  defaultContext
+
+           getResourceBody
+               >>= applyAsTemplate indexCtx
+               >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute

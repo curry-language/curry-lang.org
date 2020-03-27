@@ -1,64 +1,14 @@
+---
+title: Privacy Policy
+---
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - Curry Programming Language</title>
-  <meta name="description" content="A Truly Integrated Functional Logic Programming Language">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Privacy Policy - Curry Programming Language">
-  <meta property="og:description" content="A Truly Integrated Functional Logic Programming Language">
-  <meta property="og:image" content="https://curry-lang.org/assets/img/curry-social-wide.png">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="en">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.1.4/dist/tailwind.min.css" integrity="sha384-P1ywvnMmN+Azcym7yWmx9nlcYa3XTTEVcybwaNJY2szVm1rK0cjaxC+21s+4ag+p" crossorigin="anonymous">
-  <link rel="stylesheet" href="/assets/css/style.css">
-
-  <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
-  <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/img/curry.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/curry-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/curry-16x16.png">
-  <link rel="manifest" href="/assets/img/site.webmanifest">
-  <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg" color="black">
-  <meta name="msapplication-TileColor" content="white">
-  <meta name="theme-color" content="white">
-
-  <!-- Scripts -->
-  <script src="/assets/js/app.js" defer></script>
-</head>
+$partial("templates/head.html")$
 <body>
-  <header class="fixed top-0 w-full shadow z-10">
-    <nav class="flex flex-wrap items-center justify-between bg-white p-3">
-      <a class="flex items-center mr-6" href="/">
-        <img class="h-8 w-8 mr-1" src="/assets/img/curry.svg" alt="Curry Logo">
-        <span class="font-semibold text-xl">Curry</span>
-      </a>
-      <button id="navToggle" class="flex items-center px-3 py-2 border border-primary rounded text-primary hover:bg-primary hover:text-white md:hidden" aria-expanded="false" aria-label="Menu">
-        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z">
-        </svg>
-      </button>
-      <div id="navMenu" class="hidden w-full flex-grow md:flex md:items-center md:w-auto">
-        <div class="text-sm md:flex md:justify-end md:flex-grow">
-          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
-          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
-          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle</a>
-          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Packages</a>
-          <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
-        </div>
-        <div class="flex justify-end text-sm md:block">
-          <a class="inline-block px-4 py-2 mt-4 bg-primary border border-primary rounded leading-none text-white hover:bg-red hover:border-red hover:shadow-md md:mt-0" href="/downloads/">Downloads</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  $partial("templates/header.html")$
   <main class="pt-24">
     <section class="slanted flex justify-center bg-primary px-6">
-      <h1 class="text-center text-4xl font-bold text-white sm:text-6xl md:max-w-3xl">Privacy Policy</h1>
+      <h1 class="text-center text-4xl font-bold text-white sm:text-6xl md:max-w-3xl">$title$</h1>
     </section>
     <section class="slanted flex justify-center px-6">
       <div class="md:max-w-3xl">
@@ -68,114 +18,6 @@
       </div>
     </section>
   </main>
-  <footer class="slanted-top bg-secondary px-6 pb-6">
-    <div class="footer-grid text-white md:max-w-2xl lg:max-w-4xl mx-auto mb-12">
-      <div>
-        <h2 class="text-center underline md:text-left font-bold text-lg">Documentation</h2>
-        <ul>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/documentation/learn_more/">Learn More</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/style/">Style Guide</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="text-center underline md:text-left font-bold text-lg">Implementations</h2>
-        <ul>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/overview/">Overview</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/">PAKCS</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/">KiCS2</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://danae.uni-muenster.de/curry/">MCC</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/kics/">KiCS</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="text-center underline md:text-left font-bold text-lg">Libraries</h2>
-        <ul>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/lib/">PAKCS Libraries</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/lib/">KiCS2 Libraries</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Curr(y)gle API Search</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~curry/cpm/">Curry Packages</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="text-center underline md:text-left font-bold text-lg">Tools</h2>
-        <ul>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/editors/">Editor Support</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cpm/">CPM</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currydoc/">CurryDoc</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/spicey/">Spicey</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cass/">CASS</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www.informatik.uni-kiel.de/~pakcs/COOSy/">COOSy</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currybrowser/">CurryBrowser</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="text-center underline md:text-left font-bold text-lg">Miscellaneous</h2>
-        <ul>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/">CurryWiki</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/research/papers/">Research Papers</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/applications/">Applications</a>
-          </li>
-          <li class="flex justify-center md:justify-start">
-            <a class="text-sm hover:underline" href="https://www-ps.informatik.uni-kiel.de/currywiki/logo/">Curry Logos</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <p class="text-white text-center text-sm">
-        <a class="hover:underline" href="/">© 1995–2019 Curry Team<a> | <a class="hover:underline" href="/imprint/">Imprint</a> | <a class="hover:underline" href="/privacy/">Data Privacy</a>
-      </p>
-    </div>
-  </footer>
+  $partial("templates/footer.html")$
 </body>
 </html>
