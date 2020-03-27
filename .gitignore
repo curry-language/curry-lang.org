@@ -1,1 +1,9 @@
 .DS_Store
+/.idea/
+/dist/
+/dist-newstyle/
+/.stack-work/
+/_cache/
+/_site/
+/.ghc.environment.x86_64-mingw32-8.6.5
+/curry-lang.org-hakyll.iml
