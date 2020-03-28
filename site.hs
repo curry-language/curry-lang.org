@@ -27,7 +27,7 @@ main = do
             route   idRoute
             compile compressCssCompiler
 
-        match ("versions/*_versions.html" .||. "versions/*/*.version" .||. "features/*.html") $ do
+        match ("versions/*_versions.html" .||. "versions/*/*.version" .||. "features/*.html".||. "ecosystem/*.html") $
             compile getResourceBody
 
         match "downloads/*" $ do
@@ -50,9 +50,11 @@ main = do
         match "index.html" $ do
             route idRoute
             compile $ do
-                features <- chronological =<< loadAll "features/*.html"
+                features  <- chronological =<< loadAll "features/*.html"
+                ecosystem <- chronological =<< loadAll "ecosystem/*.html"
                 let indexCtx =
-                        listField "features" defaultContext (return features) `mappend`
+                        listField "features"  defaultContext (return features ) `mappend`
+                        listField "ecosystem" defaultContext (return ecosystem) `mappend`
                         defaultContext
                 defaultCompile indexCtx
 
