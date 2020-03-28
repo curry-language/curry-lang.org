@@ -29,15 +29,7 @@ no-dash: true
       $partial("code/main.curry.md")$
   </section>
   <section class="slanted flex justify-center px-6">
-    <div class="md:max-w-3xl">
-      <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">Curry is a <span class="font-bold">universal programming language</span> which combines the most important declarative programming paradigms, namely <span class="font-bold">functional programming</span> and <span class="font-bold">logic programming</span>. Moreover, it also covers the most important operational principles developed in the area of integrated functional logic languages: residuation and narrowing.</p>
-      <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">The development of Curry is an international initiative intended to provide a common platform for the research, teaching and application of integrated functional logic languages. The design of Curry is mainly discussed in the Curry mailing list. A detailed report describing the language is also available. To get an idea of Curry, you may have a look into the short list of Curry's features or a tutorial on Curry.</p>
-      <div class="flex flex-col justify-center sm:flex-row">
-        <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto px-4 py-3 hover:bg-primary hover:text-white sm:mx-0" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
-        <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
-        <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
-      </div>
-    </div>
+      $partial("templates/introduction.html")$
   </section>
   <section class="slanted flex flex-col justify-center bg-primary px-6">
     <div class="mx-auto mb-4">
@@ -45,37 +37,9 @@ no-dash: true
       <div class="marker bg-blue"></div>
     </div>
     <div class="features">
-      <div>
-        <h2 class="text-center text-2xl font-semibold text-white mb-2">Purely Functional</h2>
-        <p class="features-column">Curry is called a pure language, because functions in Curry are functions in the mathematical sense. Operations with side-effects are explictly marked as "IO" operations, and thus, a description of what to do, produced by pure code. Functions are constructed by expressions only, there are no statements or instructions, and every bindings to variables are immutable.</p>
-        <div class="flex justify-center mx-4 mt-4">
-          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-        </div>
-      </div>
-      <div>
-        <h2 class="text-center text-2xl font-semibold text-white mb-2">Type Inference</h2>
-    <p class="features-column">Type annotations of functions need not be written by the programmer, they are automatically inferred by the compiler using a type inference algorithm. Nevertheless, it is a good style to write down the types of functions in order to provide at least a minimal documentation of the intended use of functions.
-    </p>
-        <div class="flex justify-center mx-4 mt-4">
-          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-        </div>
-      </div>
-      <div>
-        <h2 class="text-center text-2xl font-semibold text-white mb-2">Nondeterminism</h2>
-        <p class="features-column">Non-deterministic operations are not functions in the mathematical sense because they can return different values for the same input. Non-deterministic operations support a programming style similar to that of logic programs, while preserving some advantages of functional programs such as expression nesting and lazy evaluation.</p>
-
-  <div class="flex justify-center mx-4 mt-4">
-          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-        </div>
-      </div>
-      <div>
-        <h2 class="text-center text-2xl font-semibold text-white mb-2">Free Variables</h2>
-        <p class="features-column">Free variables denote “unknown” values. They are instantiated (i.e., replaced by some concrete values) so that the instantiated expression is evaluable. REPls of Curry systems show bindings (i.e., instantiations) of the free variables it has compute to evalute an expression.</p>
-        <div class="flex justify-center mx-4 mt-4">
-          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-        </div>
-      </div>
-    </div>
+      $for(features)$
+        $partial("templates/feature.html")$
+      $endfor$
   </section>
   <section class="slanted flex justify-center px-6">
     <div class="md:max-w-3xl">

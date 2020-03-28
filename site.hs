@@ -11,6 +11,7 @@ import           Data.Map (empty, union)
 
 
 --------------------------------------------------------------------------------
+
 main :: IO ()
 main = do
     loadResult <- loadSyntaxesFromDir "syntax_definitions"
@@ -18,11 +19,7 @@ main = do
                                 (Right smap) -> smap
                                 (Left _) -> mempty
     hakyll $ do
-        match "assets/img/*" $ do
-            route   idRoute
-            compile copyFileCompiler
-
-        match "assets/js/*" $ do
+        match ("assets/js/*" .||. "assets/img/*") $ do
             route   idRoute
             compile copyFileCompiler
 
@@ -30,72 +27,37 @@ main = do
             route   idRoute
             compile compressCssCompiler
 
-        match "versions/*/*.version" $ do
-            compile getResourceBody
-
-        match "versions/packs_versions.html" $ do
-            compile getResourceBody
-
-
-        match "versions/kics2_versions.html" $ do
+        match ("versions/*_versions.html" .||. "versions/*/*.version" .||. "features/*.html") $ do
             compile getResourceBody
 
         match "downloads/*" $ do
             route   idRoute
             compile $ do
-                packs <- load "versions/packs_versions.html"
-                packs_versions <- recentFirst =<< loadAll "versions/packs/*.version"
-                let packsCtx =
-                        listField "versions" defaultContext (return packs_versions) `mappend`
+                packs <- toolVersionsCtx "packs"
+                kics2 <- toolVersionsCtx "kics2"
+
+                let downloadsCtx =
+                        packs `mappend`
+                        kics2 `mappend`
                         defaultContext
 
-                kics2 <- load "versions/kics2_versions.html"
-                kics2_versions <- recentFirst =<< loadAll "versions/kics2/*.version"
-                let kics2Ctx =
-                        listField "versions" defaultContext (return kics2_versions) `mappend`
-                        defaultContext
+                defaultCompile downloadsCtx
 
-                let indexCtx =
-                        listField "packs" packsCtx (return [packs]) `mappend`
-                        listField "kics2" kics2Ctx (return [kics2]) `mappend`
-                        defaultContext
-
-                getResourceBody
-                    >>= applyAsTemplate indexCtx
-                    >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                    >>= relativizeUrls
-
-        match "imprint/*" $ do
+        match ("imprint/*" .||. "privacy/*" ) $ do
             route   idRoute
-            compile $ do
-               let indexCtx =  defaultContext
-
-               getResourceBody
-                   >>= applyAsTemplate indexCtx
-                   >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                   >>= relativizeUrls
-
-        match "privacy/*" $ do
-            route   idRoute
-            compile $ do
-               let indexCtx =  defaultContext
-
-               getResourceBody
-                   >>= applyAsTemplate indexCtx
-                   >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                   >>= relativizeUrls
+            compile $ defaultCompile defaultContext
 
         match "index.html" $ do
             route idRoute
             compile $ do
-                let indexCtx =  defaultContext
-
-                getResourceBody
-                    >>= applyAsTemplate indexCtx
-                    >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                    >>= relativizeUrls
+                features <- chronological =<< loadAll "features/*.html"
+                let indexCtx =
+                        listField "features" defaultContext (return features) `mappend`
+                        defaultContext
+                defaultCompile indexCtx
 
         match "templates/*" $ compile templateBodyCompiler
+
         match "code/*" $ do
             dep <- makePatternDependency "syntax_definitions/*.xml"
             rulesExtraDependencies [dep] $
@@ -104,10 +66,28 @@ main = do
                    let indexCtx =  defaultContext
 
                    getResourceBody
-                    >>= applyAsTemplate indexCtx
-                    >>= renderPandocWith defaultHakyllReaderOptions (pandocWriterOptions syntaxAdditions)
-                    >>= compileTemplateItem
-                    >>= makeItem
+                        >>= applyAsTemplate indexCtx
+                        >>= renderPandocWith defaultHakyllReaderOptions (pandocWriterOptions syntaxAdditions)
+                        >>= compileTemplateItem
+                        >>= makeItem
+
+--------------------------------------------------------------------------------
+
+defaultCompile :: Context String -> Compiler (Item String)
+defaultCompile ctx =
+                getResourceBody
+                    >>= applyAsTemplate ctx
+                    >>= loadAndApplyTemplate "templates/default.html" ctx
+                    >>= relativizeUrls
+
+toolVersionsCtx :: String -> Compiler (Context String)
+toolVersionsCtx name = do
+        tool <- load  (fromFilePath ("versions/" ++ name ++ "_versions.html")) :: Compiler (Item String)
+        packs_versions <- recentFirst =<< loadAll  (fromGlob $ "versions/" ++ name ++ "/*.version")
+        let toolCtx =
+                listField "versions" defaultContext (return packs_versions) `mappend`
+                defaultContext
+        return $ listField name toolCtx (return [tool])
 
 pandocWriterOptions :: SyntaxMap -> WriterOptions
 pandocWriterOptions syntaxAdditions = def
