@@ -24,20 +24,19 @@ body {
 }
 
 /* Code highlighting */
-.sourceCode.haskell,.sourceCode.curry { color: var(--ident-color)}
-.pragma  { color: var(--pragma-color)  }
+.pragma,.at  { color: var(--pragma-color)  }
 .comment,.co { color: var(--comment-color) }
 .keyword,.kw { color: var(--keyword-color) }
 .symbol,.ot,.op  { color: var(--symbol-color)  }
-.type    { color: var(--type-color)    }
-.cons    { color: var(--cons-color)    }
+.type , .dt   { color: var(--type-color)    }
+.cons    { color: var(--cons-color)    } /* detected as function */
 .label   { color: var(--label-color)   }
-.func,.fu    { color: var(--func-color)    }
-.ident   { color: var(--ident-color)   }
-.module  { color: var(--module-color)  }
-.number  { color: var(--number-color)  }
-.string  { color: var(--string-color)  }
-.char    { color: var(--char-color)    }
+.func, .fu, .op  { color: var(--func-color)    } /* only prelude functions and operators are detected */
+.ident , .va  { color: var(--ident-color)   } /* including non prelude functions */
+.module  { color: var(--module-color)  } /* module keyword is detected as keyword, Module name as Data type */
+.number, .dv , .bn ,.fl { color: var(--number-color)  }
+.string, .st  { color: var(--string-color)  }
+.char , .ch   { color: var(--char-color)    }
 
 .bg-blue,
 .hover\:bg-blue:hover {

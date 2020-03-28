@@ -228,7 +228,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       <DetectChar   attribute="String"  context="String"  char="&quot;" />
 
       <!-- Others -->
-      <RegExpr      attribute="Special Symbol"    context="#stay"   String="(::|:=|:&gt;|\-&gt;|&lt;\-|\.\.|,|\|)" />
+      <RegExpr      attribute="Special Symbol"    context="#stay"   String="(::|:=|:&gt;|\-&gt;|&lt;\-|\.\.|,|\||\s=\s)" />
       <RegExpr      attribute="Signature"         context="#stay"   String="\s*&prefixIdent;\s*(,\s*&prefixIdent;)*\s*(?=::[^&infixchar;])" />
       <RegExpr      attribute="Function"          context="#stay"   String="&qualify;&ident;" />
       <RegExpr      attribute="Operator"          context="#stay"   String="&qualify;[&infixchar;]+" />
@@ -346,7 +346,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     <itemData name="Normal"              defStyleNum="dsNormal"   spellChecking="false" />
 
     <!-- Comments -->
-    <itemData name="Pragma"              defStyleNum="dsOthers"   spellChecking="false" />
+    <itemData name="Pragma"              defStyleNum="dsAnnotation"   spellChecking="false" />
     <itemData name="Comment"             defStyleNum="dsComment"  />
     <itemData name="Currydoc"            defStyleNum="dsDocumentation" />
 
@@ -367,12 +367,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     <!-- Others -->
     <itemData name="Braces"              defStyleNum="dsOthers"   spellChecking="false" />
-    <itemData name="Signature"           defStyleNum="dsOthers"   spellChecking="false" />
-    <itemData name="Function"            defStyleNum="dsNormal"   spellChecking="false" />
-    <itemData name="Operator"            defStyleNum="dsFunction" spellChecking="false" />
+    <itemData name="Signature"           defStyleNum="dsVariable"   spellChecking="false" />
+    <itemData name="Function"            defStyleNum="dsVariable"   spellChecking="false" />
+    <itemData name="Operator"            defStyleNum="dsOperator" spellChecking="false" />
     <itemData name="Type, Constructor"   defStyleNum="dsDataType" spellChecking="false" />
     <itemData name="Special Symbol"      defStyleNum="dsOthers"   spellChecking="false" />
-    <itemData name="Infix Application"   defStyleNum="dsOthers"   spellChecking="false" />
+    <itemData name="Infix Application"   defStyleNum="dsOperator"   spellChecking="false" />
     <itemData name="Syntax Error"        defStyleNum="dsError"    spellChecking="false" />
   </itemDatas>
   </highlighting>
