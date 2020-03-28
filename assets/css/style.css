@@ -24,14 +24,15 @@ body {
 }
 
 /* Code highlighting */
+.sourceCode.haskell,.sourceCode.curry { color: var(--ident-color)}
 .pragma  { color: var(--pragma-color)  }
-.comment { color: var(--comment-color) }
-.keyword { color: var(--keyword-color) }
-.symbol  { color: var(--symbol-color)  }
+.comment,.co { color: var(--comment-color) }
+.keyword,.kw { color: var(--keyword-color) }
+.symbol,.ot,.op  { color: var(--symbol-color)  }
 .type    { color: var(--type-color)    }
 .cons    { color: var(--cons-color)    }
 .label   { color: var(--label-color)   }
-.func    { color: var(--func-color)    }
+.func,.fu    { color: var(--func-color)    }
 .ident   { color: var(--ident-color)   }
 .module  { color: var(--module-color)  }
 .number  { color: var(--number-color)  }

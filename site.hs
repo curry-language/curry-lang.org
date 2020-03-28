@@ -61,7 +61,7 @@ main = hakyll $ do
 
            getResourceBody
                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+               >>= loadAndApplyTemplate "templates/default.html" indexCtx
                >>= relativizeUrls
 
     match "privacy/*" $ do
@@ -71,7 +71,7 @@ main = hakyll $ do
 
            getResourceBody
                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
+               >>= loadAndApplyTemplate "templates/default.html" indexCtx
                >>= relativizeUrls
 
     match "index.html" $ do
@@ -85,3 +85,13 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
+    match "code/*" $ do
+        compile $ do
+
+           let indexCtx =  defaultContext
+
+           getResourceBody
+            >>= applyAsTemplate indexCtx
+            >>= renderPandoc
+            >>= compileTemplateItem
+            >>= makeItem
