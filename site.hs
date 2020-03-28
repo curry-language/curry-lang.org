@@ -97,15 +97,17 @@ main = do
 
         match "templates/*" $ compile templateBodyCompiler
         match "code/*" $ do
-            compile $ do
+            dep <- makePatternDependency "syntax_definitions/*.xml"
+            rulesExtraDependencies [dep] $
+                compile $ do
 
-               let indexCtx =  defaultContext
+                   let indexCtx =  defaultContext
 
-               getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= renderPandocWith defaultHakyllReaderOptions (pandocWriterOptions syntaxAdditions)
-                >>= compileTemplateItem
-                >>= makeItem
+                   getResourceBody
+                    >>= applyAsTemplate indexCtx
+                    >>= renderPandocWith defaultHakyllReaderOptions (pandocWriterOptions syntaxAdditions)
+                    >>= compileTemplateItem
+                    >>= makeItem
 
 pandocWriterOptions :: SyntaxMap -> WriterOptions
 pandocWriterOptions syntaxAdditions = def
