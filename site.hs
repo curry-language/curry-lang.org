@@ -51,6 +51,7 @@ main = hakyll $ do
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
     match "imprint/*" $ do
@@ -60,6 +61,7 @@ main = hakyll $ do
 
            getResourceBody
                >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
                >>= relativizeUrls
 
     match "privacy/*" $ do
@@ -69,6 +71,7 @@ main = hakyll $ do
 
            getResourceBody
                >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
                >>= relativizeUrls
 
     match "index.html" $ do
@@ -78,6 +81,7 @@ main = hakyll $ do
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
+                >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler

@@ -2,125 +2,117 @@
 title: ""
 no-dash: true
 ---
-<!DOCTYPE html>
-<html lang="en">
-$partial("templates/head.html")$
-<body>
-  $partial("templates/header.html")$
-  <main class="pt-16">
-    <section class="slanted-bottom flex justify-center px-6 pt-4 md:pt-6">
-      <div class="md:max-w-3xl">
-        <div class="flex flex-col justify-center sm:flex-row">
-          <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="/assets/img/curry.svg" alt="Curry Logo">
-          <h1 class="flex justify-center items-center font-bold leading-tight text-7xl sm:text-10xl">Curry</h1>
-        </div>
-        <span class="block text-center text-red leading-tight text-2xl mx-auto sm:text-4xl md:max-w-2xl">A Truly Integrated Functional Logic Programming Language</span>
-        <div class="flex justify-center mt-8">
-          <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight px-4 py-3 hover:bg-red hover:text-white" href="/downloads/">Downloads</a>
-          <a class="flex items-center text-blue text-center border border-blue rounded-lg font-semibold leading-tight px-4 py-3 ml-4 hover:bg-blue hover:text-white" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
+<main class="pt-16">
+  <section class="slanted-bottom flex justify-center px-6 pt-4 md:pt-6">
+    <div class="md:max-w-3xl">
+      <div class="flex flex-col justify-center sm:flex-row">
+        <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="/assets/img/curry.svg" alt="Curry Logo">
+        <h1 class="flex justify-center items-center font-bold leading-tight text-7xl sm:text-10xl">Curry</h1>
+      </div>
+      <span class="block text-center text-red leading-tight text-2xl mx-auto sm:text-4xl md:max-w-2xl">A Truly Integrated Functional Logic Programming Language</span>
+      <div class="flex justify-center mt-8">
+        <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight px-4 py-3 hover:bg-red hover:text-white" href="/downloads/">Downloads</a>
+        <a class="flex items-center text-blue text-center border border-blue rounded-lg font-semibold leading-tight px-4 py-3 ml-4 hover:bg-blue hover:text-white" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
+      </div>
+    </div>
+  </section>
+  <section class="slanted flex justify-center px-6" style="background-color:hsl(215,25%,25%)">
+    <div class="font-mono text-xs sm:text-base">
+      <span class="comment">-- | Returns the last element.</span><br>
+      <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
+      <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span><br>
+      <span class="whitespace-pre keyword">  where</span><br>
+      <span class="whitespace-pre ident">    x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
+    </div>
+  </section>
+  <section class="slanted flex justify-center px-6">
+    <div class="md:max-w-3xl">
+      <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">Curry is a <span class="font-bold">universal programming language</span> which combines the most important declarative programming paradigms, namely <span class="font-bold">functional programming</span> and <span class="font-bold">logic programming</span>. Moreover, it also covers the most important operational principles developed in the area of integrated functional logic languages: residuation and narrowing.</p>
+      <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">The development of Curry is an international initiative intended to provide a common platform for the research, teaching and application of integrated functional logic languages. The design of Curry is mainly discussed in the Curry mailing list. A detailed report describing the language is also available. To get an idea of Curry, you may have a look into the short list of Curry's features or a tutorial on Curry.</p>
+      <div class="flex flex-col justify-center sm:flex-row">
+        <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto px-4 py-3 hover:bg-primary hover:text-white sm:mx-0" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
+        <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
+        <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
+      </div>
+    </div>
+  </section>
+  <section class="slanted flex flex-col justify-center bg-primary px-6">
+    <div class="mx-auto mb-4">
+      <h1 class="text-center text-4xl font-bold text-white">Features</h1>
+      <div class="marker bg-blue"></div>
+    </div>
+    <div class="features">
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">Purely Functional</h2>
+        <p class="features-column">Curry is called a pure language, because functions in Curry are functions in the mathematical sense. Operations with side-effects are explictly marked as "IO" operations, and thus, a description of what to do, produced by pure code. Functions are constructed by expressions only, there are no statements or instructions, and every bindings to variables are immutable.</p>
+        <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
         </div>
       </div>
-    </section>
-    <section class="slanted flex justify-center px-6" style="background-color:hsl(215,25%,25%)">
-      <div class="font-mono text-xs sm:text-base">
-        <span class="comment">-- | Returns the last element.</span><br>
-        <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
-        <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span><br>
-        <span class="whitespace-pre keyword">  where</span><br>
-        <span class="whitespace-pre ident">    x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
-      </div>
-    </section>
-    <section class="slanted flex justify-center px-6">
-      <div class="md:max-w-3xl">
-        <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">Curry is a <span class="font-bold">universal programming language</span> which combines the most important declarative programming paradigms, namely <span class="font-bold">functional programming</span> and <span class="font-bold">logic programming</span>. Moreover, it also covers the most important operational principles developed in the area of integrated functional logic languages: residuation and narrowing.</p>
-        <p class="text-center text-lg text-gray-600 leading-relaxed mb-4">The development of Curry is an international initiative intended to provide a common platform for the research, teaching and application of integrated functional logic languages. The design of Curry is mainly discussed in the Curry mailing list. A detailed report describing the language is also available. To get an idea of Curry, you may have a look into the short list of Curry's features or a tutorial on Curry.</p>
-        <div class="flex flex-col justify-center sm:flex-row">
-          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto px-4 py-3 hover:bg-primary hover:text-white sm:mx-0" href="https://www-ps.informatik.uni-kiel.de/currywiki/_media/documentation/report.pdf">Curry Report</a>
-          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0" href="https://www.informatik.uni-kiel.de/~curry/tutorial/tutorial.pdf">Tutorial</a>
-          <a class="text-primary border border-primary rounded-lg font-semibold leading-tight mx-auto mt-4 px-4 py-3 hover:bg-primary hover:text-white sm:ml-4 sm:mr-0 sm:mt-0" href="https://www.informatik.uni-kiel.de/~curry/listarchive/">Mailing List</a>
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">Type Inference</h2>
+    <p class="features-column">Type annotations of functions need not be written by the programmer, they are automatically inferred by the compiler using a type inference algorithm. Nevertheless, it is a good style to write down the types of functions in order to provide at least a minimal documentation of the intended use of functions.
+    </p>
+        <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
         </div>
       </div>
-    </section>
-    <section class="slanted flex flex-col justify-center bg-primary px-6">
-      <div class="mx-auto mb-4">
-        <h1 class="text-center text-4xl font-bold text-white">Features</h1>
-        <div class="marker bg-blue"></div>
-      </div>
-      <div class="features">
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">Purely Functional</h2>
-          <p class="features-column">Curry is called a pure language, because functions in Curry are functions in the mathematical sense. Operations with side-effects are explictly marked as "IO" operations, and thus, a description of what to do, produced by pure code. Functions are constructed by expressions only, there are no statements or instructions, and every bindings to variables are immutable.</p>
-          <div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">Type Inference</h2>
-	  <p class="features-column">Type annotations of functions need not be written by the programmer, they are automatically inferred by the compiler using a type inference algorithm. Nevertheless, it is a good style to write down the types of functions in order to provide at least a minimal documentation of the intended use of functions.
-	  </p>
-          <div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">Nondeterminism</h2>
-          <p class="features-column">Non-deterministic operations are not functions in the mathematical sense because they can return different values for the same input. Non-deterministic operations support a programming style similar to that of logic programs, while preserving some advantages of functional programs such as expression nesting and lazy evaluation.</p>
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">Nondeterminism</h2>
+        <p class="features-column">Non-deterministic operations are not functions in the mathematical sense because they can return different values for the same input. Non-deterministic operations support a programming style similar to that of logic programs, while preserving some advantages of functional programs such as expression nesting and lazy evaluation.</p>
 
-	<div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">Free Variables</h2>
-          <p class="features-column">Free variables denote “unknown” values. They are instantiated (i.e., replaced by some concrete values) so that the instantiated expression is evaluable. REPls of Curry systems show bindings (i.e., instantiations) of the free variables it has compute to evalute an expression.</p>
-          <div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
-          </div>
+  <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
         </div>
       </div>
-    </section>
-    <section class="slanted flex justify-center px-6">
-      <div class="md:max-w-3xl">
-        <p class="text-center text-lg text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-    </section>
-    <section class="slanted flex flex-col justify-center bg-primary px-6">
-      <div class="mx-auto mb-4">
-        <h1 class="text-center text-4xl font-bold text-white">Ecosystem</h1>
-        <div class="marker bg-red"></div>
-      </div>
-      <div class="features">
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">Compilers</h2>
-          <p class="eco-column">Several implementations of Curry are available and/or under development. The most prominent representatives are the Portland Aachen Kiel Curry System (PAKCS), the new version of the Kiel Curry System (KiCS2) and te Münster Curry Compiler (MCC).</p>
-          <div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/overview/">Learn More</a>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">Package Manager</h2>
-          <p class="eco-column">The Curry Package Manager (CPM) is a tool to distribute and install Curry libraries and applications and manage version dependencies between them. These libraries are organized in packages. There is a central index of all these packages which can easily be downloaded by CPM.</p>
-          <div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cpm/">Learn More</a>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">CurryDoc</h2>
-          <p class="eco-column">CurryDoc is a tool that generates the documentation for a Curry program in HTML (and optionally also LaTeX) format. The generated HTML pages contain information about all data types and functions exported by a module as well as links between the different entities.</p>
-          <div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currydoc/">Learn More</a>
-          </div>
-        </div>
-        <div>
-          <h2 class="text-center text-2xl font-semibold text-white mb-2">Curr(y)gle API Search</h2>
-          <p class="eco-column">Curr(y)gle is a Curry API search engine, which allows you to search the Curry libraries indexed by CPM. You can search by names of either function, or data types and modules. It was designed following the example set by Haskell's search engine Hoogle. </p>
-          <div class="flex justify-center mx-4 mt-4">
-            <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Learn More</a>
-          </div>
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">Free Variables</h2>
+        <p class="features-column">Free variables denote “unknown” values. They are instantiated (i.e., replaced by some concrete values) so that the instantiated expression is evaluable. REPls of Curry systems show bindings (i.e., instantiations) of the free variables it has compute to evalute an expression.</p>
+        <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-blue border-2 border-blue rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/">Learn More</a>
         </div>
       </div>
-    </section>
-  </main>
-  $partial("templates/footer.html")$
-</body>
-</html>
+    </div>
+  </section>
+  <section class="slanted flex justify-center px-6">
+    <div class="md:max-w-3xl">
+      <p class="text-center text-lg text-gray-600 leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </section>
+  <section class="slanted flex flex-col justify-center bg-primary px-6">
+    <div class="mx-auto mb-4">
+      <h1 class="text-center text-4xl font-bold text-white">Ecosystem</h1>
+      <div class="marker bg-red"></div>
+    </div>
+    <div class="features">
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">Compilers</h2>
+        <p class="eco-column">Several implementations of Curry are available and/or under development. The most prominent representatives are the Portland Aachen Kiel Curry System (PAKCS), the new version of the Kiel Curry System (KiCS2) and te Münster Curry Compiler (MCC).</p>
+        <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/implementations/overview/">Learn More</a>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">Package Manager</h2>
+        <p class="eco-column">The Curry Package Manager (CPM) is a tool to distribute and install Curry libraries and applications and manage version dependencies between them. These libraries are organized in packages. There is a central index of all these packages which can easily be downloaded by CPM.</p>
+        <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/cpm/">Learn More</a>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">CurryDoc</h2>
+        <p class="eco-column">CurryDoc is a tool that generates the documentation for a Curry program in HTML (and optionally also LaTeX) format. The generated HTML pages contain information about all data types and functions exported by a module as well as links between the different entities.</p>
+        <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/currywiki/tools/currydoc/">Learn More</a>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-center text-2xl font-semibold text-white mb-2">Curr(y)gle API Search</h2>
+        <p class="eco-column">Curr(y)gle is a Curry API search engine, which allows you to search the Curry libraries indexed by CPM. You can search by names of either function, or data types and modules. It was designed following the example set by Haskell's search engine Hoogle. </p>
+        <div class="flex justify-center mx-4 mt-4">
+          <a class="inline-block w-full text-white text-center bg-red border-2 border-red rounded-lg font-semibold leading-tight px-4 py-2 hover:border-white" href="https://www-ps.informatik.uni-kiel.de/kics2/currygle/">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

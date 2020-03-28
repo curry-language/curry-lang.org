@@ -1,22 +1,14 @@
 ---
 title: Downloads
 ---
-<!DOCTYPE html>
-<html lang="en">
-$partial("templates/head.html")$
-<body>
-  $partial("templates/header.html")$
-  <main class="pt-24">
-    $partial("templates/title_section.html")$
-    <section class="slanted px-6">
-      $for(packs)$
-        $partial("templates/version_list.html")$
-      $endfor$
-      $for(kics2)$
-        $partial("templates/version_list.html")$
-      $endfor$
-    </section>
-  </main>
-  $partial("templates/footer.html")$
-</body>
-</html>
+<main class="pt-24">
+  $partial("templates/title_section.html")$
+  <section class="slanted px-6">
+    $for(packs)$
+      $partial("templates/version_list.html")$
+    $endfor$
+    $for(kics2)$
+      $partial("templates/version_list.html")$
+    $endfor$
+  </section>
+</main>
