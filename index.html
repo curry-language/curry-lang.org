@@ -32,28 +32,18 @@ no-dash: true
       $partial("templates/introduction.html")$
   </section>
   <section class="slanted flex flex-col justify-center bg-primary px-6">
-    <div class="mx-auto mb-4">
-      <h1 class="text-center text-4xl font-bold text-white">Features</h1>
-      <div class="marker bg-blue"></div>
-    </div>
-    <div class="features">
-      $for(features)$
-        $partial("templates/learn_more.html")$
-      $endfor$
+    $for(features)$
+      $partial("templates/learn_more.html")$
+    $endfor$
   </section>
   <section class="slanted flex justify-center px-6">
     <div class="md:max-w-3xl">
         $partial("templates/small_lore_ipsum.html")$
     </div>
   </section>
-  <section class="slanted flex flex-col justify-center bg-primary px-6">
-    <div class="mx-auto mb-4">
-      <h1 class="text-center text-4xl font-bold text-white">Ecosystem</h1>
-      <div class="marker bg-red"></div>
-    </div>
-    <div class="features">
+    <section class="slanted flex flex-col justify-center bg-primary px-6">
       $for(ecosystem)$
         $partial("templates/learn_more.html")$
       $endfor$
-  </section>
+    </section>
 </main>

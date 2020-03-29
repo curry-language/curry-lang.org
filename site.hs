@@ -27,7 +27,7 @@ main = do
             route   idRoute
             compile compressCssCompiler
 
-        match ("versions/*_versions.html" .||. "versions/*/*.version" .||. "features/*.html".||. "ecosystem/*.html") $
+        match ("versions/*_versions.html" .||. "versions/*/*.version" .||. "learn_more/*_desc.html" .||. "learn_more/*/*.html") $
             compile getResourceBody
 
         match "downloads/*" $ do
@@ -50,11 +50,11 @@ main = do
         match "index.html" $ do
             route idRoute
             compile $ do
-                features  <- chronological =<< loadAll "features/*.html"
-                ecosystem <- chronological =<< loadAll "ecosystem/*.html"
+                features <- learnMoreCtx "features"
+                ecosystem <- learnMoreCtx "ecosystem"
                 let indexCtx =
-                        listField "features"  defaultContext (return features ) `mappend`
-                        listField "ecosystem" defaultContext (return ecosystem) `mappend`
+                        features `mappend`
+                        ecosystem `mappend`
                         defaultContext
                 defaultCompile indexCtx
 
@@ -81,6 +81,29 @@ defaultCompile ctx =
                     >>= applyAsTemplate ctx
                     >>= loadAndApplyTemplate "templates/default.html" ctx
                     >>= relativizeUrls
+
+-- copy of metadataField except the source of i
+itemMetaDataField :: Item  a ->  Context a
+itemMetaDataField i = Context $ \k _ _ -> do
+    let id = itemIdentifier i
+        empty' = noResult $ "No '" ++ k ++ "' field in metadata " ++
+                "of item " ++ show id
+    value <- getMetadataField id k
+    maybe empty' (return . StringField) value
+
+learnMoreCtx :: String -> Compiler (Context String)
+learnMoreCtx name = do
+        topic <- load  (fromFilePath ("learn_more/" ++ name ++ "_desc.html")) :: Compiler (Item String)
+        elements <- chronological =<< loadAll  (fromGlob $ "learn_more/" ++ name ++ "/*.html")
+        let topicCtx =
+                listField "elements" (learnMoreElementsCtx topic) (return elements) `mappend`
+                defaultContext
+        return $ listField name topicCtx (return [topic])
+
+learnMoreElementsCtx :: Item String -> Context String
+learnMoreElementsCtx i =
+    defaultContext `mappend`
+    itemMetaDataField i
 
 toolVersionsCtx :: String -> Compiler (Context String)
 toolVersionsCtx name = do
