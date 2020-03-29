@@ -4,19 +4,19 @@
   --primary-color: hsl(215, 15%, 60%);
   --secondary-color: hsl(215, 10%, 100%);
 
-  --pragma-color: hsl(0, 0%, 60%);
-  --comment-color: hsl(0, 0%, 60%);
-  --keyword-color: hsl(300, 66%, 70%);
-  --symbol-color: hsl(0, 66%, 70%);
-  --type-color: hsl(60, 66%, 70%);
+  --pragma-color: hsl(0, 28%, 42%);
+  --comment-color: hsl(0, 0%, 42%);
+  --keyword-color: hsl(222, 80%, 49%);
+  --symbol-color: hsl(344, 51%, 43%);
+  --type-color: hsl(224, 69%, 31%);
   --cons-color: hsl(330, 66%, 70%);
   --label-color: hsl(240, 66%, 70%);
-  --func-color: hsl(200, 66%, 70%);
-  --ident-color: hsl(0, 0%, 85%);
+  --func-color: hsl(284, 32%, 32%);
+  --ident-color: hsl(0, 0%, 15%);
   --module-color: hsl(20, 66%, 70%);
-  --number-color: hsl(180, 66%, 70%);
-  --string-color: hsl(120, 66%, 70%);
-  --char-color: hsl(120, 66%, 70%);
+  --number-color: hsl(180, 55%, 66%);
+  --string-color: hsl(229, 39%, 42%);
+  --char-color: hsl(196, 35%, 37%);
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 /* Code highlighting */
-.pragma,.at  { color: var(--pragma-color)  }
+.pragma,.an  { color: var(--pragma-color)  }
 .comment,.co { color: var(--comment-color) }
 .keyword,.kw { color: var(--keyword-color) }
 .symbol,.ot,.op  { color: var(--symbol-color)  }
