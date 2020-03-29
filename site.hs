@@ -1,6 +1,9 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
+import           Data.Bifunctor (first)
+import           Control.Monad (forM)
+import           Control.Applicative (empty)
 import           Hakyll
 import           Text.Pandoc
 import           Text.Pandoc.Highlighting
@@ -88,25 +91,13 @@ defaultCompile ctx = do
                     >>= loadAndApplyTemplate "templates/default.html" templateCtx
                     >>= relativizeUrls
 
-headerCtx = groupCtx "header" "link" "link_groups/header.desc" "link_groups/header/*.link"  chronological
+headerCtx :: Compiler (Context String)
+headerCtx = groupCtxWith defaultContext "header" "link" "link_groups/header.desc" "link_groups/header/*.link"  chronological
+
+footerCtx :: Compiler (Context String)
 footerCtx = do
-
-        footer          <- load "link_groups/footer.desc"
-        documentation   <- groupCtx "categorie" "links" "link_groups/footer/documentation.desc"   "link_groups/footer/documentation/*.link" chronological
-        implementations <- groupCtx "categorie" "links" "link_groups/footer/implementations.desc" "link_groups/footer/implementations/*.link" chronological
-        libraries       <- groupCtx "categorie" "links" "link_groups/footer/libraries.desc"       "link_groups/footer/libraries/*.link" chronological
-        tools           <- groupCtx "categorie" "links" "link_groups/footer/tools.desc"           "link_groups/footer/tools/*.link" chronological
-        misc            <- groupCtx "categorie" "links" "link_groups/footer/misc.desc"            "link_groups/footer/misc/*.link" chronological
-
-        categories <-  mapM makeItem [documentation,implementations,libraries,tools,misc]
-
-        return $
-            listField "footer" (fieldContext "categories" footer) (return categories) `mappend`
-            defaultContext
-
-fieldContext :: String -> Item a -> Context (Context a)
-fieldContext key item = Context $ \k _ i -> if k == key then return $ ListField (itemBody i) [item] else fail $ "Invalid key " ++ k
-
+            ctx <- subGroupCtxWith defaultContext "footer_categories" "categorie" "links" "link_groups/footer.desc" "link_groups/footer/*.desc" (\capture -> fromGlob $ "link_groups/footer/" ++ capture ++ "/*.link") chronological
+            return $ ctx `mappend` defaultContext
 
 learnMoreCtx :: String -> Compiler (Context String)
 learnMoreCtx name = let
@@ -114,7 +105,7 @@ learnMoreCtx name = let
         descriptionPattern = fromFilePath ("learn_more/" ++ name ++ "_desc.html")
         elementPattern = fromGlob $ "learn_more/" ++ name ++ "/*.html"
     in
-        groupCtx name elementsName descriptionPattern elementPattern chronological
+        groupCtxWith defaultContext name elementsName descriptionPattern elementPattern chronological
 
 toolVersionsCtx :: String -> Compiler (Context String)
 toolVersionsCtx name = let
@@ -122,7 +113,7 @@ toolVersionsCtx name = let
         descriptionPattern = fromFilePath ("versions/" ++ name ++ "_versions.html")
         elementPattern = fromGlob $ "versions/" ++ name ++ "/*.version"
     in
-        groupCtx name elementsName descriptionPattern elementPattern recentFirst
+        groupCtxWith defaultContext name elementsName descriptionPattern elementPattern recentFirst
 
 -- copy of metadataField except the source of i
 itemMetaDataField :: Item  a ->  Context a
@@ -133,17 +124,42 @@ itemMetaDataField i = Context $ \k _ _ -> do
     value <- getMetadataField id k
     maybe empty' (return . StringField) value
 
-groupCtx :: String -> String -> Identifier -> Pattern -> ([Item String] -> Compiler [Item String]) -> Compiler (Context String)
-groupCtx = groupCtxWith defaultContext
-
 groupCtxWith :: Context String -> String -> String -> Identifier -> Pattern -> ([Item String] -> Compiler [Item String]) -> Compiler (Context String)
 groupCtxWith context groupName elementsName groupDescriptionPattern groupElementPattern sorting = do
         groupDesc <- load groupDescriptionPattern
         groupElements <- sorting =<< loadAll  groupElementPattern
-        let groupCtx =
+        let listCtx =
                 listField elementsName (defaultContext `mappend` itemMetaDataField groupDesc) (return groupElements) `mappend`
                 context
-        return $ listField groupName groupCtx (return [groupDesc])
+        return $ listField groupName listCtx (return [groupDesc])
+
+subGroupCtxWith :: Context String -> String -> String -> String -> Identifier -> Pattern -> (String -> Pattern) -> ([Item String] -> Compiler [Item String]) -> Compiler (Context String)
+subGroupCtxWith context groupName subGroupName elementsName groupDescriptionPattern groupElementPattern patternFactory sorting = do
+        groupDesc <- load groupDescriptionPattern
+        groupElements <- sorting =<< loadAll  groupElementPattern
+        subGroupElements <-  forM groupElements (\i -> do
+                                                    let result = capture groupElementPattern $ itemIdentifier i
+                                                    case result of
+                                                        Just [capture] -> (\item -> return (i,item )) =<< sorting =<< loadAll (patternFactory capture)
+                                                        _              -> Control.Applicative.empty
+                                                )
+
+        let groupCtx =  itemMetaDataField groupDesc
+
+        let subGroupMap =  map  (\(g,items) -> (g,listField elementsName (defaultContext `mappend` itemMetaDataField g `mappend` groupCtx) (return items))) subGroupElements
+
+        let listCtx = groupField subGroupName subGroupMap (defaultContext `mappend` groupCtx) (return groupElements) `mappend`
+                            context
+        return $ listField groupName listCtx (return [groupDesc])
+
+groupField :: String -> [(Item a , Context a)] -> Context a -> Compiler [Item a] -> Context b
+groupField key contextMap base = let
+        contextMap' = map (first itemIdentifier) contextMap
+    in listField key (Context $ \k a i ->
+        case Prelude.lookup (itemIdentifier i) contextMap' of
+            Nothing -> Control.Applicative.empty
+            Just ctx -> unContext (base `mappend` ctx) k a i
+    )
 
 pandocWriterOptions :: SyntaxMap -> WriterOptions
 pandocWriterOptions syntaxAdditions = def

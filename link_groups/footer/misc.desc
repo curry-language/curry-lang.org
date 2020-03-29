@@ -1,4 +1,4 @@
 ---
-date: 1970-01-05 -- should this be managed to be made into an automatically loaded subgroup, for sorting chronological
+date: 1970-01-05 # used for the page order (chronologically)
 title: Miscellaneous
 ---

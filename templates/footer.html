@@ -1,20 +1,18 @@
 <footer class="slanted-top bg-secondary px-6 pb-6">
   <div class="footer-grid text-primary md:max-w-2xl lg:max-w-4xl mx-auto mb-12">
-    $for(footer)$
-      <div>
-        <ul>
-          $for(categories)$
-            $for(categorie)$
-              <h2 class="text-center underline md:text-left font-bold text-lg">$title$</h2>
-                $for(links)$
-                  <li class="flex justify-center md:justify-start">
-                    <a class="text-sm hover:underline" href="$url$">$title$</a>
-                  </li>
-                $endfor$
+    $for(footer_categories)$
+      $for(categorie)$
+        <div>
+          <ul>
+            <h2 class="text-center underline md:text-left font-bold text-lg">$title$</h2>
+            $for(links)$
+              <li class="flex justify-center md:justify-start">
+                <a class="text-sm hover:underline" href="$url$">$title$</a>
+              </li>
             $endfor$
-          $endfor$
-        </ul>
-      </div>
+          </ul>
+        </div>
+      $endfor$
     $endfor$
   </div>
   <div>
