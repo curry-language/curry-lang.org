@@ -7,7 +7,7 @@ import           Text.Pandoc.Highlighting
 import           Skylighting (defaultSyntaxMap)
 import           Skylighting.Types (SyntaxMap)
 import           Skylighting.Loader (loadSyntaxesFromDir)
-import           Data.Map (empty, union)
+import           Data.Map (empty, union, Map, lookup, fromList)
 
 
 --------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ main = do
             route   idRoute
             compile compressCssCompiler
 
-        match ("versions/*_versions.html" .||. "versions/*/*.version" .||. "learn_more/*_desc.html" .||. "learn_more/*/*.html") $
+        match ("versions/**" .||. "learn_more/**" .||. "link_groups/**") $
             compile getResourceBody
 
         match "downloads/*" $ do
@@ -76,11 +76,37 @@ main = do
 --------------------------------------------------------------------------------
 
 defaultCompile :: Context String -> Compiler (Item String)
-defaultCompile ctx =
+defaultCompile ctx = do
+                header <-  headerCtx
+                footer <- footerCtx
+                let templateCtx =
+                        ctx `mappend`
+                        footer `mappend`
+                        header
                 getResourceBody
                     >>= applyAsTemplate ctx
-                    >>= loadAndApplyTemplate "templates/default.html" ctx
+                    >>= loadAndApplyTemplate "templates/default.html" templateCtx
                     >>= relativizeUrls
+
+headerCtx = groupCtx "header" "link" "link_groups/header.desc" "link_groups/header/*.link"  chronological
+footerCtx = do
+
+        footer          <- load "link_groups/footer.desc"
+        documentation   <- groupCtx "categorie" "links" "link_groups/footer/documentation.desc"   "link_groups/footer/documentation/*.link" chronological
+        implementations <- groupCtx "categorie" "links" "link_groups/footer/implementations.desc" "link_groups/footer/implementations/*.link" chronological
+        libraries       <- groupCtx "categorie" "links" "link_groups/footer/libraries.desc"       "link_groups/footer/libraries/*.link" chronological
+        tools           <- groupCtx "categorie" "links" "link_groups/footer/tools.desc"           "link_groups/footer/tools/*.link" chronological
+        misc            <- groupCtx "categorie" "links" "link_groups/footer/misc.desc"            "link_groups/footer/misc/*.link" chronological
+
+        categories <-  mapM makeItem [documentation,implementations,libraries,tools,misc]
+
+        return $
+            listField "footer" (fieldContext "categories" footer) (return categories) `mappend`
+            defaultContext
+
+fieldContext :: String -> Item a -> Context (Context a)
+fieldContext key item = Context $ \k _ i -> if k == key then return $ ListField (itemBody i) [item] else fail $ "Invalid key " ++ k
+
 
 learnMoreCtx :: String -> Compiler (Context String)
 learnMoreCtx name = let
@@ -107,18 +133,16 @@ itemMetaDataField i = Context $ \k _ _ -> do
     value <- getMetadataField id k
     maybe empty' (return . StringField) value
 
-groupElementsCtx :: Item String -> Context String
-groupElementsCtx i =
-    defaultContext `mappend`
-    itemMetaDataField i
-
 groupCtx :: String -> String -> Identifier -> Pattern -> ([Item String] -> Compiler [Item String]) -> Compiler (Context String)
-groupCtx groupName elementsName groupDescriptionPattern groupElementPattern sorting = do
+groupCtx = groupCtxWith defaultContext
+
+groupCtxWith :: Context String -> String -> String -> Identifier -> Pattern -> ([Item String] -> Compiler [Item String]) -> Compiler (Context String)
+groupCtxWith context groupName elementsName groupDescriptionPattern groupElementPattern sorting = do
         groupDesc <- load groupDescriptionPattern
         groupElements <- sorting =<< loadAll  groupElementPattern
         let groupCtx =
-                listField elementsName (groupElementsCtx groupDesc) (return groupElements) `mappend`
-                defaultContext
+                listField elementsName (defaultContext `mappend` itemMetaDataField groupDesc) (return groupElements) `mappend`
+                context
         return $ listField groupName groupCtx (return [groupDesc])
 
 pandocWriterOptions :: SyntaxMap -> WriterOptions
