@@ -16,17 +16,11 @@ no-dash: true
       </div>
     </div>
   </section>
-  <section class="slanted flex justify-center px-6 bg-primary">
-    <div class="font-mono text-xs sm:text-base">
-      <span class="comment">-- | Returns the last element.</span><br>
-      <span class="func">last</span> <span class="symbol">::</span> <span class="symbol">[</span><span class="ident">a</span><span class="symbol">]</span> <span class="symbol">-&gt;</span> <span class="ident">a</span><br>
-      <span class="func">last</span> <span class="ident">xs</span> <span class="symbol">|</span> <span class="ident">ys</span> <span class="func">++</span> <span class="symbol">[</span><span class="ident">x</span><span class="symbol">]</span> <span class="func">=:=</span> <span class="ident">xs</span> <span class="symbol">=</span> <span class="ident">x</span><br>
-      <span class="whitespace-pre keyword">  where</span><br>
-      <span class="whitespace-pre ident">    x</span><span class="symbol">,</span> <span class="ident">ys</span> <span class="keyword">free</span>
-    </div>
+  <section class="slanted flex justify-center px-6 bg-code">
+    $partial("code/main.curry.md")$
   </section><br/>
   <section class="slanted flex justify-center px-6 bg-primary">
-      $partial("code/main.curry.md")$
+      $partial("code/main2.curry.md")$
   </section>
   <section class="slanted flex justify-center px-6">
       $partial("templates/introduction.html")$
