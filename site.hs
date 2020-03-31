@@ -61,9 +61,13 @@ main = do
                         defaultContext
                 defaultCompile indexCtx
 
-        match "templates/*" $ compile templateBodyCompiler
+        match "cpm/*.html" $ do
+            route idRoute
+            compile $ defaultCompile defaultContext
 
-        match "code/*" $ do
+        match "templates/**" $ compile templateBodyCompiler
+
+        match "code/**" $ do
             dep <- makePatternDependency "syntax_definitions/*.xml"
             rulesExtraDependencies [dep] $
                 compile $ do
