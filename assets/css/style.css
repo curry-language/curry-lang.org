@@ -2,6 +2,7 @@
   --curry-blue-color: #181f6f;
   --curry-red-color: hsl(0, 100%, 33%);
   --primary-color: hsl(215, 15%, 60%);
+  --text-primary: hsl(215, 15%, 45%);
   --secondary-color: hsl(215, 10%, 100%);
   --code-bg-color: #f8f8f8; /*Source https://github.com/tejasbubane/hakyll-css/blob/master/css/tango.css*/
 
@@ -138,6 +139,11 @@ body {
 .text-primary,
 .hover\:.text-primary:hover {
   color: var(--primary-color);
+}
+
+.text-on-primary,
+.hover\:.text-on-primary:hover {
+  color: var(--text-primary)
 }
 
 .text-secondary,
