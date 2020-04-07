@@ -152,18 +152,19 @@ subGroupCtxWith context groupName subGroupName elementsName groupDescriptionPatt
 
         let subGroupMap =  map  (\(g,items) -> (g,listField elementsName (defaultContext `mappend` itemMetaDataField g `mappend` groupCtx) (return items))) subGroupElements
 
-        let listCtx = groupField subGroupName subGroupMap (defaultContext `mappend` groupCtx) (return groupElements) `mappend`
+        let listCtx = groupField subGroupName subGroupMap (defaultContext `mappend` groupCtx) `mappend`
                             context
         return $ listField groupName listCtx (return [groupDesc])
 
-groupField :: String -> [(Item a , Context a)] -> Context a -> Compiler [Item a] -> Context b
+groupField :: String -> [(Item a , Context a)] -> Context a -> Context b
 groupField key contextMap base = let
         contextMap' = map (first itemIdentifier) contextMap
+        items        = map fst contextMap
     in listField key (Context $ \k a i ->
         case Prelude.lookup (itemIdentifier i) contextMap' of
             Nothing -> Control.Applicative.empty
-            Just ctx -> unContext (base `mappend` ctx) k a i
-    )
+            Just ctx -> unContext (ctx `mappend` base) k a i
+    ) (return items)
 
 pandocWriterOptions :: SyntaxMap -> WriterOptions
 pandocWriterOptions syntaxAdditions = def
