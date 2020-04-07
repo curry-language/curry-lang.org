@@ -48,49 +48,54 @@ It is also advisable to run `stack exec site check` to check for broken links.
 ### Folder Structure
 
 ```
-. project root                contains index.html for /  
-|                             , the haskell source site.hs
-|                             , the cabal and stack project files
-|                             , this readme document
-|                             
-+-- assets                    
-|     |                       
-|     +-- js                  contains .js files
-|     +-- css                 contains .css files
-|     +-- img                 containes images files
-|                             
-+--code                       contains embeded code as makrdown templates
-+--cpm                        contains the index.html for /cpm
-+--downloads                  contains the index.html for /downloads
-+--imprint                    contains the index.html for /imprint
-+--learn_more                 contains the files that are used to generate the Features 
-|    |                        and Ecosystem sections on the landingpage
-|    |                        
-|    +-- *_desc.html          one *_desc.html each defining the title 
-|    |                        and highlight color for each section
-|    |
-|    +--  ecosystem/features  one folder containing the definitions for 
-|                             the items of the corresponding section
+. project root
 |
-+--link_groups                contains the definitions for the generated header/footer links 
-|    |
-|    +--footer                contains a definition for each footer group 
-|    |                        and a folder each for the link definitions of that group
-|    |
-|    +--header                contains a definition for each header link
++ .gitignore
++ curry-lang-org.cabal         the cabal project file
++ index.html                   contains index.html for /
++ README.md                    this readme document
++ site.hs                      the haskell source defining the routes and resource processing
++ stack.yaml                   the stack project file 
 |
-+--privacy                    contains the index.html for /privacy
-+--syntax_definition          contains the modified language definitions used by pandoc 
-|    |
-|    +--curry.xml             modified version of the default kde curry language syntax definition 
-|                             used for syntax highlighting
 |
-+--templates                  contains variouse templates
-+--versions                   contains one *_versions.html file 
-     |                        and folde for each table on the downloads page
-     |
-     +-- *_version.html       description for a table on the downloads page
-     +-- kics2/pakcs          version entries for the download page for each table respectively   
++-- assets
+|     |
+|     +-- js                   contains .js files
+|     +-- css                  contains .css files
+|     +-- img                  containes images files
+|
++-- code                       contains embeded code as makrdown templates
++-- cpm                        contains the index.html for /cpm
++-- downloads                  contains the index.html for /downloads
++-- imprint                    contains the index.html for /imprint
++-- learn_more                 contains the files that are used to generate the Features 
+|     |                        and Ecosystem sections on the landingpage
+|     |
+|     +-- *_desc.html          one *_desc.html each defining the title 
+|     |                        and highlight color for each section
+|     |
+|     +--  ecosystem/features  one folder containing the definitions for 
+|                              the items of the corresponding section
+|
++-- link_groups                contains the definitions for the generated header/footer links 
+|     |
+|     +-- footer               contains a definition for each footer group 
+|     |                        and a folder each for the link definitions of that group
+|     |
+|     +-- header               contains a definition for each header link
+|
++-- privacy                    contains the index.html for /privacy
++-- syntax_definition          contains the modified language definitions used by pandoc 
+|     |
+|     +-- curry.xml            modified version of the default kde curry language syntax definition 
+|                              used for syntax highlighting
+|
++-- templates                  contains variouse templates
++-- versions                   contains one *_versions.html file 
+      |                        and folde for each table on the downloads page
+      |
+      +-- *_version.html       description for a table on the downloads page
+      +-- kics2/pakcs          version entries for the download page for each table respectively   
 ```
 
 ### Code Structure
