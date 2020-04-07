@@ -82,6 +82,9 @@ main = do
 
 --------------------------------------------------------------------------------
 
+{-|
+  The compiler pipeline used for most routs
+-}
 defaultCompile :: Context String -> Compiler (Item String)
 defaultCompile ctx = do
                 header <-  headerCtx
@@ -95,14 +98,26 @@ defaultCompile ctx = do
                     >>= loadAndApplyTemplate "templates/default.html" templateCtx
                     >>= relativizeUrls
 
+{-|
+  The context for the header
+-}
 headerCtx :: Compiler (Context String)
 headerCtx = groupCtxWith defaultContext "header" "link" "link_groups/header.desc" "link_groups/header/*.link"  chronological
 
+{-|
+  The context for the footer
+-}
 footerCtx :: Compiler (Context String)
 footerCtx = do
             ctx <- subGroupCtxWith defaultContext "footer_categories" "categorie" "links" "link_groups/footer.desc" "link_groups/footer/*.desc" (\capture -> fromGlob $ "link_groups/footer/" ++ capture ++ "/*.link") chronological
             return $ ctx `mappend` defaultContext
 
+{-|
+  Create the context for learn more section on the main page
+  parameter
+    - name of the section, used as the subfolder name in the learn_more folder
+                         , as well as the prefix for the description file
+-}
 learnMoreCtx :: String -> Compiler (Context String)
 learnMoreCtx name = let
         elementsName = "elements"
@@ -111,6 +126,12 @@ learnMoreCtx name = let
     in
         groupCtxWith defaultContext name elementsName descriptionPattern elementPattern chronological
 
+{-|
+  Create the context for generating the version tables on the download page
+  parameter
+    - name of the tool, used as the subfolder name in the versions folder
+                      , as well as the prefix for the description file
+-}
 toolVersionsCtx :: String -> Compiler (Context String)
 toolVersionsCtx name = let
         elementsName = "versions"
@@ -119,7 +140,11 @@ toolVersionsCtx name = let
     in
         groupCtxWith defaultContext name elementsName descriptionPattern elementPattern recentFirst
 
--- copy of metadataField except the source of i
+{-|
+  copy of metadataField,
+  but uses the parameter as source for the fields
+  instead of the item passed to the context function
+-}
 itemMetaDataField :: Item  a ->  Context a
 itemMetaDataField i = Context $ \k _ _ -> do
     let id = itemIdentifier i
@@ -128,6 +153,16 @@ itemMetaDataField i = Context $ \k _ _ -> do
     value <- getMetadataField id k
     maybe empty' (return . StringField) value
 
+{-|
+  Create a Grouping
+  parameters:
+   - base context
+   - main field name
+   - name for the groups
+   - identifier for file containing the main fields context
+   - pattern for the files containing the group definitions
+   - function for sorting the groups and subgroups inside their parent
+-}
 groupCtxWith :: Context String -> String -> String -> Identifier -> Pattern -> ([Item String] -> Compiler [Item String]) -> Compiler (Context String)
 groupCtxWith context groupName elementsName groupDescriptionPattern groupElementPattern sorting = do
         groupDesc <- load groupDescriptionPattern
@@ -137,6 +172,18 @@ groupCtxWith context groupName elementsName groupDescriptionPattern groupElement
                 context
         return $ listField groupName listCtx (return [groupDesc])
 
+{-|
+  Create a Grouping with Subgroups
+  parameters:
+   - base context
+   - main field name
+   - name for the groups
+   - name for the sub groups
+   - identifier for file containing the main fields context
+   - pattern for the files containing the group definitions
+   - function for creating a pattern from each matched group definition file
+   - function for sorting the groups and subgroups inside their parent
+-}
 subGroupCtxWith :: Context String -> String -> String -> String -> Identifier -> Pattern -> (String -> Pattern) -> ([Item String] -> Compiler [Item String]) -> Compiler (Context String)
 subGroupCtxWith context groupName subGroupName elementsName groupDescriptionPattern groupElementPattern patternFactory sorting = do
         groupDesc <- load groupDescriptionPattern
@@ -156,6 +203,13 @@ subGroupCtxWith context groupName subGroupName elementsName groupDescriptionPatt
                             context
         return $ listField groupName listCtx (return [groupDesc])
 
+{-|
+  Similar to listField but each item is used with the corresponding context
+  parameters:
+   - a name for the field
+   - a list containing item context pairs
+   - a base context
+-}
 groupField :: String -> [(Item a , Context a)] -> Context a -> Context b
 groupField key contextMap base = let
         contextMap' = map (first itemIdentifier) contextMap
@@ -166,6 +220,9 @@ groupField key contextMap base = let
             Just ctx -> unContext (ctx `mappend` base) k a i
     ) (return items)
 
+{-|
+  The pandoc options used with a parameter to override  default syntax definitions or add new ones
+-}
 pandocWriterOptions :: SyntaxMap -> WriterOptions
 pandocWriterOptions syntaxAdditions = def
     {

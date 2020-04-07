@@ -1,5 +1,24 @@
 # Website of the functional logic programming language Curry
 
+## Installation
+
+1. Install stack
+    - Stack is included in the haskell platform: <https://www.haskell.org/platform/>
+    - Stack 1.9.3 should work
+2. Install hakyll using stack: `stack install hakyll`
+
+## Build
+
+1. Build the Haskell executable: `stack build`
+    - This should install the required ghc version as well as all required dependencies, as configure in the curry-lang-org.cabal and stack.yaml
+    - currently using stack resolver lts-14.15 which corresponds to ghc-8.6.5
+2. Build the site using the compiled executable: `stack exec site build`
+    - This generates the site into the `_site` subdirectory
+3. (Optional) Check for broken links: `stack exec site check`
+
+
+## Development
+
 To view the website simply build the project and start the built-in hakyll web server at the root directory of this repository with the following command.
 
 ```shell
@@ -8,3 +27,82 @@ stack exec site watch
 ```
 
 Now open the browser of your choice and navigate to [localhost:8000](localhost:8000).
+
+When any changes outside of the haskell code are saved all dependent pages will be rebuild automatically and
+be seen in the browser after a refresh.
+
+After changes to the haskell code more manual intervention is necessary.
+First stop the running `stck exec site watch` invocation.
+Then run  the following commands
+
+```
+stack build
+stack exec site rebuild
+stack exec site watch
+```
+
+It is also advisable to run `stack exec site check` to check for broken links.
+
+## Structure
+
+### Folder Structure
+
+```
+. project root                contains index.html for /  
+|                             , the haskell source site.hs
+|                             , the cabal and stack project files
+|                             , this readme document
+|                             
++-- assets                    
+|     |                       
+|     +-- js                  contains .js files
+|     +-- css                 contains .css files
+|     +-- img                 containes images files
+|                             
++--code                       contains embeded code as makrdown templates
++--cpm                        contains the index.html for /cpm
++--downloads                  contains the index.html for /downloads
++--imprint                    contains the index.html for /imprint
++--learn_more                 contains the files that are used to generate the Features 
+|    |                        and Ecosystem sections on the landingpage
+|    |                        
+|    +-- *_desc.html          one *_desc.html each defining the title 
+|    |                        and highlight color for each section
+|    |
+|    +--  ecosystem/features  one folder containing the definitions for 
+|                             the items of the corresponding section
+|
++--link_groups                contains the definitions for the generated header/footer links 
+|    |
+|    +--footer                contains a definition for each footer group 
+|    |                        and a folder each for the link definitions of that group
+|    |
+|    +--header                contains a definition for each header link
+|
++--privacy                    contains the index.html for /privacy
++--syntax_definition          contains the modified language definitions used by pandoc 
+|    |
+|    +--curry.xml             modified version of the default kde curry language syntax definition 
+|                             used for syntax highlighting
+|
++--templates                  contains variouse templates
++--versions                   contains one *_versions.html file 
+     |                        and folde for each table on the downloads page
+     |
+     +-- *_version.html       description for a table on the downloads page
+     +-- kics2/pakcs          version entries for the download page for each table respectively   
+```
+
+### Code Structure
+
+The sites routes and used files are specified as part of the haskell program defined in `site.hs`.
+
+The main function specifies the routes and route dependencies, it is separated from the remaining code by 
+a line of dashes.
+
+In the main function there is a `match` expression for each set of identically processed resources.
+   
+
+## Other
+
+`stack exec site clean` can be used to clean the `_site` and `_cache` directory.
