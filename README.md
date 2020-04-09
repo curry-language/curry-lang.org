@@ -28,12 +28,12 @@ stack exec site watch
 
 Now open the browser of your choice and navigate to [localhost:8000](localhost:8000).
 
-When any changes outside of the haskell code are saved all dependent pages will be rebuild automatically and
+When any changes outside of the haskell code are saved, all dependent pages will be rebuild automatically and
 be seen in the browser after a refresh.
 
 After changes to the haskell code more manual intervention is necessary.
 First stop the running `stck exec site watch` invocation.
-Then run  the following commands
+Then run the following commands.
 
 ```
 stack build
@@ -62,7 +62,7 @@ It is also advisable to run `stack exec site check` to check for broken links.
 |     |
 |     +-- js                   contains .js files
 |     +-- css                  contains .css files
-|     +-- img                  containes images files
+|     +-- img                  contains images files
 |
 +-- code                       contains embeded code as makrdown templates
 +-- cpm                        contains the index.html for /cpm
@@ -90,9 +90,9 @@ It is also advisable to run `stack exec site check` to check for broken links.
 |     +-- curry.xml            modified version of the default kde curry language syntax definition 
 |                              used for syntax highlighting
 |
-+-- templates                  contains variouse templates
++-- templates                  contains various templates
 +-- versions                   contains one *_versions.html file 
-      |                        and folde for each table on the downloads page
+      |                        and folder for each table on the downloads page
       |
       +-- *_version.html       description for a table on the downloads page
       +-- kics2/pakcs          version entries for the download page for each table respectively   
