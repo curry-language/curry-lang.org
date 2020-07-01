@@ -6,6 +6,8 @@
     - Stack is included in the haskell platform: <https://www.haskell.org/platform/>
     - Stack 1.9.3 should work
 2. Install hakyll using stack: `stack install hakyll`
+    - might require system packages `gmp-devel` or `libgmp-dev`
+      to be installed for some dependencies to compile under linux
 
 ## Build
 
