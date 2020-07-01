@@ -2,9 +2,14 @@
 title: Main Page Example
 ---
 ~~~~  {.curry .bg-primary}
--- | Returns the last element.
+-- Returns the last element of a list.
 last :: [a] -> a
-last xs | ys ++ [x] =:= xs = x
-  where
-    x, ys free
+last (_ ++ [x]) = x
+
+-- Returns some permutation of a list.
+perm :: [a] -> [a]
+perm []     = []
+perm (x:xs) = insert (perm xs)
+ where insert ys     = x : ys
+       insert (y:ys) = y : insert ys
 ~~~~
