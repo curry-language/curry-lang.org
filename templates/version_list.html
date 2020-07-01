@@ -1,24 +1,26 @@
-<div class="flex justify-center mx-auto md:max-w-3xl mt-12">
-    <table class="table-auto table-colored">
-        <caption class="mb-4">
-            <h1 class="text-center text-4xl font-bold leading-tight">$name$</h1>
-            <h2 class="text-center text-xl font-semibold">$long_name$</h2>
-        </caption>
-        <thead>
-        <tr>
-            <th class="border px-4 py-2">Version</th>
-            <th class="border px-4 py-2">Assets</th>
-        </tr>
-        </thead>
-        <tbody>
-        $for(versions)$
-            $partial("templates/version_entry.html")$
-        $endfor$
-        </tbody>
-    </table>
-</div>
-<div class="flex justify-center mt-6">
-    <a class="font-semibold leading-tight hover:underline"
-       href="$old_releases$" target="_blank"
-       rel="noopener noreferrer">Older $name$ Releases …</a>
+<div>
+    <div class="flex justify-center mt-12">
+        <table class="table-auto table-colored">
+            <caption class="mb-4">
+                <h1 class="text-center text-4xl font-bold leading-tight">$name$</h1>
+                <h2 class="text-center text-xl font-semibold">$long_name$</h2>
+            </caption>
+            <thead>
+            <tr>
+                <th class="border px-4 py-2">Version</th>
+                <th class="border px-4 py-2">Assets</th>
+            </tr>
+            </thead>
+            <tbody>
+            $for(versions)$
+                $partial("templates/version_entry.html")$
+            $endfor$
+            </tbody>
+        </table>
+    </div>
+    <div class="flex justify-center mt-6">
+        <a class="font-semibold leading-tight hover:underline"
+           href="$old_releases$" target="_blank"
+           rel="noopener noreferrer">Older $name$ Releases …</a>
+    </div>
 </div>
