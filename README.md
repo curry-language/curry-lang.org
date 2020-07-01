@@ -19,7 +19,9 @@
 
 ## Development
 
-To view the website simply build the project and start the built-in hakyll web server at the root directory of this repository with the following command.
+To view the website simply build the project and start the built-in
+hakyll web server at the root directory of this repository with the
+following command.
 
 ```shell
 stack build
@@ -28,11 +30,12 @@ stack exec site watch
 
 Now open the browser of your choice and navigate to [localhost:8000](localhost:8000).
 
-When any changes outside of the haskell code are saved, all dependent pages will be rebuild automatically and
-be seen in the browser after a refresh.
+When any changes outside of the Haskell code are saved, all dependent
+pages will be rebuild automatically and be seen in the browser after a
+refresh.
 
-After changes to the haskell code more manual intervention is necessary.
-First stop the running `stck exec site watch` invocation.
+After changes to the Haskell code more manual intervention is necessary.
+First stop the running `stack exec site watch` invocation.
 Then run the following commands.
 
 ```
@@ -64,7 +67,7 @@ It is also advisable to run `stack exec site check` to check for broken links.
 |     +-- css                  contains .css files
 |     +-- img                  contains images files
 |
-+-- code                       contains embeded code as makrdown templates
++-- code                       contains embedded code as markdown templates
 +-- cpm                        contains the index.html for /cpm
 +-- downloads                  contains the index.html for /downloads
 +-- imprint                    contains the index.html for /imprint
