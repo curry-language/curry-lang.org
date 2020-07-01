@@ -3,24 +3,32 @@ title: ""
 no-dash: true
 ---
 <main class="pt-16">
-  <section class="slanted-bottom flex justify-center px-6 pt-4 md:pt-6 ">
-    <div class="md:max-w-3xl">
-      <div class="flex flex-col justify-center sm:flex-row">
-        <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="/assets/img/curry.svg" alt="Curry Logo">
-        <h1 class="flex justify-center items-center font-bold leading-tight text-7xl sm:text-10xl">Curry</h1>
-      </div>
-      <span class="block text-center text-red leading-tight text-2xl mx-auto sm:text-4xl md:max-w-2xl">A Truly Integrated Functional Logic Programming Language</span>
-      <div class="flex justify-center mt-8">
-        <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight px-4 py-3 hover:bg-red hover:text-white" href="/downloads/">Downloads</a>
-        <a class="flex items-center text-blue text-center border border-blue rounded-lg font-semibold leading-tight px-4 py-3 ml-4 hover:bg-blue hover:text-white" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
-      </div>
-    </div>
-    <div class="justify-center flex flex-col">
-        <div class="bg-code px-6">
-            $partial("code/main.curry.md")$
-        </div>
-    </div>
-  </section>
+  <div class="main-top flex-col">
+      <section class="slanted-bottom flex justify-center px-6 pt-4 md:pt-6 main-top px-6">
+          <div class="md:max-w-3xl">
+              <!-- Curry Logo and Name -->
+              <div class="flex flex-col justify-center sm:flex-row">
+                  <img class="h-32 w-32 sm:h-56 sm:w-56 -mb-4 mx-auto sm:mb-0 sm:ml-0 sm:mr-3" src="/assets/img/curry.svg" alt="Curry Logo">
+                  <h1 class="flex justify-center items-center font-bold leading-tight text-7xl sm:text-10xl">Curry</h1>
+              </div>
+
+              <span class="block text-center text-red leading-tight text-2xl mx-auto sm:text-4xl md:max-w-2xl">A Truly Integrated Functional Logic Programming Language</span>
+              <!-- Download and Try It! Buttons -->
+              <div class="flex justify-center mt-8">
+                  <a class="flex items-center text-red text-center border border-red rounded-lg font-semibold leading-tight px-4 py-3 hover:bg-red hover:text-white" href="/downloads/">Downloads</a>
+                  <a class="flex items-center text-blue text-center border border-blue rounded-lg font-semibold leading-tight px-4 py-3 ml-4 hover:bg-blue hover:text-white" href="https://www-ps.informatik.uni-kiel.de/smap/">Try It!</a>
+              </div>
+          </div>
+      </section>
+      <!-- Code Example -->
+      <section class="justify-center main-example flex flex-col pt-12 px-6">
+          <div class=" flex justify-center">
+              <div class="bg-code px-6">
+                  $partial("code/main.curry.md")$
+              </div>
+          </div>
+      </section>
+  </div>
   <section class="slanted flex justify-center px-6">
       $partial("templates/introduction.html")$
   </section>
