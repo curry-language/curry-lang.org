@@ -13,7 +13,9 @@
       <div class="text-sm md:flex md:justify-end md:flex-grow">
         $for(header)$
           $for(link)$
-            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="$url$">$title$</a>
+            <a class="block mt-4 mr-0 text-primary text-right underline md:inline-block md:mt-0 md:mr-4" href="$url$"
+               target="_blank"
+               rel="noopener noreferrer">$title$</a>
           $endfor$
         $endfor$
       </div>
