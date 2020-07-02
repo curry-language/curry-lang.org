@@ -7,6 +7,7 @@ before_script:
 variables:
   LANG: "C.UTF-8"
   LC_ALL: "C.UTF-8"
+  STACK_ROOT: "${CI_PROJECT_DIR}/.stack-root"
 
 stages:
   - haskell_build
@@ -19,10 +20,11 @@ build_haskell:
   before_script:
     - echo "LANG=${LANG}"
     - apt-get update -qq && apt-get install libgmp-dev
-    - stack setup
-    - stack install --only-dependencies
+    - stack setup --system-ghc
+    - stack install --system-ghc --only-dependencies
   script:
-    - stack build
+    - stack build --system-ghc
+    - du -hcs .stack-work/ .stack-root/
   artifacts:
     paths:
       - .stack-work/
@@ -37,7 +39,7 @@ build_site:
       - _cache/
       - _site/
   script:
-    - stack exec site build
+    - stack exec --system-ghc site build
 
 check_links:
     stage: test
@@ -47,7 +49,7 @@ check_links:
       - job: "build_site"
         artifacts: true
     script:
-      - stack exec site check
+      - stack exec --system-ghc site check
 
 .deploy:
   stage: deploy
