@@ -92,12 +92,12 @@ body {
 }
 
 .features-column {
-  height: 225px;
+  min-height: 225px;
   color: #fff;
 }
 
 .eco-column {
-  height: 200px;
+  min-height: 200px;
   color: #fff;
 }
 
@@ -171,8 +171,13 @@ body {
     font-size: 8rem;
   }
 
-  .features,
   .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 681px) {
+  .features {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -183,7 +188,7 @@ body {
   }
 }
 
-@media (min-width: 880px) {
+@media (min-width: 895px) {
   .downloads {
     grid-template-columns: repeat(2, auto);
   }
@@ -205,15 +210,16 @@ body {
         display: grid;
         grid-template-columns: repeat(2, auto);
     }
-
 }
 
 @media (min-width: 1024px) {
-  .features {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    .footer-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
 
-  .footer-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
+@media (min-width: 1347px) {
+    .features {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
