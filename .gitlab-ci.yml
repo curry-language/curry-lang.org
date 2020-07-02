@@ -1,0 +1,73 @@
+image: "haskell:8.6.5"
+
+before_script:
+  - apt-get update -qq && apt-get install libgmp-dev
+  - locale
+
+variables:
+  LANG: "C.UTF-8"
+  LC_ALL: "C.UTF-8"
+
+stages:
+  - haskell_build
+  - site_build
+  - test
+  - deploy
+
+build_haskell:
+  stage: haskell_build
+  before_script:
+    - echo "LANG=${LANG}"
+    - apt-get update -qq && apt-get install libgmp-dev
+    - stack setup
+    - stack install --only-dependencies
+  script:
+    - stack build
+  artifacts:
+    paths:
+      - .stack-work/
+
+build_site:
+  stage: site_build
+  needs:
+    - job: "build_haskell"
+      artifacts: true
+  artifacts:
+    paths:
+      - _cache/
+      - _site/
+  script:
+    - stack exec site build
+
+check_links:
+    stage: test
+    needs:
+      - job: "build_haskell"
+        artifacts: true
+      - job: "build_site"
+        artifacts: true
+    script:
+      - stack exec site check
+
+.deploy:
+  stage: deploy
+  needs:
+    - job: "build_site"
+      artifacts: true
+  script:
+    - mkdir .public
+    - cp -r _site/* .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+
+create_archive:
+  extends: .deploy
+  except:
+    - master
+
+pages:
+  extends: .deploy
+  only:
+      - master
