@@ -1,8 +1,9 @@
 image: "haskell:8.6.5"
 
 before_script:
-  - apt-get update -qq && apt-get install libgmp-dev
+  # - apt-get update -qq && apt-get install libgmp-dev
   - locale
+  - stack --version
 
 variables:
   LANG: "C.UTF-8"
@@ -19,7 +20,7 @@ build_haskell:
   stage: haskell_build
   before_script:
     - echo "LANG=${LANG}"
-    - apt-get update -qq && apt-get install libgmp-dev
+    # - apt-get update -qq && apt-get install libgmp-dev
     - stack setup --system-ghc
     - stack install --system-ghc --only-dependencies
   script:
