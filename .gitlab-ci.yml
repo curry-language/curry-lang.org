@@ -30,6 +30,10 @@ build_haskell:
   artifacts:
     paths:
       - .stack-work/
+  cache:
+    key: "${CI_COMMIT_REF_SLUG}-haskell_build"
+    paths:
+      - .stack-root/
 
 build_site:
   stage: site_build
@@ -44,6 +48,10 @@ build_site:
       - _site/
   script:
     - stack exec --system-ghc site build
+  cache:
+    key: "${CI_COMMIT_REF_SLUG}-site"
+    paths:
+      - .stack-root/
 
 check_links:
     stage: test
@@ -56,6 +64,11 @@ check_links:
         artifacts: true
     script:
       - stack exec --system-ghc site check
+    cache:
+      key: "${CI_COMMIT_REF_SLUG}-site"
+      policy: pull
+      paths:
+        - .stack-root/
 
 .deploy:
   stage: deploy
@@ -71,6 +84,7 @@ check_links:
   artifacts:
     paths:
       - public
+  cache: {}
 
 create_archive:
   extends: .deploy
