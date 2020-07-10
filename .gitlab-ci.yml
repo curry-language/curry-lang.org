@@ -17,6 +17,8 @@ stages:
 
 build_haskell:
   stage: haskell_build
+  tags: 
+    - docker
   before_script:
     - locale
     - stack --version
@@ -31,6 +33,8 @@ build_haskell:
 
 build_site:
   stage: site_build
+  tags:
+    - docker
   needs:
     - job: "build_haskell"
       artifacts: true
@@ -43,6 +47,8 @@ build_site:
 
 check_links:
     stage: test
+    tags:
+      - docker
     needs:
       - job: "build_haskell"
         artifacts: true
@@ -53,6 +59,8 @@ check_links:
 
 .deploy:
   stage: deploy
+  tags:
+    - docker
   needs:
     - job: "build_site"
       artifacts: true
