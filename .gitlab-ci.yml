@@ -89,9 +89,9 @@ check_links:
 create_archive:
   extends: .deploy
   except:
-    - master
+    - hakyll
 
 pages:
   extends: .deploy
   only:
-      - master
+      - hakyll
