@@ -65,9 +65,9 @@ main = do
             route idRoute
             compile $ defaultCompile defaultContext
 
-        match "templates/**" $ compile templateBodyCompiler
+        match "templates/**.html" $ compile templateBodyCompiler
 
-        match "code/**" $ do
+        match( "code/**" .||. "templates/**.md") $ do
             dep <- makePatternDependency "syntax_definitions/*.xml"
             rulesExtraDependencies [dep] $
                 compile $ do
