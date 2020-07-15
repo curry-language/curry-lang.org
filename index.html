@@ -34,13 +34,16 @@ no-dash: true
             </div>
         </section>
     </div>
+    <section class="slanted flex justify-center px-6">
+        $partial("templates/introduction.html")$
+    </section>
     <section class="slanted flex flex-col justify-center bg-primary px-6">
         $for(features)$
         $partial("templates/learn_more.html")$
         $endfor$
     </section>
     <section class="slanted flex justify-center px-6">
-        $partial("templates/introduction.html")$
+        $partial("templates/development.html")$
     </section>
     <section class="slanted flex flex-col justify-center bg-primary px-6">
         $for(ecosystem)$
