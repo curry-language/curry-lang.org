@@ -218,7 +218,7 @@ body {
     }
 }
 
-@media (min-width: 1347px) {
+@media (min-width: 1415px) {
     .features {
         grid-template-columns: repeat(4, 1fr);
     }
