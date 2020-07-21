@@ -1,0 +1,28 @@
+.markdown {
+    justify-content: center;
+}
+
+
+.markdown .centered {
+  display: initial;
+  margin-top: 1rem;
+}
+
+.markdown a {
+  text-decoration: underline;
+  text-font-size: inherit;
+}
+
+.markdown * {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  line-height: 1.625;
+}
+
+.markdown .bg-primary * {
+  color: var(--text-primary);
+}
+
+.markdown .centered {
+  text-align: center;
+}
