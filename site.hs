@@ -68,19 +68,27 @@ main = do
         match "templates/**.html" $ compile templateBodyCompiler
 
         match( "code/**" .||. "templates/**.md") $ do
+            -- we need to tell hakyll explicitly about our dependency on custom syntax definitions
+            -- otherwise hakyll won't rebuild on syntax definition changes unless using rebuild explicitly
             dep <- makePatternDependency "syntax_definitions/*.xml"
             rulesExtraDependencies [dep] $
-                compile $ do
-
-                   let indexCtx =  defaultContext
-
-                   getResourceBody
-                        >>= applyAsTemplate indexCtx
-                        >>= renderPandocWith defaultHakyllReaderOptions (pandocWriterOptions syntaxAdditions)
-                        >>= compileTemplateItem
-                        >>= makeItem
+                compile markdownCompile
 
 --------------------------------------------------------------------------------
+{-|
+  The compile pipline used for markdown templates
+-}
+markdownCompile :: Compiler (Item String)
+markdownCompile = do
+   let indexCtx =  defaultContext
+
+   getResourceBody
+        >>= applyAsTemplate indexCtx
+        -- the syntaxAdditions should to be added as dependencies in the rules monad outside the compile
+        >>= renderPandocWith defaultHakyllReaderOptions (pandocWriterOptions syntaxAdditions)
+        >>= loadAndApplyTemplate "templates/markdown.html" indexCtx
+        >>= compileTemplateItem
+        >>= makeItem
 
 {-|
   The compiler pipeline used for most routs

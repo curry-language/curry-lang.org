@@ -1,5 +1,3 @@
-<!-- marker div that this is generated from markdown -->
-:::markdown
 <section class="text-center">
 :::md:max-w-3xl
 With **Markdown**:
@@ -11,4 +9,3 @@ The [data privacy statement](https://www.uni-kiel.de/en/data-protection)
 of the Kiel University also applies to this web site.
 ::: 
 </section>
-:::
