@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, PartialTypeSignatures #-}
 import           Data.Monoid (mappend)
 import           Data.Bifunctor (first)
 import           Control.Monad (forM)
@@ -17,10 +17,7 @@ import           Data.Map (empty, union, Map, lookup, fromList)
 
 main :: IO ()
 main = do
-    loadResult <- loadSyntaxesFromDir "syntax_definitions"
-    let syntaxAdditions = case loadResult of
-                                (Right smap) -> smap
-                                (Left _) -> mempty
+    withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
     hakyll $ do
         match ("assets/js/*" .||. "assets/img/*") $ do
             route   idRoute
@@ -67,19 +64,27 @@ main = do
 
         match "templates/**.html" $ compile templateBodyCompiler
 
-        match( "code/**" .||. "templates/**.md") $ do
-            -- we need to tell hakyll explicitly about our dependency on custom syntax definitions
-            -- otherwise hakyll won't rebuild on syntax definition changes unless using rebuild explicitly
-            dep <- makePatternDependency "syntax_definitions/*.xml"
-            rulesExtraDependencies [dep] $
-                compile markdownCompile
+        match( "code/**" .||. "templates/**.md") $
+            withSyntaxAdditions $ (compile . markdownCompile)
+
 
 --------------------------------------------------------------------------------
+loadSyntaxFromDir :: String -> IO ((SyntaxMap -> Rules a) -> Rules a)
+loadSyntaxFromDir dir = do
+    loadResult <- loadSyntaxesFromDir dir
+    let syntaxAdditions = case loadResult of
+                                (Right smap) -> smap
+                                (Left _) -> mempty
+    pure $ (\rule -> do
+        dep <- makePatternDependency $ fromGlob $ dir <> "/*.xml"
+        rulesExtraDependencies [dep] $ rule syntaxAdditions
+      )
+
 {-|
   The compile pipline used for markdown templates
 -}
-markdownCompile :: Compiler (Item String)
-markdownCompile = do
+markdownCompile :: SyntaxMap -> Compiler (Item Hakyll.Template)
+markdownCompile syntaxAdditions = do
    let indexCtx =  defaultContext
 
    getResourceBody
