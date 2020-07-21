@@ -54,7 +54,7 @@ main = do
             compile $ withSyntaxAdditions >>= markdownCompile
 --------------------------------------------------------------------------------
 {-|
-  Loads additional syntax definitions from a directory
+  Loads additional syntax definitions from the provided directory
 -}
 {-
   Needs to be a rule so that we have access to preprocess for IO
