@@ -7,6 +7,7 @@ import Data.Bifunctor (first)
 import Data.Map (Map, empty, fromList, lookup, union)
 import Data.Monoid (mappend)
 import Hakyll
+import Hakyll.Core.Compiler.Internal (compilerTellDependencies)
 import Skylighting (defaultSyntaxMap)
 import Skylighting.Loader (loadSyntaxesFromDir)
 import Skylighting.Types (SyntaxMap)
@@ -16,7 +17,6 @@ import Text.Pandoc.Highlighting
 --------------------------------------------------------------------------------
 main :: IO ()
 main = do
-    withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
     hakyll $ do
         match ("assets/js/*" .||. "assets/img/*") $ do
             route idRoute
@@ -49,24 +49,32 @@ main = do
             route idRoute
             compile $ defaultCompile defaultContext
         match "templates/**.html" $ compile templateBodyCompiler
-        match ("code/**" .||. "templates/**.md") $
-            withSyntaxAdditions (compile . markdownCompile)
-
+        match ("code/**" .||. "templates/**.md") $ do
+            withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
+            compile $ withSyntaxAdditions >>= markdownCompile
 --------------------------------------------------------------------------------
-loadSyntaxFromDir :: String -> IO ((SyntaxMap -> Rules a) -> Rules a)
+{-|
+  Loads additional syntax definitions from a directory
+-}
+{-
+  Needs to be a rule so that we have access to preprocess for IO
+  Returns the result inside an Compiler Monad to guarantee that the dependency is registered
+-}
+loadSyntaxFromDir :: FilePath -> Rules (Compiler SyntaxMap)
 loadSyntaxFromDir dir = do
-    loadResult <- loadSyntaxesFromDir dir
+    loadResult <- preprocess $ loadSyntaxesFromDir dir
     let syntaxAdditions =
             case loadResult of
                 (Right smap) -> smap
                 (Left _) -> mempty
-    pure
-        (\rule -> do
-             dep <- makePatternDependency $ fromGlob $ dir <> "/*.xml"
-             rulesExtraDependencies [dep] $ rule syntaxAdditions)
+    pure $ do
+         dep <- makePatternDependency $ fromGlob $ dir <> "/*.xml"
+         compilerTellDependencies [dep]
+         pure syntaxAdditions
 
 {-|
-  The compile pipline used for markdown templates
+  The compile pipeline used for markdown templates
+  Takes a SyntaxMap of changed/added syntax definitions that will be used by Pandoc
 -}
 markdownCompile :: SyntaxMap -> Compiler (Item Hakyll.Template)
 markdownCompile syntaxAdditions = do
