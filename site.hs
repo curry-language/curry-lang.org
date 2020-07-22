@@ -48,10 +48,14 @@ main = do
         match "cpm/*.html" $ do
             route idRoute
             compile $ defaultCompile defaultContext
+        match "cpm-test/*.md" $ do
+            route $ setExtension "html"
+            withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
+            compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
         match "templates/**.html" $ compile templateBodyCompiler
         match ("code/**" .||. "templates/**.md") $ do
             withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
-            compile $ withSyntaxAdditions >>= markdownCompile
+            compile $ withSyntaxAdditions >>= templateCompileMarkdown
 --------------------------------------------------------------------------------
 {-|
   Loads additional syntax definitions from the provided directory
@@ -73,11 +77,11 @@ loadSyntaxFromDir dir = do
          pure syntaxAdditions
 
 {-|
-  The compile pipeline used for markdown templates
-  Takes a SyntaxMap of changed/added syntax definitions that will be used by Pandoc
+  The compile pipeline used for Markdown templates.
+  Takes a SyntaxMap of changed/added syntax definitions that will be used by Pandoc.
 -}
-markdownCompile :: SyntaxMap -> Compiler (Item Hakyll.Template)
-markdownCompile syntaxAdditions = do
+templateCompileMarkdown :: SyntaxMap -> Compiler (Item Hakyll.Template)
+templateCompileMarkdown syntaxAdditions = do
     let indexCtx = defaultContext
     getResourceBody >>= applyAsTemplate indexCtx >>=
         renderPandocWith
@@ -88,7 +92,26 @@ markdownCompile syntaxAdditions = do
         makeItem
 
 {-|
-  The compiler pipeline used for most routs
+  A version of 'defaultCompile' that works on Markdown files instead.
+  Taking a SyntaxMap of changed/added syntax definitions that will be used by Pandoc.
+  See 'templateCompileMarkdown' for compiling Markdown templates.
+-}
+defaultCompileMarkdown :: Context String -> SyntaxMap -> Compiler (Item String)
+defaultCompileMarkdown ctx syntaxAdditions = do
+  header <- headerCtx
+  footer <- footerCtx
+  let templateCtx = ctx `mappend` footer `mappend` header
+  getResourceBody >>= applyAsTemplate ctx >>=
+      renderPandocWith
+        defaultHakyllReaderOptions
+        (pandocWriterOptions syntaxAdditions) >>=
+      loadAndApplyTemplate "templates/markdown.html" ctx >>=
+      loadAndApplyTemplate "templates/default.html" templateCtx >>=
+      relativizeUrls
+
+{-|
+  The compiler pipeline used for most routs.
+  See 'defaultCompileMarkdown' for a version handling Markdown files.
 -}
 defaultCompile :: Context String -> Compiler (Item String)
 defaultCompile ctx = do

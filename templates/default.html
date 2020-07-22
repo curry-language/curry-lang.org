@@ -3,7 +3,15 @@
     $partial("templates/head.html")$
     <body>
         $partial("templates/header.html")$
-        $body$
+        $if(with-main)$
+        <main class="$with-main$">
+            $body$
+        </main>
+        $else$
+        <main class="pt-24">
+            $body$
+        </main>
+        $endif$
         $partial("templates/footer.html")$
     </body>
 </html>

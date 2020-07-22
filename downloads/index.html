@@ -1,16 +1,14 @@
 ---
 title: Downloads
 ---
-<main class="pt-24">
-  $partial("templates/title_section.html")$
-  <section class="slanted px-6 flex-col">
-    <div class="downloads justify-center">
-        $for(packs)$
-          $partial("templates/version_list.html")$
-        $endfor$
-        $for(kics2)$
-          $partial("templates/version_list.html")$
-        $endfor$
-    </div>
-  </section>
-</main>
+$partial("templates/title_section.html")$
+<section class="slanted px-6 flex-col">
+<div class="downloads justify-center">
+    $for(packs)$
+      $partial("templates/version_list.html")$
+    $endfor$
+    $for(kics2)$
+      $partial("templates/version_list.html")$
+    $endfor$
+</div>
+</section>
