@@ -126,6 +126,10 @@ section.bg-primary + .markdown section:nth-of-type(2n+0) .sourceCode {
   background-color: var(--primary-color);
 }
 
+.markdown pre.bg-primary > code {
+  background-color: var(--primary-color);
+}
+
 
 :not(.bg-primary) + .markdown section:nth-of-type(2n+1) code:not(.sourceCode) {
     background-color: var(--markdown-inline-code-primary-bg);
