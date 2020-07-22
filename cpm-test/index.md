@@ -1,6 +1,5 @@
 ---
 title: "Curry Package Manager"
-no-dash: true
 ---
 <section>
 :::md:max-w-3xl
