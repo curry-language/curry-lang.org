@@ -116,3 +116,43 @@ In the main function there is a `match` expression for each set of identically p
 ## Other
 
 `stack exec site clean` can be used to clean the `_site` and `_cache` directory.
+
+## Wiki -> Markdown Conversion
+
+- Headlines 
+ - replace `=` signes with markdown headline
+ - Main Headline underline with `=` or prefix with `# `
+ - Other headlines should be at least h2 headlines with `##` prefix
+
+- Code Examples
+  - add backtick fence
+  - decrease indentation
+  - annotate language for correct highlighting
+    - explicit `default` is different to no annotation 
+  - surround with `---` separated by a blank line 
+
+- External Link Rewrite Regex 
+  - Find `\[\[\s*(\S*)\s*\|\s*(\S*)\s*\]\]`
+  - Replace `[$2]($1)`
+  
+- Internal Links
+  - manual 
+  
+- Adding section
+  - Start (first) Section 
+    ```markdown
+    <section>
+    :::md:max-w-3xl
+    ```
+  - Change Section 
+    ```markdown
+    :::
+    </section>  
+    <section>
+    :::md:max-w-3xl
+    ```
+  - End (last) Section 
+    ```markdown  
+    :::
+    </section>  
+    ```

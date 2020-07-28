@@ -48,7 +48,7 @@ main = do
         match "cpm/*.html" $ do
             route idRoute
             compile $ defaultCompile defaultContext
-        match "cpm-test/*.md" $ do
+        match "*-test/*.md" $ do
             route $ setExtension "html"
             withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
             compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
