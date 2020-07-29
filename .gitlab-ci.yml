@@ -25,11 +25,11 @@ build_haskell:
     - stack setup --system-ghc
     - stack install --system-ghc --only-dependencies
   script:
-    - stack build --system-ghc
+    - stack install --system-ghc --local-bin-path ./bin
     - du -hcs .stack-work/ .stack-root/
   artifacts:
     paths:
-      - .stack-work/
+      - ./bin
   cache:
     key: "${CI_COMMIT_REF_SLUG}-haskell_build"
     paths:
@@ -47,11 +47,8 @@ build_site:
       - _cache/
       - _site/
   script:
-    - stack exec --system-ghc site build
-  cache:
-    key: "${CI_COMMIT_REF_SLUG}-site"
-    paths:
-      - .stack-root/
+    - ./bin/site build
+  cache: {}
 
 check_links:
     stage: test
@@ -63,12 +60,8 @@ check_links:
       - job: "build_site"
         artifacts: true
     script:
-      - stack exec --system-ghc site check
-    cache:
-      key: "${CI_COMMIT_REF_SLUG}-site"
-      policy: pull
-      paths:
-        - .stack-root/
+      - ./bin/site check
+    cache: {}
 
 .deploy:
   stage: deploy
