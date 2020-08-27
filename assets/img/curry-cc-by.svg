@@ -10,7 +10,7 @@
    viewBox="0 0 512 512"
    version="1.1"
    id="svg6"
-   sodipodi:docname="safari-pinned-tab.svg"
+   sodipodi:docname="curry-cc-by.svg"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
   <metadata
      id="metadata12">
@@ -20,6 +20,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -38,27 +39,24 @@
      inkscape:window-height="1023"
      id="namedview8"
      showgrid="false"
-     inkscape:zoom="1"
-     inkscape:cx="-12.677966"
-     inkscape:cy="256"
+     inkscape:zoom="1.3037281"
+     inkscape:cx="99.85079"
+     inkscape:cy="217.51893"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg6" />
-  <g
-     id="g36">
-    <path
-       id="path2"
-       fill="#000000"
-       d="M224.98 48 L224.98 463.839 303.798 463.839 303.798 295.337 511.413 295.337 511.413 216.501 303.798 216.501 303.798 48 Z" />
-    <path
-       id="path4"
-       fill="#000000"
-       d="M177.329 129.606 Q161.283 87.053 138.708 67.661 116.405 48.001 84.313 48.001 L18.494 48.001 18.494 108.06 50.859 108.06 Q75.337 108.06 86.759 116.409 98.183 124.489 109.878 154.384 L115.862 170.543 -0 463.836 83.767 463.836 153.394 268.039 220.03 463.836 303.8 463.836 Z" />
-  </g>
+  <path
+     d="M224.98 48 L224.98 463.839 303.798 463.839 303.798 295.337 511.413 295.337 511.413 216.501 303.798 216.501 303.798 48 Z"
+     id="path2"
+     fill="#aa0000" />
+  <path
+     d="M177.329 129.606 Q161.283 87.053 138.708 67.661 116.405 48.001 84.313 48.001 L18.494 48.001 18.494 108.06 50.859 108.06 Q75.337 108.06 86.759 116.409 98.183 124.489 109.878 154.384 L115.862 170.543 -0 463.836 83.767 463.836 153.394 268.039 220.03 463.836 303.8 463.836 Z"
+     fill="#181f6f"
+     id="path4" />
   <g
      id="g69"
-     transform="matrix(0.93924088,0,0,0.93924088,56.705871,49.123367)">
+     transform="matrix(0.93924088,0,0,0.93924088,56.705872,49.123372)">
     <path
        inkscape:connector-curvature="0"
        id="path83"
