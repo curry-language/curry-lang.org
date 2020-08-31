@@ -91,6 +91,10 @@ body {
   z-index: -1;
 }
 
+.wp-3rem {
+    width: calc(100% + 3rem);
+}
+
 .features-column {
   min-height: 225px;
   color: #fff;
