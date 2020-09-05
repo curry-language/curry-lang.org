@@ -38,7 +38,7 @@ The installation and usage is described in the distributed
 
 The [Kate](http://kate-editor.org/) editor contains
 syntax highlighting for Curry programs. This mode can be
-acticated by Kate's download mechanism. To do this, start
+activated by Kate's download mechanism. To do this, start
 Kate and go to
 
 ---
