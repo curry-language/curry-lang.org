@@ -16,7 +16,7 @@ import Text.Pandoc.Highlighting
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = do
+main =
     hakyll $ do
         match ("assets/js/**" .||. "assets/img/**" .||. "assets/files/**") $ do
             route idRoute
@@ -25,8 +25,9 @@ main = do
             route idRoute
             compile compressCssCompiler
         match ("versions/**" .||. "learn_more/**" .||. "link_groups/**") $
+            -- only used as metadata no routes needed
             compile getResourceBody
-        match "downloads/*" $ do
+        match "downloads/*.html" $ do
             route idRoute
             compile $ do
                 packs <- toolVersionsCtx "packs"
@@ -34,10 +35,6 @@ main = do
                 let downloadsCtx =
                         packs `mappend` kics2 `mappend` defaultContext
                 defaultCompile downloadsCtx
-        match ("imprint/*.md" .||. "privacy/*.md") $ do
-            route $ setExtension "html"
-            withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
-            compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
         match "index.html" $ do
             route idRoute
             compile $ do
@@ -46,19 +43,33 @@ main = do
                 let indexCtx =
                         features `mappend` ecosystem `mappend` defaultContext
                 defaultCompile indexCtx
-        match "tools/*/*.md" $ do
-            route $ setExtension "html"
-            withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
-            compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
-        match "*-test/*.md" $ do
-            route $ setExtension "html"
-            withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
-            compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
+        match ("imprint/index.md" .||. "privacy/index.md") defaultMarkdownRules
+        match "tools/**.md" defaultMarkdownRules
+        match "test/**.md" defaultMarkdownRules
+        match "test/**.html" defaultHtmlRules
         match "templates/**.html" $ compile templateBodyCompiler
-        match ("code/**" .||. "templates/**.md") $ do
+        match "templates/**.md" $ do
             withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
             compile $ withSyntaxAdditions >>= templateCompileMarkdown
+
 --------------------------------------------------------------------------------
+{-|
+ The rules usually used for .html files 
+-}
+defaultHtmlRules :: Rules ()
+defaultHtmlRules = do
+    route idRoute
+    compile $ defaultCompile defaultContext
+
+{-|
+ The rules usually used for .md files 
+-}
+defaultMarkdownRules :: Rules ()
+defaultMarkdownRules = do
+    route $ setExtension "html"
+    withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
+    compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
+
 {-|
   Loads additional syntax definitions from the provided directory
 -}
@@ -74,9 +85,9 @@ loadSyntaxFromDir dir = do
                 (Right smap) -> smap
                 (Left _) -> mempty
     pure $ do
-         dep <- makePatternDependency $ fromGlob $ dir <> "/*.xml"
-         compilerTellDependencies [dep]
-         pure syntaxAdditions
+        dep <- makePatternDependency $ fromGlob $ dir <> "/*.xml"
+        compilerTellDependencies [dep]
+        pure syntaxAdditions
 
 {-|
   The compile pipeline used for Markdown templates.
@@ -100,16 +111,14 @@ templateCompileMarkdown syntaxAdditions = do
 -}
 defaultCompileMarkdown :: Context String -> SyntaxMap -> Compiler (Item String)
 defaultCompileMarkdown ctx syntaxAdditions = do
-  header <- headerCtx
-  footer <- footerCtx
-  let templateCtx = ctx `mappend` footer `mappend` header
-  getResourceBody >>= applyAsTemplate ctx >>=
-      renderPandocWith
-        defaultHakyllReaderOptions
-        (pandocWriterOptions syntaxAdditions) >>=
-      loadAndApplyTemplate "templates/markdown.html" ctx >>=
-      loadAndApplyTemplate "templates/default.html" templateCtx >>=
-      relativizeUrls
+    templateCtx <- templateContext
+    getResourceBody >>= applyAsTemplate ctx >>=
+        renderPandocWith
+            defaultHakyllReaderOptions
+            (pandocWriterOptions syntaxAdditions) >>=
+        loadAndApplyTemplate "templates/markdown.html" ctx >>=
+        loadAndApplyTemplate "templates/default.html" templateCtx >>=
+        relativizeUrls
 
 {-|
   The compiler pipeline used for most routs.
@@ -117,12 +126,22 @@ defaultCompileMarkdown ctx syntaxAdditions = do
 -}
 defaultCompile :: Context String -> Compiler (Item String)
 defaultCompile ctx = do
-    header <- headerCtx
-    footer <- footerCtx
-    let templateCtx = ctx `mappend` footer `mappend` header
+    templateCtx <- templateContext
     getResourceBody >>= applyAsTemplate ctx >>=
         loadAndApplyTemplate "templates/default.html" templateCtx >>=
         relativizeUrls
+
+{-| 
+The context used by `defaultCompile` and `defaultCompileMarkdown`
+for loading and applying the default.html template
+
+Contains the metadata used for generating the header and footer section
+-}
+templateContext = do
+    header <- headerCtx
+    footer <- footerCtx
+    let templateCtx' = ctx `mappend` footer `mappend` header
+    pure templateCtx'
 
 {-|
   The context for the header
