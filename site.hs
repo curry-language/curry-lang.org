@@ -137,6 +137,7 @@ for loading and applying the default.html template
 
 Contains the metadata used for generating the header and footer section
 -}
+templateContext :: Context String -> Compiler (Context String) 
 templateContext ctx = do
     header <- headerCtx
     footer <- footerCtx
