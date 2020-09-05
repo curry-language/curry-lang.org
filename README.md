@@ -129,15 +129,21 @@ In the main function there is a `match` expression for each set of identically p
   - decrease indentation
   - annotate language for correct highlighting
     - explicit `default` is different to no annotation 
-  - surround with `---` separated by a blank line 
+  - surround with lines containing only `___`
 
 - External Link Rewrite Regex 
   - Find `\[\[\s*(\S*)\s*\|\s*(\S*)\s*\]\]`
   - Replace `[$2]($1)`
   
 - Internal Links
-  - manual 
+  - manual
+   - for links to wiki files (e.g. cass_longer.pdf) the file should be added to the assets and linked from there
   
+- Images
+ - manual
+   - for wiki image download image and add it to the assets then link from there
+   - for external images just link to the external image
+    
 - Adding section
   - Start (first) Section 
     ```markdown

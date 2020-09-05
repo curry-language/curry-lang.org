@@ -18,7 +18,7 @@ import Text.Pandoc.Highlighting
 main :: IO ()
 main = do
     hakyll $ do
-        match ("assets/js/*" .||. "assets/img/*") $ do
+        match ("assets/js/**" .||. "assets/img/**" .||. "assets/files/**") $ do
             route idRoute
             compile copyFileCompiler
         match "assets/css/*" $ do
@@ -46,7 +46,7 @@ main = do
                 let indexCtx =
                         features `mappend` ecosystem `mappend` defaultContext
                 defaultCompile indexCtx
-        match "tools/*/*.md" $ do 
+        match "tools/*/*.md" $ do
             route $ setExtension "html"
             withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
             compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
