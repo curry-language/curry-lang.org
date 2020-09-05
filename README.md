@@ -56,23 +56,22 @@ It is also advisable to run `stack exec site check` to check for broken links.
 . project root
 |
 + .gitignore
++ .gitlab-ci.yml               YAML file containing the Gitlab CI/CD configuration
 + curry-lang-org.cabal         the cabal project file
 + index.html                   contains index.html for /
 + README.md                    this readme document
 + site.hs                      the haskell source defining the routes and resource processing
 + stack.yaml                   the stack project file 
 |
-|
 +-- assets
 |     |
 |     +-- js                   contains .js files
 |     +-- css                  contains .css files
 |     +-- img                  contains images files
+|     +-- files                contains other asset files
 |
-+-- code                       contains embedded code as markdown templates
-+-- cpm                        contains the index.html for /cpm
 +-- downloads                  contains the index.html for /downloads
-+-- imprint                    contains the index.html for /imprint
++-- imprint                    contains the index.md for /imprint
 +-- learn_more                 contains the files that are used to generate the Features 
 |     |                        and Ecosystem sections on the landingpage
 |     |
@@ -89,13 +88,20 @@ It is also advisable to run `stack exec site check` to check for broken links.
 |     |
 |     +-- header               contains a definition for each header link
 |
-+-- privacy                    contains the index.html for /privacy
++-- privacy                    contains the index.md for /privacy
 +-- syntax_definition          contains the modified language definitions used by pandoc 
 |     |
 |     +-- curry.xml            modified version of the default kde curry language syntax definition 
 |                              used for syntax highlighting
 |
 +-- templates                  contains various templates
+|   |
+|   +-- code                   contains emmbedded code as markdown templates
+|
++-- test                       contains the source for experimental and test pages under /test
+|
++-- tools                      contains the source for the pages under /tools
+|
 +-- versions                   contains one *_versions.html file 
       |                        and folder for each table on the downloads page
       |
