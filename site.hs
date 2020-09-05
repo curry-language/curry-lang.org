@@ -111,7 +111,7 @@ templateCompileMarkdown syntaxAdditions = do
 -}
 defaultCompileMarkdown :: Context String -> SyntaxMap -> Compiler (Item String)
 defaultCompileMarkdown ctx syntaxAdditions = do
-    templateCtx <- templateContext
+    templateCtx <- templateContext ctx
     getResourceBody >>= applyAsTemplate ctx >>=
         renderPandocWith
             defaultHakyllReaderOptions
@@ -126,7 +126,7 @@ defaultCompileMarkdown ctx syntaxAdditions = do
 -}
 defaultCompile :: Context String -> Compiler (Item String)
 defaultCompile ctx = do
-    templateCtx <- templateContext
+    templateCtx <- templateContext ctx
     getResourceBody >>= applyAsTemplate ctx >>=
         loadAndApplyTemplate "templates/default.html" templateCtx >>=
         relativizeUrls
@@ -137,7 +137,7 @@ for loading and applying the default.html template
 
 Contains the metadata used for generating the header and footer section
 -}
-templateContext = do
+templateContext ctx = do
     header <- headerCtx
     footer <- footerCtx
     let templateCtx' = ctx `mappend` footer `mappend` header
