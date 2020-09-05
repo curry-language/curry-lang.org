@@ -34,9 +34,6 @@ main = do
                 let downloadsCtx =
                         packs `mappend` kics2 `mappend` defaultContext
                 defaultCompile downloadsCtx
-        match ("imprint/*.html" .||. "privacy/*.html") $ do
-            route idRoute
-            compile $ defaultCompile defaultContext
         match ("imprint/*.md" .||. "privacy/*.md") $ do
             route $ setExtension "html"
             withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
