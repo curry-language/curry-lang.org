@@ -87,7 +87,8 @@ link from some path directory to this binary.
 
 ## Quick Start
 
-Now you can clone a copy of the central package index repository by
+If you installed CPM so the binary `cypm` is in your path,
+you can clone a copy of the central package index repository by
 
 ---
 

@@ -14,13 +14,11 @@ Curry Analysis Server System
 
 ## Introduction
 
-CASS is a tool in the
-[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/) and
-[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2) distributions
+CASS (Curry Analysis Server System) is a tool
 for the analysis of Curry programs.
 CASS is generic so that various kinds of
 analyses (e.g., groundness, non-determinism, demanded arguments) can
-be easily integrated.  In order to analyze larger applications
+be easily integrated  into CASS. In order to analyze larger applications
 consisting of dozens or hundreds of modules, CASS supports a modular
 and incremental analysis of programs.  Moreover, it can be used by
 different programming tools, like documentation generators, analysis
@@ -36,27 +34,48 @@ parallel or distributed execution environments.
 <section>
 :::md:max-w-3xl
 
-## Usage
+## Installation
 
-The analysis results computed by CASS can be accessed in various ways:
+The current implementation of CASS is a package
+managed by the Curry Package Manager CPM.
+Thus, to install the newest version of CASS, use the following commands:
+
+___
+```sh
+> cypm update
+> cypm install cass
+```
+___
+
+This downloads the newest package, compiles it, and places
+the executable `cass` into the directory `<HOME>/.cpm/bin`.
+Hence it is recommended to add this directory to your path
+in order to execute CASS as described below.
 
 :::
 </section>
 <section>
 :::md:max-w-3xl
 
+## Usage
+
+The analysis results computed by CASS can be accessed in various ways:
+
 ### Batch mode
-CASS is started with an analysis name and the name of the module to be analyzed.
-Then this analysis is applied to the module and the results are printed.
-This mode is useful to get a quick access to analysis information so that one can experiment with different abstractions,
-fixpoint computations, etc.
-For instance, the following command analyzes the groundness behavior of operations
-of the module `rev` (here we assume that CASS is installed as part of
-PAKCS or KiCS2 so that it is invoked via `curry analyze`):
+
+In order to show analysis results for a given module, one can use CASS
+in the batch mode. In this mode, CASS is started with an analysis
+name and the name of the module to be analyzed. Then this analysis is
+applied to the module and the results are printed. This mode is
+useful to get a quick access to analysis information so that one can
+experiment with different abstractions, fixpoint computations, etc.
+For instance, the following command analyzes the groundness behavior
+of operations of the module `rev` (here we assume that CASS is
+installed as part of PAKCS or KiCS2 so that it is invoked via `cass`):
 
 ___
 ```sh
-> curry analyze Groundness rev
+> cass Groundness rev
 rev.append ground if arguments [1,2] are ground
 rev.main always ground result
 rev.rev ground if argument 1 is ground
@@ -72,7 +91,8 @@ ___
 If the analysis information should be used in an application implemented in Curry,
 the application program could use the CASS interface operations to start an analysis and 
 use the computed results for further processing. 
-For instance, CASS provides an operation
+For instance, CASS provides an operation (defined in the
+module `CASS.Server` of the package `cass`)
 
 ___
 ```curry
@@ -95,7 +115,8 @@ implemented in some language that does not have a direct interface to Curry,
 one can start CASS in a server mode. In this case, one can connect to
 CASS via some socket using a simple communication protocol that is specified
 in the documentation of CASS and also sketched below.
-The server mode of CASS is used in a recently developed Eclipse plug-in for Curry
+For instance, the server mode of CASS is used in an experimental
+Eclipse plug-in for Curry
 (see [this master thesis ](http://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/palkus.pdf)).
 
 The following figure shows some uses of CASS.
@@ -103,24 +124,19 @@ The following figure shows some uses of CASS.
 ![](/assets/img/tools/cass/cass-ecosystem-scrshots-big.png "Cass Ecosystem Screenshot")
 <!-- Pandoc generates adds a caption instead of an alt text when putting something in the [], using title instead -->
 
-:::
-</section>
-<section>
-:::md:max-w-3xl
-
-## Server Protocol
+### Server Protocol
 
 To start CASS in the server mode, execute the command
 
 ___
 ```sh
-curry analyze --server [ -p <port> ]
+cass --server [ -p <port> ]
 ```
 ___
 
 where an optional port number for the communication can be provided.
 Otherwise, a free port number is chosen and shown.
-In the server mode, it understands the following commands:
+In the server mode, CASS understands the following commands:
 
 ___
 ```sh
