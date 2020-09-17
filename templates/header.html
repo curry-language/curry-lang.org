@@ -14,8 +14,10 @@
         $for(header)$
           $for(link)$
             <a class="block hover:underline mt-4 mr-0 text-primary text-right md:inline-block md:mt-0 md:mr-4" href="$url$"
-               target="_blank"
-               rel="noopener noreferrer">$title$</a>
+               $if(internal)$$else$
+               target="_blank" rel="external noopener noreferrer"
+               $endif$
+            >$title$</a>
           $endfor$
         $endfor$
       </div>

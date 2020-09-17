@@ -21,6 +21,9 @@
   --char-color: hsl(196, 35%, 37%);
 }
 
+a[rel*="external"]::after {
+}
+
 body {
   min-width: 320px;
 }
