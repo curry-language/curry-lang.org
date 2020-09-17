@@ -98,6 +98,10 @@ body {
     width: calc(100% + 3rem);
 }
 
+.feature-outer {
+    max-width: 1950px;
+}
+
 .features-column {
   min-height: 225px;
   color: #fff;
@@ -216,6 +220,7 @@ body {
     .main-top {
         display: grid;
         grid-template-columns: repeat(2, auto);
+        /*max-width: 1950px;*/
     }
 }
 
@@ -228,5 +233,6 @@ body {
 @media (min-width: 1415px) {
     .features {
         grid-template-columns: repeat(4, 1fr);
+        /*max-width: 1950px;*/
     }
 }
