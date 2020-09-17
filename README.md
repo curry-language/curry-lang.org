@@ -139,11 +139,12 @@ In the main function there is a `match` expression for each set of identically p
 
 - External Link Rewrite Regex 
   - Find `\[\[\s*(\S*)\s*\|\s*(\S*)\s*\]\]`
-  - Replace `[$2]($1)`
+  - Replace `[$2]($1){rel="external noopener noreferrer"}`
   
 - Internal Links
   - manual
    - for links to wiki files (e.g. cass_longer.pdf) the file should be added to the assets and linked from there
+   - for links that should still point to the wiki `[title](link){rel="external noopener noreferrer"}` should be used
   
 - Images
  - manual

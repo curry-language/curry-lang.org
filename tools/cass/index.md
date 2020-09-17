@@ -117,7 +117,7 @@ CASS via some socket using a simple communication protocol that is specified
 in the documentation of CASS and also sketched below.
 For instance, the server mode of CASS is used in an experimental
 Eclipse plug-in for Curry
-(see [this master thesis ](http://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/palkus.pdf)).
+(see [this master thesis ](http://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/palkus.pdf){rel="external noopener noreferrer"}).
 
 The following figure shows some uses of CASS.
 
@@ -247,7 +247,7 @@ ___
 
 If you want try CASS on simple programs via a web interface,
 you can use the
-[Web Demo Installation of CASS](http://www-ps.informatik.uni-kiel.de/~mh/webcass/main.cgi).
+[Web Demo Installation of CASS](http://www-ps.informatik.uni-kiel.de/~mh/webcass/main.cgi){rel="external noopener noreferrer"}.
 
 :::
 </section>
@@ -259,10 +259,10 @@ you can use the
 More details about CASS and how to implement new analyses
 with CASS can be found in the following paper:
 
-**[A Modular and Generic Analysis Server System for Functional Logic Programs](http://www.informatik.uni-kiel.de/~mh/papers/PEPM14.html)**
+**[A Modular and Generic Analysis Server System for Functional Logic Programs](http://www.informatik.uni-kiel.de/~mh/papers/PEPM14.html){rel="external noopener noreferrer"}**
 (PEPM 2014, [longer version](/assets/files/tools/cass/cass_paper.pdf))
 
-A [previous version of this paper](http://www.informatik.uni-kiel.de/~mh/papers/CICLOPS13.html)
+A [previous version of this paper](http://www.informatik.uni-kiel.de/~mh/papers/CICLOPS13.html){rel="external noopener noreferrer"}
 has been presented at the
 13th International Colloquium on Implementation of Constraint and Logic Programming Systems
 (CICLOPS 2013).

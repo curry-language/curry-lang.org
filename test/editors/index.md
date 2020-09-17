@@ -21,11 +21,11 @@ to edit or highlight Curry programs.
 ## Emacs
 
 The distributions of the Curry systems
-[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/) and
-[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2)
+[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/){rel="external noopener noreferrer"} and
+[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2){rel="external noopener noreferrer"}
 contain (in the directory ''tools/emacs'') a Curry mode
 (adapted from a Haskell mode) for the editor
-[Emacs](http://www.gnu.org/software/emacs/).
+[Emacs](http://www.gnu.org/software/emacs/){rel="external noopener noreferrer"}.
 The installation and usage is described in the distributed
 ''README'' file.
 
@@ -36,7 +36,7 @@ The installation and usage is described in the distributed
 
 ## Kate
 
-The [Kate](http://kate-editor.org/) editor contains
+The [Kate](http://kate-editor.org/){rel="external noopener noreferrer"} editor contains
 syntax highlighting for Curry programs. This mode can be
 activated by Kate's download mechanism. To do this, start
 Kate and go to
@@ -64,7 +64,7 @@ installation to take effect.
 
 ## Atom 
 
-The [Atom](https://atom.io/) editor contains syntax highlighting and snippets
+The [Atom](https://atom.io/){rel="external noopener noreferrer"} editor contains syntax highlighting and snippets
 for Curry programs with the package ''language-curry''.
 To download the package, start Atom and navigate to
 
