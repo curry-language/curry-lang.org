@@ -102,11 +102,7 @@ body {
     max-width: 1950px;
 }
 
-.features-column {
-  color: #fff;
-}
-
-.eco-column {
+.features-column, .eco-column {
   color: #fff;
 }
 
