@@ -4,11 +4,11 @@
 import Control.Applicative (empty)
 import Control.Monad (forM)
 import Data.Bifunctor (first)
-import Data.Map (Map, empty, fromList, lookup, union)
+import Data.Map (union)
 import Data.List (isInfixOf)
 import Data.Monoid (mappend)
 import Hakyll
-import qualified Hakyll.Core.Item
+import qualified Hakyll.Core.Item ()
 import Hakyll.Core.Compiler.Internal (compilerTellDependencies)
 import Skylighting (defaultSyntaxMap)
 import Skylighting.Loader (loadSyntaxesFromDir)
@@ -134,12 +134,18 @@ defaultCompile ctx = do
         loadAndApplyTemplate "templates/default.html" templateCtx >>=
         relativizeUrls >>= markExternalLinks
 
+{-|
+  Assumes that the input item is html
+  Modifies all "a" tags where the href attribute is detected to contain an external url
+  -Add/Set    target attribute to _blank
+  -Add/Modify rel    attribute to contain external noopener noreferrer
+-}
 markExternalLinks :: Item String -> Compiler (Item String)
 markExternalLinks = return . fmap markExternalLinks'
-
-markExternalLinks' :: String -> String
-markExternalLinks' = withTags marker
   where
+    markExternalLinks' :: String -> String
+    markExternalLinks' = withTags marker
+
     marker :: TS.Tag String -> TS.Tag String
     marker tag = case tag of
         TS.TagOpen "a" attr -> TS.TagOpen "a" $ markerAttributes attr
@@ -147,22 +153,23 @@ markExternalLinks' = withTags marker
 
     getAttrId :: String -> [TS.Attribute String] -> Maybe String
     getAttrId _  []                 = Nothing
-    getAttrId id ((id', content):t) | id == id'
+    getAttrId attrId ((id', content):t) | attrId == id'
                                     = Just content
                                     | otherwise
-                                    = getAttrId id t
+                                    = getAttrId attrId t
 
     mapAttrId :: String ->  (String -> String) -> [TS.Attribute String] -> [TS.Attribute String]
-    mapAttrId id fun list = fmap (\attr@(id', content) -> if id == id' then (id', fun content) else attr) list
+    mapAttrId attrId fun = fmap (\attr@(id', content) -> if attrId == id' then (id', fun content) else attr)
 
-    {-| 
-      all internal urls are expected to be relative and normalized
-      therefor an internal url should not contain // 
-      external urls shpould contain // as part of the protocol specifier or be protocol relative
-      e.g.  https://uni-kiel.de  or //uni-kiel.de
+    {-|
+      internal urls should not contain // as they should just be a relative path
+      e.g. </tools/cass>, <../tools/cass> or <./cass>
+      external http/https urls should contain // as part of the protocol specific part
+      e.g.  <http://uni-kiel.de>, <https://uni-kiel.de>  or <//uni-kiel.de>
+      TODO should this be replaced by hakyll's `isExternal`?
     -}
-    isExternal :: String -> Bool
-    isExternal url = "//" `isInfixOf` url
+    isUrlExternal :: String -> Bool
+    isUrlExternal url = "//" `isInfixOf` url
 
     addElement :: String -> String -> String
     addElement element c = if  (' ' : element ++ " ") `isInfixOf` (' ' : c ++ " ") then c else element ++ ' ' : c
@@ -172,7 +179,7 @@ markExternalLinks' = withTags marker
       case getAttrId "href" attrs of
         Nothing -> attrs
         Just href ->
-          if isExternal href then
+          if isUrlExternal href then
             let
               -- make sure attributes rel and target exist
               attrs1 = case getAttrId "rel" attrs of
@@ -227,8 +234,8 @@ footerCtx = do
             "links"
             "link_groups/footer.desc"
             "link_groups/footer/*.desc"
-            (\capture ->
-                 fromGlob $ "link_groups/footer/" ++ capture ++ "/*.link")
+            (\captured ->
+                 fromGlob $ "link_groups/footer/" ++ captured ++ "/*.link")
             chronological
     return $ ctx `mappend` defaultContext
 
@@ -280,11 +287,11 @@ toolVersionsCtx name =
 itemMetaDataField :: Item a -> Context a
 itemMetaDataField i =
     Context $ \k _ _ -> do
-        let id = itemIdentifier i
+        let ident = itemIdentifier i
             empty' =
                 noResult $
-                "No '" ++ k ++ "' field in metadata " ++ "of item " ++ show id
-        value <- getMetadataField id k
+                "No '" ++ k ++ "' field in metadata " ++ "of item " ++ show ident
+        value <- getMetadataField ident k
         maybe empty' (return . StringField) value
 
 {-|
@@ -347,9 +354,9 @@ subGroupCtxWith context groupName subGroupName elementsName groupDescriptionPatt
             (\i -> do
                  let result = capture groupElementPattern $ itemIdentifier i
                  case result of
-                     Just [capture] ->
+                     Just [captured] ->
                          (\item -> return (i, item)) =<<
-                         sorting =<< loadAll (patternFactory capture)
+                         sorting =<< loadAll (patternFactory captured)
                      _ -> Control.Applicative.empty)
     let groupCtx = itemMetaDataField groupDesc
     let subGroupMap =
