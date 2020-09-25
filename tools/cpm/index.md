@@ -38,9 +38,9 @@ the same package.
 
 ## Available Packages
 
-There are more than [100 packages available](http://www-ps.informatik.uni-kiel.de/~cpm/){rel="external noopener noreferrer"}
+There are more than [100 packages available](http://www-ps.informatik.uni-kiel.de/~cpm/)
 (including more than 600 modules).
-There is a [table of all packages](http://www-ps.informatik.uni-kiel.de/~cpm/){rel="external noopener noreferrer"}
+There is a [table of all packages](http://www-ps.informatik.uni-kiel.de/~cpm/)
 with more detailed information (e.g., API documentation).
 These packages can immediately be downloaded or installed when CPM is installed (see below).
 
@@ -52,8 +52,8 @@ These packages can immediately be downloaded or installed when CPM is installed 
 ## Installing the Curry Package Manager
 
 CPM is already part of recent distributions of the Curry systems
-[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/){rel="external noopener noreferrer"} (Version 1.15.0 or higher) and
-[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2/){rel="external noopener noreferrer"} (Version 0.6.0 or higher).
+[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/) (Version 1.15.0 or higher) and
+[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2/) (Version 0.6.0 or higher).
 If you have some older version of PAKCS or KiCS2, you can also
 install CPM from its public repository.
 The installation requires that one of the Curry systems PAKCS or KiCS2
@@ -195,12 +195,12 @@ directory `src`, you can load it into your Curry system
 
 ## Manual and Further Documentation
 
-For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf){rel="external noopener noreferrer"}
+For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf)
 
 A detailed description about CPM and its implementation can be found
 in the following thesis:
 
-[A Package Manager for Curry (Jonas Oberschweiber, CAU Kiel, September 2016)](https://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/Oberschweiber.pdf){rel="external noopener noreferrer"}
+[A Package Manager for Curry (Jonas Oberschweiber, CAU Kiel, September 2016)](https://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/Oberschweiber.pdf)
 
 :::
 </section>

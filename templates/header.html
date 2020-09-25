@@ -13,11 +13,7 @@
       <div class="text-sm md:flex md:justify-end md:flex-grow">
         $for(header)$
           $for(link)$
-            <a class="block hover:underline mt-4 mr-0 text-primary text-right md:inline-block md:mt-0 md:mr-4" href="$url$"
-               $if(internal)$$else$
-               target="_blank" rel="external noopener noreferrer"
-               $endif$
-            >$title$</a>
+            <a class="block hover:underline mt-4 mr-0 text-primary text-right md:inline-block md:mt-0 md:mr-4" href="$url$">$title$</a>
           $endfor$
         $endfor$
       </div>

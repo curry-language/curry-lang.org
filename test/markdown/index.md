@@ -19,7 +19,7 @@ as a tar or zip file to
 
 ## Text with link
 
-For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf){rel="external noopener noreferrer"}
+For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf)
 
 ## Shell Code
 
@@ -72,7 +72,7 @@ as a tar or zip file to
 
 ## Text with link
 
-For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf){rel="external noopener noreferrer"}
+For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf)
 
 ## Shell Code
 

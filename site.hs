@@ -5,14 +5,17 @@ import Control.Applicative (empty)
 import Control.Monad (forM)
 import Data.Bifunctor (first)
 import Data.Map (Map, empty, fromList, lookup, union)
+import Data.List (isInfixOf)
 import Data.Monoid (mappend)
 import Hakyll
+import qualified Hakyll.Core.Item
 import Hakyll.Core.Compiler.Internal (compilerTellDependencies)
 import Skylighting (defaultSyntaxMap)
 import Skylighting.Loader (loadSyntaxesFromDir)
 import Skylighting.Types (SyntaxMap)
 import Text.Pandoc
 import Text.Pandoc.Highlighting
+import qualified Text.HTML.TagSoup as TS
 
 --------------------------------------------------------------------------------
 main :: IO ()
@@ -118,7 +121,7 @@ defaultCompileMarkdown ctx syntaxAdditions = do
             (pandocWriterOptions syntaxAdditions) >>=
         loadAndApplyTemplate "templates/markdown.html" ctx >>=
         loadAndApplyTemplate "templates/default.html" templateCtx >>=
-        relativizeUrls
+        relativizeUrls >>= markExternalLinks
 
 {-|
   The compiler pipeline used for most routs.
@@ -129,7 +132,61 @@ defaultCompile ctx = do
     templateCtx <- templateContext ctx
     getResourceBody >>= applyAsTemplate ctx >>=
         loadAndApplyTemplate "templates/default.html" templateCtx >>=
-        relativizeUrls
+        relativizeUrls >>= markExternalLinks
+
+markExternalLinks :: Item String -> Compiler (Item String)
+markExternalLinks = return . fmap markExternalLinks'
+
+markExternalLinks' :: String -> String
+markExternalLinks' = withTags marker
+  where
+    marker :: TS.Tag String -> TS.Tag String
+    marker tag = case tag of
+        TS.TagOpen "a" attr -> TS.TagOpen "a" $ markerAttributes attr
+        _                   -> tag
+
+    getAttrId :: String -> [TS.Attribute String] -> Maybe String
+    getAttrId _  []                 = Nothing
+    getAttrId id ((id', content):t) | id == id'
+                                    = Just content
+                                    | otherwise
+                                    = getAttrId id t
+
+    mapAttrId :: String ->  (String -> String) -> [TS.Attribute String] -> [TS.Attribute String]
+    mapAttrId id fun list = fmap (\attr@(id', content) -> if id == id' then (id', fun content) else attr) list
+
+    {-| 
+      all internal urls are expected to be relative and normalized
+      therefor an internal url should not contain // 
+      external urls shpould contain // as part of the protocol specifier or be protocol relative
+      e.g.  https://uni-kiel.de  or //uni-kiel.de
+    -}
+    isExternal :: String -> Bool
+    isExternal url = "//" `isInfixOf` url
+
+    addElement :: String -> String -> String
+    addElement element c = if  (' ' : element ++ " ") `isInfixOf` (' ' : c ++ " ") then c else element ++ ' ' : c
+
+    markerAttributes :: [TS.Attribute String] -> [TS.Attribute String]
+    markerAttributes attrs =
+      case getAttrId "href" attrs of
+        Nothing -> attrs
+        Just href ->
+          if isExternal href then
+            let
+              -- make sure attributes rel and target exist
+              attrs1 = case getAttrId "rel" attrs of
+                Nothing -> ("rel", "") : attrs
+                Just _  -> attrs
+              attrs2 = case getAttrId "target" attrs of
+                Nothing -> ("target", "") : attrs1
+                Just _  -> attrs1
+              -- adjust content of rel and target
+              attrs3 = mapAttrId "rel"    (addElement "external" . addElement "noopener" . addElement "noreferrer") attrs2
+              attrs4 = mapAttrId "target" (const "_blank") attrs3
+            in attrs4
+          else
+            attrs
 
 {-| 
 The context used by `defaultCompile` and `defaultCompileMarkdown`
