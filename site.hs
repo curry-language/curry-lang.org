@@ -7,6 +7,7 @@ import Data.Bifunctor (first)
 import Data.Map (union)
 import Data.List (isInfixOf)
 import Data.Monoid (mappend)
+import qualified Data.Text as T
 import Hakyll
 import qualified Hakyll.Core.Item ()
 import Hakyll.Core.Compiler.Internal (compilerTellDependencies)
@@ -27,9 +28,16 @@ main =
         match "assets/css/*" $ do
             route idRoute
             compile compressCssCompiler
-        match ("versions/**" .||. "learn_more/**" .||. "link_groups/**") $
+        match "data/**" $ do
             -- only used as metadata no routes needed
-            compile getResourceBody
+            -- the body (below the metadata section, delimited by --- ) is treated as markdown
+            withSyntaxAdditions <- loadSyntaxFromDir "data/syntax_definitions"
+            compile $ withSyntaxAdditions >>= (\syntaxAdditions ->
+                          getResourceBody >>=
+                          renderMarkdownWith defaultHakyllReaderOptions (pandocWriterOptions syntaxAdditions) >>=
+                          loadAndApplyTemplate "templates/markdown.html" defaultContext >>=
+                          relativizeUrls >>= markExternalLinks)
+
         match "downloads/*.html" $ do
             route idRoute
             compile $ do
@@ -47,15 +55,42 @@ main =
                         features `mappend` ecosystem `mappend` defaultContext
                 defaultCompile indexCtx
         match ("imprint/index.md" .||. "privacy/index.md") defaultMarkdownRules
+        match "papers/*.html" $ do
+          route idRoute
+          compile $ do
+            papers <- papersCtx
+            defaultCompile $ papers `mappend` defaultContext
         match "tools/**.md" defaultMarkdownRules
         match "test/**.md" defaultMarkdownRules
         match "test/**.html" defaultHtmlRules
         match "templates/**.html" $ compile templateBodyCompiler
         match "templates/**.md" $ do
-            withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
+            withSyntaxAdditions <- loadSyntaxFromDir "data/syntax_definitions"
             compile $ withSyntaxAdditions >>= templateCompileMarkdown
 
 --------------------------------------------------------------------------------
+{-|
+ copy of renderPandocWith but assumes Markdown instead of
+ using the file extension to determine the file type
+
+ Useful for when the file extension doesn't match what hakyll expects
+-}
+renderMarkdownWith :: ReaderOptions -> WriterOptions -> Item String -> Compiler (Item String)
+renderMarkdownWith ropt wopt item =
+  writePandocWith wopt <$> readMarkdownWith ropt item
+
+{-|
+ copy of readPandocWith but assumes Markdown instead of
+ using the file extension to determine the file type
+
+ Useful for when the file extension doesn't match what hakyll expects
+-}
+readMarkdownWith :: ReaderOptions -> Item String -> Compiler (Item Pandoc)
+readMarkdownWith ropt item =
+  case runPure $ traverse (readMarkdown ropt) (fmap T.pack item) of
+    Left err -> fail $ "Site: parse failed: " ++ show err
+    Right item' -> return item'
+
 {-|
  The rules usually used for .html files 
 -}
@@ -70,7 +105,7 @@ defaultHtmlRules = do
 defaultMarkdownRules :: Rules ()
 defaultMarkdownRules = do
     route $ setExtension "html"
-    withSyntaxAdditions <- loadSyntaxFromDir "syntax_definitions"
+    withSyntaxAdditions <- loadSyntaxFromDir "data/syntax_definitions"
     compile $ withSyntaxAdditions >>= defaultCompileMarkdown defaultContext
 
 {-|
@@ -217,8 +252,8 @@ headerCtx =
         defaultContext
         "header"
         "link"
-        "link_groups/header.desc"
-        "link_groups/header/*.link"
+        "data/link_groups/header.desc"
+        "data/link_groups/header/*.link"
         chronological
 
 {-|
@@ -232,12 +267,25 @@ footerCtx = do
             "footer_categories"
             "categorie"
             "links"
-            "link_groups/footer.desc"
-            "link_groups/footer/*.desc"
+            "data/link_groups/footer.desc"
+            "data/link_groups/footer/*.desc"
             (\captured ->
-                 fromGlob $ "link_groups/footer/" ++ captured ++ "/*.link")
+                 fromGlob $ "data/link_groups/footer/" ++ captured ++ "/*.link")
             chronological
     return $ ctx `mappend` defaultContext
+
+papersCtx :: Compiler (Context String)
+papersCtx = do
+  ctx <- subGroupCtxWith
+            defaultContext
+            "paper_categories"
+            "categorie"
+            "papers"
+            "data/papers/papers.main"
+            "data/papers/*.desc"
+            (\captured -> fromGlob $ "data/papers/" ++ captured ++ "/*.paper")
+            recentFirst
+  return $ ctx `mappend` defaultContext
 
 {-|
   Create the context for learn more section on the main page
@@ -249,8 +297,8 @@ learnMoreCtx :: String -> Compiler (Context String)
 learnMoreCtx name =
     let elementsName = "elements"
         descriptionPattern =
-            fromFilePath ("learn_more/" ++ name ++ "_desc.html")
-        elementPattern = fromGlob $ "learn_more/" ++ name ++ "/*.html"
+            fromFilePath ("data/learn_more/" ++ name ++ "_desc.html")
+        elementPattern = fromGlob $ "data/learn_more/" ++ name ++ "/*.html"
      in groupCtxWith
             defaultContext
             name
@@ -269,8 +317,8 @@ toolVersionsCtx :: String -> Compiler (Context String)
 toolVersionsCtx name =
     let elementsName = "versions"
         descriptionPattern =
-            fromFilePath ("versions/" ++ name ++ "_versions.html")
-        elementPattern = fromGlob $ "versions/" ++ name ++ "/*.version"
+            fromFilePath ("data/versions/" ++ name ++ "_versions.html")
+        elementPattern = fromGlob $ "data/versions/" ++ name ++ "/*.version"
      in groupCtxWith
             defaultContext
             name

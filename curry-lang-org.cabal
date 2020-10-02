@@ -12,5 +12,6 @@ executable site
                   , skylighting-core == 0.8.2.1
                   , skylighting      == 0.8.2.1
                   , tagsoup          == 0.14.8
+                  , text             == 1.*
   ghc-options:      -threaded
   default-language: Haskell2010

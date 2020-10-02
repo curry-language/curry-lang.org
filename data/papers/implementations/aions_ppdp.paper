@@ -1,0 +1,9 @@
+---
+title:    "An Implementation of Narrowing Strategies"
+citation: "(PPDP 2001)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/PPDP01.html"
+date:     2001-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes an implementation of the kernel of Curry
+by translating functional logic programs into imperative (Java) programs without an intermediate abstract machine.
+A central idea of this approach is the explicit representation and processing of narrowing computations as data objects.

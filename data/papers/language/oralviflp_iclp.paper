@@ -1,0 +1,10 @@
+---
+title:    "Overlapping Rules and Logic Variables in Functional Logic Programs"
+citation: "(ICLP 2006)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/ICLP06.html"
+date:     2006-01-01
+---
+This papers shows the equivalence of logic variables and
+nondeterministic operations in functional logic programs
+so that a kernel language need only to implement one of these features.
+This result is the basis of the KiCS implementation of Curry.

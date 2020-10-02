@@ -1,0 +1,9 @@
+---
+title:    "Programming with Narrowing: a Tutorial"
+citation: "(JSC 2010)"
+url:      "http://web.cecs.pdx.edu/~antoy/homepage/publications/narrowing/paper.pdf"
+date:     2010-05-01
+---
+This paper surveys the use of narrowing, i.e.,
+the operational principle of Curry,
+from a programmer viewpoint by means of examples.

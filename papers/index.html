@@ -1,0 +1,26 @@
+---
+title: Research Papers
+---
+$partial("templates/title_section.html")$
+
+<section class="slanted flex align-center justify-center px-6">
+    <div class="md:max-w-3xl">
+    Note: this is only a selection and, thus, always incomplete!
+    </div>
+</section>
+
+$for(paper_categories)$
+    $for(categorie)$
+        $partial("templates/title_section.html")$
+        <section class="slanted flex align-center justify-center px-6">
+            <div class="md:max-w-3xl">
+                $for(papers)$
+                    <p>
+                        <a class="underline" href="$url$">$title$</a> $citation$ <br />
+                        $body$
+                    </p> <br />
+                $endfor$
+            </div>
+        </section>
+    $endfor$
+$endfor$

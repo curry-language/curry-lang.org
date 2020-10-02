@@ -1,0 +1,7 @@
+---
+title:    "Evaluation Strategies for Functional Logic Programming"
+citation: "(JSC 2005)"
+url:      "http://web.cecs.pdx.edu/~antoy/homepage/publications/jsc/paper.pdf"
+date:     2005-01-01
+---
+This paper contains a survey on evaluation strategies and classes of functional logic programs.

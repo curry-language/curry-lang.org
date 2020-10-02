@@ -1,0 +1,9 @@
+---
+title:    "Operational Semantics for Declarative Multi-Paradigm Languages"
+citation: "(JSC 2005)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/JSC05.html"
+date:     2005-01-01
+---
+This paper describes an operational semantics
+covering most aspects of Curry, like laziness, sharing,
+concurrency, non-determinism etc.

@@ -56,57 +56,60 @@ It is also advisable to run `stack exec site check` to check for broken links.
 . project root
 |
 + .gitignore
-+ .gitlab-ci.yml               YAML file containing the Gitlab CI/CD configuration
-+ curry-lang-org.cabal         the cabal project file
-+ index.html                   contains index.html for /
-+ README.md                    this readme document
-+ site.hs                      the haskell source defining the routes and resource processing
-+ stack.yaml                   the stack project file 
-|
-+-- assets
-|     |
-|     +-- js                   contains .js files
-|     +-- css                  contains .css files
-|     +-- img                  contains images files
-|     +-- files                contains other asset files
-|
-+-- downloads                  contains the index.html for /downloads
-+-- imprint                    contains the index.md for /imprint
-+-- learn_more                 contains the files that are used to generate the Features 
-|     |                        and Ecosystem sections on the landingpage
-|     |
-|     +-- *_desc.html          one *_desc.html each defining the title 
-|     |                        and highlight color for each section
-|     |
-|     +--  ecosystem/features  one folder containing the definitions for 
-|                              the items of the corresponding section
-|
-+-- link_groups                contains the definitions for the generated header/footer links 
-|     |
-|     +-- footer               contains a definition for each footer group 
-|     |                        and a folder each for the link definitions of that group
-|     |
-|     +-- header               contains a definition for each header link
-|
-+-- privacy                    contains the index.md for /privacy
-+-- syntax_definition          contains the modified language definitions used by pandoc 
-|     |
-|     +-- curry.xml            modified version of the default kde curry language syntax definition 
-|                              used for syntax highlighting
-|
-+-- templates                  contains various templates
++ .gitlab-ci.yml                 YAML file containing the Gitlab CI/CD configuration
++ curry-lang-org.cabal           the cabal project file
++ index.html                     contains index.html for /
++ README.md                      this readme document
++ site.hs                        the haskell source defining the routes and resource processing
++ stack.yaml                     the stack project file 
+|                                  
++-- assets                         
+|   |                            
+|   +-- js                       contains .js files
+|   +-- css                      contains .css files
+|   +-- img                      contains images files
+|   +-- files                    contains other asset files
+|                                  
++-- downloads                    contains the index.html for /downloads
++-- imprint                      contains the index.md for /imprint
++-- data                         contains files not directly used as routes or templates
 |   |
-|   +-- code                   contains emmbedded code as markdown templates
+|   +-- learn_more               contains the files that are used to generate the Features 
+|   |   |                        and Ecosystem sections on the landingpage
+|   |   |
+|   |   +-- *_desc.html          one *_desc.html each defining the title 
+|   |   |                        and highlight color for each section
+|   |   |
+|   |   +--  ecosystem/features  one folder containing the definitions for 
+|   |                            the items of the corresponding section
+|   |
+|   +-- link_groups              contains the definitions for the generated header/footer links 
+|   |   |
+|   |   +-- footer               contains a definition for each footer group 
+|   |   |                        and a folder each for the link definitions of that group
+|   |   |
+|   |   +-- header               contains a definition for each header link
+|   |
+|   +-- syntax_definition        contains the modified language definitions used by pandoc 
+|   |  |
+|   |  +-- curry.xml             modified version of the default kde curry language syntax definition 
+|   |                            used for syntax highlighting
+|   |
+|   +-- versions                 contains one *_versions.html file 
+|       |                        and folder for each table on the downloads page
+|       |
+|       +-- *_version.html       description for a table on the downloads page
+|       +-- kics2/pakcs          version entries for the download page for each table respectively  
 |
-+-- test                       contains the source for experimental and test pages under /test
-|
-+-- tools                      contains the source for the pages under /tools
-|
-+-- versions                   contains one *_versions.html file 
-      |                        and folder for each table on the downloads page
-      |
-      +-- *_version.html       description for a table on the downloads page
-      +-- kics2/pakcs          version entries for the download page for each table respectively   
++-- privacy                      contains the index.md for /privacy
+|                               
++-- templates                    contains various templates
+|   |                           
+|   +-- code                     contains emmbedded code as markdown templates
+|                               
++-- test                         contains the source for experimental and test pages under /test
+|                               
++-- tools                        contains the source for the pages under /tools 
 ```
 
 ### Code Structure

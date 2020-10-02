@@ -1,0 +1,8 @@
+---
+title:    "Search Strategies for Functional Logic Programming"
+citation: "(ATPS 2012)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/ATPS12.html"
+date:     2012-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes the features of KiCS2 for encapsulated search and
+the implementation of various search strategies and compares their efficiency by some benchmarks.

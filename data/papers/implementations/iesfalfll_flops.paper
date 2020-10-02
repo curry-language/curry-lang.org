@@ -1,0 +1,8 @@
+---
+title:    "Implementing Encapsulated Search for a Lazy Functional Logic Language"
+citation: "(FLOPS 1999)"
+url:      "http://dx.doi.org/10.1007/10705424_7"
+date:     1999-01-03 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes an abstract machine for the implementation of Curry and its features for encapsulating search.
+This is the basis of a Curry implementation which can be found [here](http://danae.uni-muenster.de/curry/).

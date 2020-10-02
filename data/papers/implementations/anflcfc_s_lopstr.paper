@@ -1,0 +1,7 @@
+---
+title:    "A New Functional-Logic Compiler for Curry: Sprite"
+citation: "(LOPSTR 2016)"
+url:      "https://arxiv.org/abs/1608.04016"
+date:     2016-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes a new native code compiler for Curry which implements a fair evaluation of non-deterministic branches in a computation.

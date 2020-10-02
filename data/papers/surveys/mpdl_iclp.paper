@@ -1,0 +1,8 @@
+---
+title:    "Multi-paradigm Declarative Languages"
+citation: "(ICLP 2007)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/ICLP07.html"
+date:     2007-01-01
+---
+This papers surveys general features of functional logic languages
+and discusses the design of Curry.

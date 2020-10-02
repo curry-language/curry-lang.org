@@ -1,0 +1,7 @@
+---
+title:    "Implementing Equational Constraints in a Functional Language"
+citation: "(PADL 2013)"
+url:      "http://dx.doi.org/10.1007/978-3-642-45284-0_9"
+date:     2013-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes the implementation of equational constraints and functional patterns in KiCS2.

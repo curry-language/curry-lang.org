@@ -1,0 +1,8 @@
+---
+title:    "Optimal Non-Deterministic Functional Logic Computations"
+citation: "(ALP 1997)"
+#old broken link: "ftp://ftp.cs.pdx.edu/pub/faculty/antoy/Non-Determ.ps.Z"
+url:      "https://dl.acm.org/doi/proceedings/10.5555/647709"
+date:     1997-09-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper motivates the use of non-deterministic functions in Curry and proposes an optimal evaluation strategy.

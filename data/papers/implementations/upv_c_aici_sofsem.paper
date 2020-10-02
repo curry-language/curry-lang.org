@@ -1,0 +1,9 @@
+---
+title:    "UPV-Curry: An Incremental Curry Interpreter"
+citation: "(SOFSEM 1999)"
+url:      "http://www.dsic.upv.es/users/elp/papers.html#ael99"
+date:     1999-01-02 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes the ideas of the Curry interpreter developed at the Technical University of Valencia.
+<!-- An implementation is available [here](http://www.dsic.upv.es/users/elp/upv-curry/). -->
+An implementation is available [here](https://web.archive.org/web/20021231113339/http://www.dsic.upv.es:80/users/elp/upv-curry/).

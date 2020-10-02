@@ -1,0 +1,8 @@
+---
+title:    "An Efficient Abstract Machine for Curry"
+citation: "(ATPS 1999)"
+url:      "http://dx.doi.org/10.1007/978-3-662-01069-3_58"
+date:     1999-01-04 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes an abstract machine for the implementation of Curry.
+The abstract machine is an extension of a stack-based graph reduction machine and is implemented in C.

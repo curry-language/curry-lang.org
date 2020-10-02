@@ -1,0 +1,8 @@
+---
+title:    "Functional Logic Programming: From Theory to Curry"
+citation: "(Programming Logics - Essays in Memory of Harald Ganzinger)"
+url:      "http://dx.doi.org/10.1007/978-3-642-37651-1_6"
+date:     2013-01-01
+---
+This papers surveys general features of functional logic languages,
+and discusses the design, implementation, extensions, and applications of Curry.

@@ -1,0 +1,7 @@
+---
+title:    "Example Title"
+citation: "(EXAMPLE 1970)"
+url:      "https://broken.example.com"
+date:     1970-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This is an [example](https://de.wiktionary.org/wiki/example "Example Wiktionary Article") description.
