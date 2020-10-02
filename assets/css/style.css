@@ -21,7 +21,11 @@
   --char-color: hsl(196, 35%, 37%);
 }
 
-a[rel*="external"]::after {
+a[rel*="external"]:hover::after {
+    content: "\01f30d" /* 🌍 */;
+    position: absolute;
+    display: inline;
+    font-size: smaller;
 }
 
 body {
