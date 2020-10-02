@@ -1,0 +1,7 @@
+---
+date: 99999-12-31
+version: Latest
+source: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.1-src.tar.gz
+linux:  https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.1-amd64-Linux.tar.gz
+manual: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-2.2.1-manual.pdf
+---

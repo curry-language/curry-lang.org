@@ -33,10 +33,10 @@ main =
         match "downloads/*.html" $ do
             route idRoute
             compile $ do
-                packs <- toolVersionsCtx "packs"
+                pakcs <- toolVersionsCtx "pakcs"
                 kics2 <- toolVersionsCtx "kics2"
                 let downloadsCtx =
-                        packs `mappend` kics2 `mappend` defaultContext
+                        pakcs `mappend` kics2 `mappend` defaultContext
                 defaultCompile downloadsCtx
         match "index.html" $ do
             route idRoute
