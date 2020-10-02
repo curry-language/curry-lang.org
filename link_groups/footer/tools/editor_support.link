@@ -1,5 +1,6 @@
 ---
 title: Editor Support
-url: https://www-ps.informatik.uni-kiel.de/currywiki/tools/editors/
-date: 1970-01-01 # used for the page order (chronologically)
+url:   https://www-ps.informatik.uni-kiel.de/currywiki/tools/editors/
+date:  1970-01-01 # used for the page order (chronologically)
+desc:  Instruction on how to enable Curry Support in some Editors
 ---

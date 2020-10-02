@@ -117,7 +117,7 @@ CASS via some socket using a simple communication protocol that is specified
 in the documentation of CASS and also sketched below.
 For instance, the server mode of CASS is used in an experimental
 Eclipse plug-in for Curry
-(see [this master thesis ](http://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/palkus.pdf)).
+(see [this master thesis](http://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/palkus.pdf "An Eclipse-Based Integrated Development Environment for Curry")).
 
 The following figure shows some uses of CASS.
 

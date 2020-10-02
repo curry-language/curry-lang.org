@@ -13,7 +13,7 @@
       <div class="text-sm md:flex md:justify-end md:flex-grow">
         $for(header)$
           $for(link)$
-            <a class="block hover:underline mt-4 mr-0 text-primary text-right md:inline-block md:mt-0 md:mr-4" href="$url$">$title$</a>
+            <a class="block hover:underline mt-4 mr-0 text-primary text-right md:inline-block md:mt-0 md:mr-4"$if(desc)$ title="$desc$"$endif$ href="$url$">$title$</a>
           $endfor$
         $endfor$
       </div>

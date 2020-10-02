@@ -1,5 +1,6 @@
 ---
 title: Spicey
-url: https://www.informatik.uni-kiel.de/~pakcs/spicey/
-date: 1970-01-04 # used for the page order (chronologically)
+url:   https://www.informatik.uni-kiel.de/~pakcs/spicey/
+date:  1970-01-04 # used for the page order (chronologically)
+desc:  An ER-based Web Framework for Curry
 ---

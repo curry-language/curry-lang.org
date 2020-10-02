@@ -7,7 +7,7 @@
             <h2 class="text-center md:text-left font-bold text-lg">$title$</h2>
             $for(links)$
               <li class="flex justify-center md:justify-start">
-                <a class="text-sm hover:underline" href="$url$">$title$</a>
+                <a class="text-sm hover:underline"$if(desc)$ title="$desc$"$endif$ href="$url$">$title$</a>
               </li>
             $endfor$
           </ul>
