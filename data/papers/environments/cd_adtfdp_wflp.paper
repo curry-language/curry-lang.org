@@ -1,0 +1,9 @@
+---
+title:    "CurryDoc: A Documentation Tool for Declarative Programs"
+citation: "(WFLP 2002)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/WFLP02_Doc.html"
+date:     2002-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper presents CurryDoc,
+a tool for the automatic generation of documentation manuals in HTML format
+from Curry programs.

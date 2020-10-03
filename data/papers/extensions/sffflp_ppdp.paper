@@ -1,0 +1,11 @@
+---
+title:    "Set Functions for Functional Logic Programming"
+citation: "(PPDP 2009)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/PPDP09.html"
+date:     2009-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper proposes set functions as a new feature
+to encapsulate nondeterministic computations in Curry.
+In contrast to previous approaches,
+the result of set functions is independent of their evaluation order.
+Thus, they can be considered as a declarative approach to encapsulate search.

@@ -1,0 +1,11 @@
+---
+title:    "Default Rules for Curry"
+citation: "(TPLP 2017)"
+url:      "http://doi.org/10.1017/S1471068416000168"
+date:     2017-03-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper proposes a new concept of default rules for Curry
+that simplifies some computation tasks and is conform with the core properties of Curry.
+Default rules are integrated with a preprocessor in the Curry implementations
+[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System") and
+[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2 "Kiel Curry System").

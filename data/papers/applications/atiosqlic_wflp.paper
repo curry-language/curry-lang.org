@@ -1,0 +1,10 @@
+---
+title:    "A Typeful Integration of SQL into Curry"
+citation: "(WFLP 2016)"
+url:      "http://dx.doi.org/10.4204/EPTCS.234.8"
+date:     2016-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes the integration of SQL queries
+in Curry programs in a type-safe manner,
+based on a logical description of the relational database
+as an entity-relationship (ER) model.

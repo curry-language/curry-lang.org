@@ -1,0 +1,9 @@
+---
+title:    "Using an Abstract Representation to Specialize Functional Logic Programs"
+citation: "(LPAR 2000)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/LPAR00.html"
+date:     2000-01-02 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes a new approach to the partial evaluation of Curry programs.
+The partial evaluator based on these ideas is implemented in Curry itself
+and is available [here](http://www.dsic.upv.es/users/elp/peval/peval.html).

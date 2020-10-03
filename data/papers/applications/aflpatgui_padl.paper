@@ -1,0 +1,10 @@
+---
+title:    "A Functional Logic Programming Approach to Graphical User Interfaces"
+citation: "(PADL 2000)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/PADL00.html"
+date:     2000-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes the design of a library for GUI programming in Curry.
+The functional features are exploited to define the layout
+and to define new graphical abstractions,
+and the logic features are used to specify the logical dependencies of an interface.

@@ -1,0 +1,13 @@
+---
+title:    "Declarative Programming with Function Patterns"
+citation: "(LOPSTR 2005)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/LOPSTR05.html"
+date:     2005-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper proposes an extension of Curry
+that allows the definition of operations with patterns
+containing other defined operation symbols.
+Such “function patterns” allow a direct representation of specifications as declarative programs,
+provide better abstractions of patterns as first-class objects,
+and support the high-level programming of queries
+and transformation of complex structures.

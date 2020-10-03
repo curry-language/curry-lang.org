@@ -1,0 +1,16 @@
+---
+title:    "An Object-Oriented Extension of the Declarative Multi-Paradigm Language Curry"
+citation: "(IFL 2000)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/IFL00.html"
+date:     2000-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes ObjectCurry,
+an extension of Curry to support a classical object-oriented programming style.
+ObjectCurry supports the definition of templates
+and the dynamic creation of objects, i.e., instances of templates.
+Objects owns a state and react when they receive a message.
+Template definitions can be reused by inheritance.
+Although ObjectCurry has a specific type system that
+combines parametric polymorphism with subtype polymorphism,
+each ObjectCurry program can be translated into a standard Curry program
+so that ObjectCurry can be implemented as a preprocessor for a standard Curry system.

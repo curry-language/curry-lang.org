@@ -1,0 +1,8 @@
+---
+title:    "Demand-driven Search in Functional Logic Programs"
+citation: ""
+url:      "http://www.informatik.uni-kiel.de/~mh/publications/reports/LIFO-98-08.html"
+date:     1998-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper shows the advantages of Curry to implement demand-driven search strategies.
+Moreover, it demonstrates these advantages by an application from the area of music composition.

@@ -1,0 +1,11 @@
+---
+title:    "Declarative Programming of User Interfaces"
+citation: "(PADL 2009)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/PADL09.html"
+date:     2009-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper shows how the features of Curry can be exploited
+to define user interfaces in a declarative manner
+so that graphical user interfaces for desktop applications
+as well as web user interfaces can be obtained from
+the same user interface specification.

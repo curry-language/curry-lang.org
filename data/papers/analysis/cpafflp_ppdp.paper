@@ -1,0 +1,8 @@
+---
+title:    "Call Pattern Analysis for Functional Logic Programs"
+citation: "(PPDP 2008)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/PPDP08.html"
+date:     2008-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper presents a new program analysis framework to approximate call patterns
+and their results in functional logic programs.

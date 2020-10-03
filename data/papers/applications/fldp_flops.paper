@@ -1,0 +1,8 @@
+---
+title:    "Functional Logic Design Patterns"
+citation: "(FLOPS 2002)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/FLOPS02.html"
+date:     2002-01-02 # used for sorting, most recent first, should usually match the papers date
+---
+This paper introduces a handful of software design patterns
+that are useful for programming in Curry.

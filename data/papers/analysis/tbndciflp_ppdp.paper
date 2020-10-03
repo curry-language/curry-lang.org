@@ -1,0 +1,8 @@
+---
+title:    "Type-based Nondeterminism Checking in Functional Logic Programs"
+citation: "(PPDP 2000)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/PPDP00.html"
+date:     2000-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes a method to analyse
+the non-determinism behavior of Curry programs.

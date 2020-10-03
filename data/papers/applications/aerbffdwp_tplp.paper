@@ -1,0 +1,12 @@
+---
+title:    "An ER-based Framework for Declarative Web Programming"
+citation: "(TPLP 2014)"
+url:      "http://dx.doi.org/10.1017/S1471068412000385"
+date:     2014-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes a framework to generate web applications from
+an entity-relationship (ER) model of the underlying data.
+The generated implementation contains operations to create
+and manipulate entities of the data model, supports authentication,
+authorization, session handling, and the composition of individual operations to user processes.
+Furthermore, the implementation ensures the integrity of the database after update operations.

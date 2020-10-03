@@ -1,0 +1,7 @@
+---
+title:    "Programming Autonomous Robots in Curry"
+citation: "(WFLP 2002)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/WFLP02_Robot.html"
+date:     2002-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper resent a framework to program autonomous robots in Curry.

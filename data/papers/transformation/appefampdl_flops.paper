@@ -1,0 +1,9 @@
+---
+title:    "A Practical Partial Evaluator for a Multi-Paradigm Declarative Language"
+citation: "(FLOPS 2001)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/FLOPS01.html"
+date:     2001-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes an approach to the partial evaluation of arbitrary Curry programs.
+In particular, it addresses the partial evaluation of all standard features like external functions, higher-order functions, concurrency etc.
+The partial evaluator based on these ideas is implemented in Curry itself and is available [here](http://www.dsic.upv.es/users/elp/peval/peval.html).

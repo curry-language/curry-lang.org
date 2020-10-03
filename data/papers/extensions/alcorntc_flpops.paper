@@ -1,0 +1,9 @@
+---
+title:    "Adding Linear Constraints over Real Numbers to Curry"
+citation: "(FLPOPS 2001)"
+url:      "http://dx.doi.org/10.1007/3-540-44716-4_12"
+date:     2001-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes an approach to extend Curry
+by the possibility to specify linear constraints over real numbers in Curry
+that are processed by a specific constraint solving algorithm.

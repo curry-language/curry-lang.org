@@ -1,0 +1,12 @@
+---
+title:    "From Boolean Equalities to Constraints"
+citation: "(LOPSTR 2015)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/LOPSTR15.html"
+date:     2015-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes an automatic method
+to transform Boolean equalities into constraint equalities,
+if possible.
+With this transformation tool,
+it is sufficient to use only Boolean equalities in Curry programs,
+since operationally more efficient constraints are automatically inserted.

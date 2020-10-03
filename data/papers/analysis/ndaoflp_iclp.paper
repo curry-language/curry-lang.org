@@ -1,0 +1,8 @@
+---
+title:    "Nondeterminism Analysis of Functional Logic Programs"
+citation: "(ICLP 2005)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/ICLP05.html"
+date:     2005-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper presents a method to analyse the non-determinism behavior
+of Curry programs based on a type inferences for nonstandard types.

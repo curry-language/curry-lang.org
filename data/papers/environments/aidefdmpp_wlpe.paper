@@ -1,0 +1,11 @@
+---
+title:    "An Integrated Development Environment for Declarative Multi-Paradigm Programming"
+citation: "(WLPE 2001)"
+url:      "http://www.informatik.uni-kiel.de/~mh/papers/WLPE01.html"
+date:     2001-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes CIDER,
+a graphical programming and development environment for Curry
+and other declarative programming languages.
+CIDER is intended as a platform to integrate various tools for analyzing
+and debugging Curry programs.

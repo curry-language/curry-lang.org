@@ -1,0 +1,8 @@
+---
+title:    "Improving Functional Logic Programs by Difference-Lists"
+citation: "(ASIAN 2000)"
+url:      "http://www.informatik.uni-kiel.de/~fst/research/asian2000/asian2000abstract.html"
+date:     2000-01-01 # used for sorting, most recent first, should usually match the papers date
+---
+This paper describes an approach to optimize Curry programs
+by a stepwise transformation based on difference lists as used in logic programming.
