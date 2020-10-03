@@ -1,0 +1,8 @@
+---
+title:    "Free Theorems for Functional Logic Programs"
+citation: "(PLPV 2010)"
+#old broken link: "http://www.iai.uni-bonn.de/~jv/FTForCurry.pdf"
+url:      "https://doi.org/10.1145/1707790.1707797"
+date:     2010-01-01
+---
+An example driven investigation of the restrictions of free theorems in Curry.

@@ -1,7 +1,8 @@
 ---
 title:    "Incremental Needed Narrowing"
 citation: "(IDL 1999)"
-url:      "http://www.dsic.upv.es/users/elp/papers.html#ael-idl99"
+#old broken link: "http://www.dsic.upv.es/users/elp/papers.html#ael-idl99"
+url:      "https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.22.3510"
 date:     1999-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper contains the correctness proof of the incremental narrowing algorithm described in the previous paper.
