@@ -32,6 +32,12 @@ body {
   min-width: 320px;
 }
 
+.anchor {
+    visibility: hidden;
+    padding-top: 4rem;
+    margin-top: -4rem;
+}
+
 .bg-blue,
 .hover\:bg-blue:hover {
   background-color: var(--curry-blue-color);

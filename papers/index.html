@@ -5,12 +5,23 @@ $partial("templates/title_section.html")$
 
 <section class="slanted flex align-center justify-center px-6">
     <div class="md:max-w-3xl">
-    Note: this is only a selection and, thus, always incomplete!
+        <h2 class="text-primary text-xl font-semibold "  >Sections:</h2>
+        $for(paper_categories)$
+            $for(categorie)$
+            <ul>
+                <li>
+                    <a class="rounded-lg text-primary mx-auto hover:bg-primary hover:text-white px-2 py-1" href="#cartegory_$title$">$title$</a>
+                </li>
+            </ul>
+            $endfor$
+        $endfor$
+        Note: this is only a selection and, thus, always incomplete!
     </div>
 </section>
 
 $for(paper_categories)$
     $for(categorie)$
+        <div class="anchor" id="cartegory_$title$"></div>
         $partial("templates/title_section.html")$
         <section class="slanted flex align-center justify-center px-6">
             <div class="md:max-w-3xl">
