@@ -7,13 +7,13 @@ $partial("templates/title_section.html")$
     <div class="md:max-w-3xl">
         <h2 class="text-primary text-xl font-semibold">Sections:</h2>
         $for(paper_categories)$
-            $for(categorie)$
             <ul>
+            $for(categorie)$
                 <li>
                     <a class="rounded-lg text-primary mx-auto hover:bg-primary hover:text-white px-2 py-1" href="#cartegory_$title$">$title$</a>
                 </li>
-            </ul>
             $endfor$
+            </ul>
         $endfor$
         Note: this is only a selection and, thus, always incomplete!
     </div>
