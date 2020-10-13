@@ -18,5 +18,8 @@ at Kiel University.
 For further information, see the
 [imprint of Kiel University](https://www.uni-kiel.de/en/imprint).
 
+If you want to add or correct something in these web pages,
+please write to `www AT curry-lang.org`.
+
 :::
 </section>

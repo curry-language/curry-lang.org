@@ -5,7 +5,7 @@ $partial("templates/title_section.html")$
 
 <section class="slanted flex align-center justify-center px-6">
     <div class="md:max-w-3xl">
-        <h2 class="text-primary text-xl font-semibold">Sections:</h2>
+        <h2 class="text-primary text-xl font-semibold">Categories:</h2>
         $for(paper_categories)$
             <ul>
             $for(categorie)$
@@ -15,7 +15,12 @@ $partial("templates/title_section.html")$
             $endfor$
             </ul>
         $endfor$
-        Note: this is only a selection and, thus, always incomplete!
+        <p>
+          Note: this is only a selection of the numerous papers related
+          to Curry and, thus, always incomplete!
+          If you have some paper to add, please write to us
+          (see <a class="underline" href="/imprint">imprint</a>).
+        </p>
     </div>
 </section>
 
