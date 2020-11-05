@@ -61,6 +61,7 @@ check_links:
         artifacts: true
     script:
       - ./bin/site check
+    retry: 2 # job is susceptible to network failure, retry up to two times on failure
     cache: {}
 
 .deploy:
