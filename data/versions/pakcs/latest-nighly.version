@@ -1,11 +1,11 @@
 ---
-date: 2020-11-29
-version: Latest Nightly 25ce767d (29/11/20)
-source: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4018/artifacts/raw/pakcs-2.3.0-src.tar.gz
-linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4018/artifacts/raw/pakcs-2.3.0-amd64-Linux.tar.gz
-manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4016/artifacts/raw/docs/Manual.pdf
+date: 2020-11-30
+version: Latest Nightly 25ce767d (30/11/20)
+source: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4036/artifacts/raw/pakcs-2.3.0-src.tar.gz
+linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4036/artifacts/raw/pakcs-2.3.0-amd64-Linux.tar.gz
+manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4034/artifacts/raw/docs/Manual.pdf
 commit_sha: 25ce767d8dc704d4715bf0aea65f9e3a5f8ff871
 commit_short_sha: 25ce767d
-ci_job: 4020
-pipeline_url: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/pipelines/946
+ci_job: 4038
+pipeline_url: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/pipelines/951
 ---
