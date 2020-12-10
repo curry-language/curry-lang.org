@@ -26,7 +26,7 @@ build_haskell:
     - stack install --system-ghc --only-dependencies
   script:
     - stack install --system-ghc --local-bin-path ./bin
-    - du -hcs .stack-work/ .stack-root/
+    - du -hcs .stack-work/ .stack-root/ || true
   artifacts:
     paths:
       - ./bin
