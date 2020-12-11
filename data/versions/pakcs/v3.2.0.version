@@ -1,0 +1,7 @@
+---
+date: 2020-11-30
+version: v3.2.0 (30/11/20, with class 'Data')
+source: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.2.0-src.tar.gz
+linux:  https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.2.0-amd64-Linux.tar.gz
+manual: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.2.0-manual.pdf
+---
