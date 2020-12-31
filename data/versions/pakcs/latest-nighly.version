@@ -3,11 +3,11 @@
 # MANUAL CHANGES TO THIS FILE WILL GET LOST ON THE NEXT NIGHTLY RUN
 date: 2020-12-31
 version: Latest Nightly 931b3c0c (31/12/20)
-source: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4948/artifacts/raw/pakcs-3.3.0-src.tar.gz
-linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4948/artifacts/raw/pakcs-3.3.0-amd64-Linux.tar.gz
-manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4947/artifacts/raw/docs/Manual.pdf
+source: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4967/artifacts/raw/pakcs-3.3.0-src.tar.gz
+linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4967/artifacts/raw/pakcs-3.3.0-amd64-Linux.tar.gz
+manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/4966/artifacts/raw/docs/Manual.pdf
 commit_sha: 931b3c0cf621c4e22efae99cf652238ff1cd6e64
 commit_short_sha: 931b3c0c
-ci_job: 4950
-pipeline_url: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/pipelines/1205
+ci_job: 4969
+pipeline_url: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/pipelines/1210
 ---
