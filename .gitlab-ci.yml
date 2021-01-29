@@ -62,6 +62,7 @@ check_links:
     script:
       - ./bin/site check
     retry: 2 # job is susceptible to network failure, retry up to two times on failure
+    allow_failure: true
     cache: {}
 
 .deploy:
