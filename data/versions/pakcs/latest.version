@@ -1,13 +1,7 @@
 ---
-# THIS FILE IS GENERATED AUTOMATICALLY BY THE PACKS RELEASE PIPELINE
-# MANUAL CHANGES TO THIS FILE WILL GET LOST ON THE NEXT RELEASE RUN
-date: 2021-02-04
+date: 2021-02-15
 version: Latest
-source: https://git.ps.informatik.uni-kiel.de/curry/pakcs//downloads/pakcs-3.3.0-src.tar.gz
-linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs//downloads/pakcs-3.3.0-amd64-Linux.tar.gz
-manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs//downloads/pakcs-3.3.0-manual.pdf
-commit_sha: 30a61f23418f5743a557a6882f5b4e7b59faaa48
-commit_short_sha: 30a61f23
-ci_job: 5676
-pipeline_url: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/pipelines/1411
+source: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.3.0-src.tar.gz
+linux:  https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.3.0-amd64-Linux.tar.gz
+manual: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.3.0-manual.pdf
 ---
