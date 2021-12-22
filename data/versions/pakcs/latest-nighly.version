@@ -1,13 +1,13 @@
 ---
 # THIS FILE IS GENERATED AUTOMATICALLY BY THE PACKS NIGHTLY PIPELINE
 # MANUAL CHANGES TO THIS FILE WILL GET LOST ON THE NEXT NIGHTLY RUN
-date: 2021-12-21
-version: Latest Nightly ec507c43 (21/12/21)
-source: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/12349/artifacts/raw/pakcs-3.4.2-src.tar.gz
-linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/12349/artifacts/raw/pakcs-3.4.2-amd64-Linux.tar.gz
-manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/12348/artifacts/raw/docs/Manual.pdf
+date: 2021-12-22
+version: Latest Nightly ec507c43 (22/12/21)
+source: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/12370/artifacts/raw/pakcs-3.4.2-src.tar.gz
+linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/12370/artifacts/raw/pakcs-3.4.2-amd64-Linux.tar.gz
+manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/jobs/12369/artifacts/raw/docs/Manual.pdf
 commit_sha: ec507c43af2888c125b22c06dee2faafa3143254
 commit_short_sha: ec507c43
-ci_job: 12351
-pipeline_url: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/pipelines/3307
+ci_job: 12372
+pipeline_url: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/pipelines/3312
 ---
