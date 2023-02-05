@@ -38,9 +38,9 @@ the same package.
 
 ## Available Packages
 
-There are more than [100 packages available](http://www-ps.informatik.uni-kiel.de/~cpm/)
+There are more than [130 packages available](https://www-ps.informatik.uni-kiel.de/~cpm/)
 (including more than 600 modules).
-There is a [table of all packages](http://www-ps.informatik.uni-kiel.de/~cpm/)
+There is a [table of all packages](https://www-ps.informatik.uni-kiel.de/~cpm/)
 with more detailed information (e.g., API documentation).
 These packages can immediately be downloaded or installed when CPM is installed (see below).
 
@@ -52,8 +52,10 @@ These packages can immediately be downloaded or installed when CPM is installed 
 ## Installing the Curry Package Manager
 
 CPM is already part of recent distributions of the Curry systems
-[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/) (Version 1.15.0 or higher) and
-[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2/) (Version 0.6.0 or higher).
+[PAKCS](https://www.informatik.uni-kiel.de/~pakcs/) (Version 1.15.0 or higher),
+[KiCS2](https://www-ps.informatik.uni-kiel.de/kics2/) (Version 0.6.0 or higher),
+and
+[Curry2Go(https://www-ps.informatik.uni-kiel.de/curry2go/).
 If you have some older version of PAKCS or KiCS2, you can also
 install CPM from its public repository.
 The installation requires that one of the Curry systems PAKCS or KiCS2
