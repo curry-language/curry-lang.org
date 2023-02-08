@@ -55,7 +55,7 @@ CPM is already part of recent distributions of the Curry systems
 [PAKCS](https://www.informatik.uni-kiel.de/~pakcs/) (Version 1.15.0 or higher),
 [KiCS2](https://www-ps.informatik.uni-kiel.de/kics2/) (Version 0.6.0 or higher),
 and
-[Curry2Go(https://www-ps.informatik.uni-kiel.de/curry2go/).
+[Curry2Go](https://www-ps.informatik.uni-kiel.de/curry2go/).
 If you have some older version of PAKCS or KiCS2, you can also
 install CPM from its public repository.
 The installation requires that one of the Curry systems PAKCS or KiCS2
