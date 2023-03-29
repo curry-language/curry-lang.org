@@ -38,9 +38,9 @@ the same package.
 
 ## Available Packages
 
-There are more than [130 packages available](https://cpm.informatik.uni-kiel.de/)
+There are more than [130 packages available](https://cpm.curry-lang.org/)
 (including more than 600 modules).
-There is a [table of all packages](https://cpm.informatik.uni-kiel.de/)
+There is a [table of all packages](https://cpm.curry-lang.org/)
 with more detailed information (e.g., API documentation).
 These packages can immediately be downloaded or installed when CPM is installed (see below).
 
@@ -198,7 +198,7 @@ directory `src`, you can load it into your Curry system
 ## Manual and Further Documentation
 
 For further information, look into the
-[manual of CPM](https://cpm.informatik.uni-kiel.de/DOC/cpm-3.1.0/manual.pdf)
+[manual of CPM](https://cpm.curry-lang.org/DOC/cpm-3.1.0/manual.pdf)
 
 A detailed description about CPM and its implementation can be found
 in the following thesis:
