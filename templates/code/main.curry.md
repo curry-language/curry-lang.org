@@ -2,8 +2,8 @@
 title: Main Page Example
 ---
 ```curry
--- Returns the last element of a list.
-last :: [a] -> a
+-- Returns the last number of a list.
+last :: [Int] -> Int
 last (_ ++ [x]) = x
 
 -- Returns some permutation of a list.
