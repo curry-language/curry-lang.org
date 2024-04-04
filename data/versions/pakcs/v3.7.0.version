@@ -1,8 +1,7 @@
 ---
-# THIS FILE IS GENERATED AUTOMATICALLY BY THE PACKS RELEASE PIPELINE
-# MANUAL CHANGES TO THIS FILE WILL GET LOST ON THE NEXT RELEASE RUN
+# THIS FILE WAS GENERATED AUTOMATICALLY BY THE PACKS RELEASE PIPELINE
 date: 2024-04-04
-version: Latest
+version: v3.7.0 (04/04/24)
 source: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/releases/v3.7.0/downloads/other/pakcs-3.7.0-src.tar.gz
 linux:  https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/releases/v3.7.0/downloads/other/pakcs-3.7.0-amd64-Linux.tar.gz
 manual: https://git.ps.informatik.uni-kiel.de/curry/pakcs/-/releases/v3.7.0/downloads/other/pakcs-3.7.0-manual.pdf
