@@ -1,0 +1,6 @@
+---
+title: Execution Visualizer
+url:   https://icurry.informatik.uni-kiel.de/
+date:  1970-01-02 # used for the page order (chronologically)
+desc:  Visualize term graphs during the execution of Curry programs
+---
