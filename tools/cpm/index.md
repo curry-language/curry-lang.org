@@ -212,18 +212,11 @@ in the following thesis:
 
 ## Uploading and Publishing Packages
 
-Currently, there is no support for automatically uploading
-and publishing new packages.
-However, if you have developed some package that might be of
-interest to other Curry users, please send the package
-as a tar or zip file to
-
----
-
-> packages (AT) curry-language.org
-<hr>
-
-in order to make it publicly available.
+New Curry packages can be uploaded and published with
+[Masala](https://cpm.curry-lang.org/masala/),
+a web-based system to store Curry packages.
+Packages published via Masala can be used or installed by CPM
+as sketched above.
 
 :::
 </section>
