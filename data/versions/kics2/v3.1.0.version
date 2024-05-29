@@ -1,6 +1,6 @@
 ---
-date: 99999-12-31
-version: Latest
+date: 2024-05-22
+version: v3.1.0 (22/05/24)
 source: https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-3.1.0-x86_64-linux-debian12.tar.gz
 manual: https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-3.1.0-manual.pdf
 ---
