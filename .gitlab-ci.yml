@@ -30,6 +30,7 @@ build_haskell:
   artifacts:
     paths:
       - ./bin
+    expire_in: 1 week
   cache:
     key: "${CI_COMMIT_REF_SLUG}-haskell_build"
     paths:
@@ -46,6 +47,7 @@ build_site:
     paths:
       - _cache/
       - _site/
+    expire_in: 1 week
   script:
     - ./bin/site build
   cache: {}
@@ -79,6 +81,7 @@ check_links:
   artifacts:
     paths:
       - public
+    expire_in: 1 week
   cache: {}
 
 create_archive:
