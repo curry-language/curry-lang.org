@@ -66,6 +66,8 @@ check_links:
     retry: 2 # job is susceptible to network failure, retry up to two times on failure
     allow_failure: true
     cache: {}
+    artifacts:
+      expire_in: 1 week
 
 .deploy:
   stage: deploy
