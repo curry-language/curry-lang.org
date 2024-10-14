@@ -247,7 +247,7 @@ ___
 
 If you want try CASS on simple programs via a web interface,
 you can use the
-[Web Demo Installation of CASS](http://www-ps.informatik.uni-kiel.de/~mh/webcass/main.cgi).
+[Web Demo Installation of CASS](https://cpm.curry-lang.org/webinstall/cass/main.cgi).
 
 :::
 </section>
