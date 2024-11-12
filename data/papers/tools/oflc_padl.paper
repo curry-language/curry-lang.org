@@ -6,4 +6,7 @@ date:     2004-01-01 # used for sorting, most recent first, should usually match
 ---
 This paper describes the tool COOSy
 to observe the results of computations in a Curry program.
-COOSy is integrated in the Curry implementation [PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System").
+COOSy is available as a
+[Curry package](https://cpm.curry-lang.org/pkgs/coosy.html)
+and integrated in the Curry implementation
+[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System").

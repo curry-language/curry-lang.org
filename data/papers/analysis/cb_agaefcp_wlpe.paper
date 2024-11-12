@@ -5,5 +5,6 @@ url:      "http://www.informatik.uni-kiel.de/~mh/papers/WLPE06.html"
 date:     2006-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper presents the ideas of [CurryBrowser](https://www-ps.informatik.uni-kiel.de/currywiki/tools/currybrowser),
-a generic analysis environment for Curry programs
-that is integrated into the [PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System") environment.
+a generic analysis environment for Curry programs.
+The implementation is available in the
+[Curry package currybrowse](https://cpm.curry-lang.org/pkgs/currybrowse.html).

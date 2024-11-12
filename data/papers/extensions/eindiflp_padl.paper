@@ -8,6 +8,5 @@ This paper proposes determinism annoations for operations defined in Curry.
 A determinism annotation avoids the recomputation of identical results and,
 thus, improve the operational behavior of Curry programs without
 destroying its completeness.
-Determinism annotations are integrated with a preprocessor
-in the Curry implementations [PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System") and
-[KiCS2](http://www-ps.informatik.uni-kiel.de/kics2 "Kiel Curry System").
+Determinism annotations are implemented in the
+[Curry preprocessor](https://cpm.curry-lang.org/pkgs/currypp.html).

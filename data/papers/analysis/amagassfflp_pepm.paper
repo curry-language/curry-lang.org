@@ -4,6 +4,7 @@ citation: "(PEPM 2014)"
 url:      "http://www.informatik.uni-kiel.de/~mh/papers/PEPM14.html"
 date:     2014-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
-This paper presents the ideas and implementation of the [program analysis framework CASS](/tools/cass "Curry Analysis Server System")
-which is part of the [PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System")
-and [KiCS2](http://www-ps.informatik.uni-kiel.de/kics2 "Kiel Curry System") distributions.
+This paper presents the ideas and implementation of the
+[program analysis framework CASS](/tools/cass "Curry Analysis Server System").
+The implementation is available in the
+[Curry package cass](https://cpm.curry-lang.org/pkgs/cass.html).

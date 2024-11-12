@@ -4,6 +4,6 @@ citation: "(ENTCS 177)"
 url:      "http://www.informatik.uni-kiel.de/~mh/papers/ENTCS177.html"
 date:     2007-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
-This paper describes the implementation of failure reporting
-in the Curry implementation [PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System").
+This paper describes the implementation of failure reporting in the Curry implementation
+[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System").
 

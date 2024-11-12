@@ -8,4 +8,5 @@ This paper proposes an integration of Constraint Handling Rules (CHR),
 a rule-based language to specify application-oriented constraint solvers, into Curry.
 This integration provides a convenient way to specify and
 use flexible constraint systems in applications implemented in Curry.
-The implementation is available as a library in [PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System").
+The implementation is available as a
+[Curry package](https://cpm.curry-lang.org/pkgs/chr-curry.html).

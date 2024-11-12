@@ -6,5 +6,5 @@ date:     2006-01-01 # used for sorting, most recent first, should usually match
 ---
 This paper proposes a new technique for the high-level construction
 of type-safe web-oriented user interfaces in Curry.
-It is integrated as a library ([WUI](http://www.informatik.uni-kiel.de/~pakcs/WUI "Web User Interface"))
-in the [PAKCS](http://www.informatik.uni-kiel.de/~pakcs "Portland Aachen Kiel Curry System") programming environment.
+The implementation is available as a library in the
+[Curry package wui](https://cpm.curry-lang.org/pkgs/wui.html).

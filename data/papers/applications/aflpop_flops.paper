@@ -7,4 +7,5 @@ date:     1999-01-01 # used for sorting, most recent first, should usually match
 ---
 This paper describes the design of a library for building parsers
 where the functional and logic features are exploited.
-This library is available in the [PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System") distribution of Curry.
+This library is available in the
+[Curry package fl-parser](https://cpm.curry-lang.org/pkgs/fl-parser.html).

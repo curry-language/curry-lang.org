@@ -7,4 +7,5 @@ date:     2007-01-01 # used for sorting, most recent first, should usually match
 This paper presents a technique to compile Curry programs
 into JavaScript programs in order to check specific input conditions in the web browser,
 where the programmer can implement these conditions in Curry.
-The compiler is integrated as in the [PAKCS](http://www.informatik.uni-kiel.de/~pakcs "Portland Aachen Kiel Curry System") programming environment.
+The implementation is available in the
+[Curry package wui](https://cpm.curry-lang.org/pkgs/wui.html).
