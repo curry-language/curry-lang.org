@@ -67,6 +67,7 @@ main =
         match "templates/**.md" $ do
             withSyntaxAdditions <- loadSyntaxFromDir "data/syntax_definitions"
             compile $ withSyntaxAdditions >>= templateCompileMarkdown
+        match "various/**.md" defaultMarkdownRules
 
 --------------------------------------------------------------------------------
 {-|
