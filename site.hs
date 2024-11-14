@@ -38,6 +38,7 @@ main =
                           loadAndApplyTemplate "templates/markdown.html" defaultContext >>=
                           relativizeUrls >>= markExternalLinks)
 
+        match "documentation/**.md" defaultMarkdownRules
         match "downloads/*.html" $ do
             route idRoute
             compile $ do
