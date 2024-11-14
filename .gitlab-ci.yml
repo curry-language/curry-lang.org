@@ -78,7 +78,9 @@ check_links:
       artifacts: true
   script:
     - mkdir .public
-    - cp -r _site/* .public
+    # old deploy: - cp -r _site/* .public
+    # deploy forward index page:
+    - cp index-fwd.html .public/index.html
     - mv .public public
   artifacts:
     paths:
