@@ -1,6 +1,6 @@
 ---
 title: CurryBrowser
-url: https://www-ps.informatik.uni-kiel.de/currywiki/tools/currybrowser/
-date: 1970-01-08 # used for the page order (chronologically)
+url: https://cpm.curry-lang.org/pkgs/currybrowse.html
+date: 1970-01-09 # used for the page order (chronologically)
 desc: Generic Curry Analysis Environment
 ---
