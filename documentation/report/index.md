@@ -17,16 +17,16 @@ this report to explain restrictions or differences.
 
 If you are interested in a general introduction to programming in Curry,
 please look into the
-[tutorial on Curry](../tutorial/).
+[tutorial on Curry](/documentation/tutorial/).
 
 :::
 </section>
 <section>      
 :::md:max-w-3xl
 
-* __[Curry Report (Version 0.9.0)](../../docs/report/curry-report.pdf)__
-* __[BibTeX entry](../../docs/report/curry-report.bib)__ for citing the report
-* __[List of changes](../../docs/report/reports.html)__
+* __[Curry Report (Version 0.9.0)](/docs/report/curry-report.pdf)__
+* __[BibTeX entry](/docs/report/curry-report.bib)__ for citing the report
+* __[List of changes](/docs/report/reports.html)__
   in the current and older revisions of the report
 
 :::

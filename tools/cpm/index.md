@@ -198,7 +198,7 @@ directory `src`, you can load it into your Curry system
 ## Manual and Further Documentation
 
 For further information, look into the
-[manual of CPM](https://cpm.curry-lang.org/DOC/cpm-3.1.0/manual.pdf)
+[manual of CPM](https://cpm.curry-lang.org/DOC/cpm-3.3.0/manual.pdf)
 
 A detailed description about CPM and its implementation can be found
 in the following thesis:

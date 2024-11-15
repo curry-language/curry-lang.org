@@ -55,6 +55,7 @@ main =
                 let indexCtx =
                         features `mappend` ecosystem `mappend` defaultContext
                 defaultCompile indexCtx
+        match "implementations/**.md" defaultMarkdownRules
         match ("imprint/index.md" .||. "privacy/index.md") defaultMarkdownRules
         match "papers/*.html" $ do
           route idRoute

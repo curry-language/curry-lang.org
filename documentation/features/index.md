@@ -9,8 +9,7 @@ Features of Curry
 <section>      
 :::md:max-w-3xl
 
-To get an idea of the multi-paradigm programming language
-[Curry](http://www.curry-lang.org),
+To get an idea of the multi-paradigm programming language Curry,
 here is an (incomplete) list of its features:
 
 * __Program entities:__ functions defined by equations (predicates are considered as Boolean functions or constraints)
@@ -28,7 +27,7 @@ here is an (incomplete) list of its features:
 :::md:max-w-3xl
 
 These are the basic features of the kernel language. Look into the
-[Curry report](https://www.curry-lang.org/docs/report/)
+[Curry report](/documentation/report/)
 if you are interested in more details.
 Further features might
 be added in different extensions of this kernel language.

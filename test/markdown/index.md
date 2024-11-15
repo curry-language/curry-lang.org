@@ -19,7 +19,8 @@ as a tar or zip file to
 
 ## Text with link
 
-For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf)
+For further information, look into the
+[manual of CPM](https://cpm.curry-lang.org/DOC/cpm-3.1.0/manual.pdf)
 
 ## Shell Code
 
@@ -72,7 +73,8 @@ as a tar or zip file to
 
 ## Text with link
 
-For further information, look into the  [manual of CPM](https://www-ps.informatik.uni-kiel.de/currywiki/_media/tools/cpm/manual.pdf)
+For further information, look into the
+[manual of CPM](https://cpm.curry-lang.org/DOC/cpm-3.1.0/manual.pdf)
 
 ## Shell Code
 
