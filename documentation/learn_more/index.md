@@ -21,9 +21,9 @@ Here are a few links to further resources related to Curry.
 [Functional Logic Design Patterns](http://web.cecs.pdx.edu/~antoy/flp/patterns/)
 A catalog of design patterns related to functional logic programming.
 
-[Example programs (executable in a web browser)](https://smap.informatik.uni-kiel.de/smap.cgi?browser/programs?lang=curry)
+[Example programs (executable in a web browser)](https://smap.curry-lang.org/smap.cgi?browser/programs?lang=curry)
 available in
-[Smap](https://smap.informatik.uni-kiel.de/) (an interactive web-based source code editor)
+[Smap](https://smap.curry-lang.org/) (an interactive web-based source code editor)
 
 [Example programs](http://www.informatik.uni-kiel.de/~curry/examples/)
 A collection of (small) Curry programs that are distributed with
