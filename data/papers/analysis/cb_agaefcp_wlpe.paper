@@ -1,7 +1,7 @@
 ---
 title:    "CurryBrowser: A Generic Analysis Environment for Curry Programs"
 citation: "(WLPE 2006)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/WLPE06.html"
+url:      "https://www.michaelhanus.de/papers/WLPE06.html"
 date:     2006-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper presents the ideas of

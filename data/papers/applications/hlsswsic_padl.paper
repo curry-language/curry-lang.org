@@ -1,7 +1,7 @@
 ---
 title:    "High-Level Server Side Web Scripting in Curry"
 citation: "(PADL 2001)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/PADL01.html"
+url:      "https://www.michaelhanus.de/papers/PADL01.html"
 date:     2001-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper describes the design of a library for programming dynamic web pages

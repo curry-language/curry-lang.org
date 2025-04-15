@@ -1,7 +1,7 @@
 ---
 title:    "Putting Declarative Programming into the Web: Translating Curry to JavaScript"
 citation: "(PPDP 2007)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/PPDP07.html"
+url:      "https://www.michaelhanus.de/papers/PPDP07.html"
 date:     2007-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper presents a technique to compile Curry programs

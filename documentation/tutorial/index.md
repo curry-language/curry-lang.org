@@ -11,7 +11,7 @@ Tutorial on Curry
 
 This web page contains a tutorial introduction to
 the declarative programming language
-[Curry](http://ww.curry-lang.org).
+[Curry](https://www.curry-lang.org).
 Note that the tutorial is not yet finalized.
 However, it might be already useful
 for people who want to learn programming with Curry.

@@ -1,7 +1,7 @@
 ---
 title:    "Distributed Programming in a Multi-Paradigm Declarative Language"
 citation: "(PPDP 1999)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/PPDP99.html"
+url:      "https://www.michaelhanus.de/papers/PPDP99.html"
 date:     1999-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper describes an extension of Curry to support distributed applications

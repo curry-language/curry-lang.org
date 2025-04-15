@@ -1,7 +1,7 @@
 ---
 title:    "Teaching Functional and Logic Programming with a Single Computation Model"
 citation: "(PLILP 1997)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/DPLE97.html"
+url:      "https://www.michaelhanus.de/papers/DPLE97.html"
 date:     1997-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper describes how to use Curry to teach functional and

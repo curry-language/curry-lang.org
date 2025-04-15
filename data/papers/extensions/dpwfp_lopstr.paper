@@ -1,7 +1,7 @@
 ---
 title:    "Declarative Programming with Function Patterns"
 citation: "(LOPSTR 2005)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/LOPSTR05.html"
+url:      "https://www.michaelhanus.de/papers/LOPSTR05.html"
 date:     2005-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper proposes an extension of Curry

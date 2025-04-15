@@ -1,7 +1,7 @@
 ---
 title:    "Observing Functional Logic Computations"
 citation: "(PADL 2004)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/PADL04.html"
+url:      "https://www.michaelhanus.de/papers/PADL04.html"
 date:     2004-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper describes the tool COOSy
@@ -9,4 +9,4 @@ to observe the results of computations in a Curry program.
 COOSy is available as a
 [Curry package](https://cpm.curry-lang.org/pkgs/coosy.html)
 and integrated in the Curry implementation
-[PAKCS](http://www.informatik.uni-kiel.de/~pakcs/ "Portland Aachen Kiel Curry System").
+[PAKCS](https://www.curry-lang.org/pakcs/ "Portland Aachen Kiel Curry System").

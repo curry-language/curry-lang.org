@@ -1,7 +1,7 @@
 ---
 title:    "Set Functions for Functional Logic Programming"
 citation: "(PPDP 2009)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/PPDP09.html"
+url:      "https://www.michaelhanus.de/papers/PPDP09.html"
 date:     2009-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper proposes set functions as a new feature

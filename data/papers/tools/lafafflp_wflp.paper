@@ -1,7 +1,7 @@
 ---
 title:    "Lazy and Faithful Assertions for Functional Logic Programs"
 citation: "(WFLP 2010)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/WFLP10.html"
+url:      "https://www.michaelhanus.de/papers/WFLP10.html"
 date:     2010-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper proposes a new form of assertions that can be used in Curry programs.

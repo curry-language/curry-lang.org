@@ -1,7 +1,7 @@
 ---
 title:    "CurryCheck: Checking Properties of Curry Programs"
 citation: "(LOPSTR 2016)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/LOPSTR16.html"
+url:      "https://www.michaelhanus.de/papers/LOPSTR16.html"
 date:     2016-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper the tool CurryCheck to test properties contained in Curry programs.

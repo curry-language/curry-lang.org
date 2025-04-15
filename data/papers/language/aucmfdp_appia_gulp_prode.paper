@@ -1,7 +1,7 @@
 ---
 title:    "A Unified Computation Model for Declarative Programming"
 citation: "(APPIA-GULP-PRODE 1997)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/AGP97.html"
+url:      "https://www.michaelhanus.de/papers/AGP97.html"
 date:     1997-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper contains an updated and slightly modified introduction into the computation model of Curry.

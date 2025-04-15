@@ -1,7 +1,7 @@
 ---
 title:    "KiCS2: A New Compiler from Curry to Haskell"
 citation: "(WFLP 2011)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/WFLP11_KiCS2.html"
+url:      "https://www.michaelhanus.de/papers/WFLP11_KiCS2.html"
 date:     2011-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper describes Curry implementation KiCS2 which is based on the translation of Curry programs into Haskell programs.

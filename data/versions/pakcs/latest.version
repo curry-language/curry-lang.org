@@ -1,7 +1,7 @@
 ---
 date: 2024-10-11
 version: Latest
-source: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.8.0-src.tar.gz
-linux:  https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.8.0-amd64-Linux.tar.gz
-manual: https://www.informatik.uni-kiel.de/~pakcs/download/pakcs-3.8.0-manual.pdf
+source: https://www.curry-lang.org/pakcs/download/pakcs-3.8.0-src.tar.gz
+linux:  https://www.curry-lang.org/pakcs/download/pakcs-3.8.0-amd64-Linux.tar.gz
+manual: https://www.curry-lang.org/pakcs/download/pakcs-3.8.0-manual.pdf
 ---

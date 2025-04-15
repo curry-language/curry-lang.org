@@ -1,7 +1,7 @@
 ---
 title:    "Curry: A Truly Functional Logic Language"
 citation: "(ILPS 1995 Workshop on Vision for the Future of Logic Programming)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/ILPS95.html"
+url:      "https://www.michaelhanus.de/papers/ILPS95.html"
 date:     1995-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper sketches the very first ideas of the possible features of Curry. It is outdated and only included to track the history of Curry.

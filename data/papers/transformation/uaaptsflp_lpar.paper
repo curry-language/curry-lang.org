@@ -1,7 +1,7 @@
 ---
 title:    "Using an Abstract Representation to Specialize Functional Logic Programs"
 citation: "(LPAR 2000)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/LPAR00.html"
+url:      "https://www.michaelhanus.de/papers/LPAR00.html"
 date:     2000-01-02 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper describes a new approach to the partial evaluation of Curry programs.

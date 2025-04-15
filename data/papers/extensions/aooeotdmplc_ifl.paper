@@ -1,7 +1,7 @@
 ---
 title:    "An Object-Oriented Extension of the Declarative Multi-Paradigm Language Curry"
 citation: "(IFL 2000)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/IFL00.html"
+url:      "https://www.michaelhanus.de/papers/IFL00.html"
 date:     2000-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper describes ObjectCurry,

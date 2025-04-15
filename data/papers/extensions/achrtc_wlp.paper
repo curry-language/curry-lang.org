@@ -1,7 +1,7 @@
 ---
 title:    "Adding Constraint Handling Rules to Curry"
 citation: "(WLP 2006)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/WLP06.html"
+url:      "https://www.michaelhanus.de/papers/WLP06.html"
 date:     2006-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper proposes an integration of Constraint Handling Rules (CHR),

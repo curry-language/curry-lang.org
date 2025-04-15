@@ -1,7 +1,7 @@
 ---
 title:    "CHR(Curry): Interpretation and Compilation of Constraint Handling Rules in Curry"
 citation: "(PADL 2015)"
-url:      "http://www.informatik.uni-kiel.de/~mh/papers/PADL15.html"
+url:      "https://www.michaelhanus.de/papers/PADL15.html"
 date:     2015-01-01 # used for sorting, most recent first, should usually match the papers date
 ---
 This paper proposes an integration of Constraint Handling Rules (CHR),

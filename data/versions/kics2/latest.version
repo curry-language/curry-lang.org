@@ -1,6 +1,6 @@
 ---
 date: 99999-12-31
 version: Latest
-source: https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-3.3.0-x86_64-linux-debian12.tar.gz
-manual: https://www-ps.informatik.uni-kiel.de/kics2/download/kics2-3.3.0-manual.pdf
+source: https://www.curry-lang.org/kics2/download/kics2-3.3.0-x86_64-linux-debian12.tar.gz
+manual: https://www.curry-lang.org/kics2/download/kics2-3.3.0-manual.pdf
 ---
