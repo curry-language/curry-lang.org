@@ -52,10 +52,10 @@ These packages can immediately be downloaded or installed when CPM is installed 
 ## Installing the Curry Package Manager
 
 CPM is already part of recent distributions of the Curry systems
-[PAKCS](https://www.informatik.uni-kiel.de/~pakcs/) (Version 1.15.0 or higher),
-[KiCS2](https://www-ps.informatik.uni-kiel.de/kics2/) (Version 0.6.0 or higher),
+[PAKCS](https://www.curry-lang.org/pakcs/) (Version 1.15.0 or higher),
+[KiCS2](https://www.curry-lang.org/kics2/) (Version 0.6.0 or higher),
 and
-[Curry2Go](https://www-ps.informatik.uni-kiel.de/curry2go/).
+[Curry2Go](https://www.curry-lang.org/curry2go/).
 If you have some older version of PAKCS or KiCS2, you can also
 install CPM from its public repository.
 The installation requires that one of the Curry systems PAKCS or KiCS2
@@ -68,7 +68,7 @@ Then perform the following steps to install CPM:
 ---
 
 ```sh
-1> git clone https://git.ps.informatik.uni-kiel.de/curry-packages/cpm.git
+1> git clone https://github.com/curry-packages/cpm.git
 2> cd cpm
 3> make
 ```
@@ -203,7 +203,7 @@ For further information, look into the
 A detailed description about CPM and its implementation can be found
 in the following thesis:
 
-[A Package Manager for Curry (Jonas Oberschweiber, CAU Kiel, September 2016)](https://www.informatik.uni-kiel.de/~mh/lehre/abschlussarbeiten/msc/Oberschweiber.pdf)
+[A Package Manager for Curry (Jonas Oberschweiber, CAU Kiel, September 2016)](https://www.michaelhanus.de/lehre/abschlussarbeiten/msc/Oberschweiber.pdf)
 
 :::
 </section>

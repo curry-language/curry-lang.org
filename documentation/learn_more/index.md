@@ -25,7 +25,7 @@ A catalog of design patterns related to functional logic programming.
 available in
 [Smap](https://smap.curry-lang.org/) (an interactive web-based source code editor)
 
-[Example programs](http://www.informatik.uni-kiel.de/~curry/examples/)
+[Example programs](http://www.curry-lang.org/pakcs/examples/)
 A collection of (small) Curry programs that are distributed with
 [PAKCS](https://www.curry-lang.org/pakcs/)
 

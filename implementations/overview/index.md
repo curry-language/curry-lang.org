@@ -37,7 +37,7 @@ The
 is an implementation of Curry jointly developed by the
 [Portland State University](https://www.cs.pdx.edu/~antoy/),
 the Aachen University of Technology, and the
-[Kiel University](http://www.informatik.uni-kiel.de/~mh/).
+[Kiel University](http://www.michaelhanus.de/).
 PAKCS is an interactive system
 to develop Curry programs. It has a simple user interface,
 some interactive debugging features and provides direct access

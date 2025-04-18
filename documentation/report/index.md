@@ -36,7 +36,7 @@ please look into the
 
 For suggestions to correct, extend, or improve the report,
 contact the editor of the report:
-[Michael Hanus](http://www.informatik.uni-kiel.de/~mh)
+[Michael Hanus](https://www.michaelhanus.de)
 
 :::
 </section>
