@@ -19,7 +19,7 @@ Please send contributions to this list to `curry_AT_lists.rwth-aachen.de`.
 Note that only subscribed members of the mailing list can post contributions to this list.
 
 You can also look at the current list of
-[subscribers](http://www-ps.informatik.uni-kiel.de/~mh/currylist/members.cgi).
+[subscribers](https://www.michaelhanus.de/currylist/members.cgi).
 
 :::
 </section>

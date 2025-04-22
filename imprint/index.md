@@ -13,7 +13,7 @@ Imprint
 :::md:max-w-3xl
 
 This web site is managed by the
-[Compiler Construction and Programming Languages Group](https://www.ps.informatik.uni-kiel.de/en)
+[Compiler Construction and Programming Languages Group](https://www.uni-kiel.de/en/tf/research/institute-computer-science/programming-languages-and-compiler-construction)
 at Kiel University.
 For further information, see the
 [imprint of Kiel University](https://www.uni-kiel.de/en/imprint).

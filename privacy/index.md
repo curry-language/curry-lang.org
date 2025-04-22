@@ -12,7 +12,7 @@ Privacy Policy
 <section>
 :::md:max-w-3xl
 This web site is managed by the
-[Compiler Construction and Programming Languages Group](https://www.ps.informatik.uni-kiel.de/en)
+[Compiler Construction and Programming Languages Group](https://www.uni-kiel.de/en/tf/research/institute-computer-science/programming-languages-and-compiler-construction)
 at Kiel University.
 The [data privacy statement](https://www.uni-kiel.de/en/data-protection)
 of the Kiel University also applies to this web site.
