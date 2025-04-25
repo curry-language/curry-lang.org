@@ -1,6 +1,6 @@
 ---
-date: 2024-10-10
-version: v3.8.0 (10/10/24)
+date: 2025-04-07
+version: v3.8.0 (07/04/25)
 source: https://www.curry-lang.org/pakcs/download/pakcs-3.8.0-src.tar.gz
 linux:  https://www.curry-lang.org/pakcs/download/pakcs-3.8.0-amd64-Linux.tar.gz
 manual: https://www.curry-lang.org/pakcs/download/pakcs-3.8.0-manual.pdf
