@@ -134,7 +134,7 @@ for university curricula. The complete system is web-based, i.e.,
 lecturers can describe their teaching units and collect them to
 study programs via standard web browsers.
 The system is in use at the
-[[https://www.uni-kiel.de | University of Kiel]]
+[University of Kiel](https://www.uni-kiel.de)
 and can be accessed at the
 [ModulDB website](https://moduldb.informatik.uni-kiel.de/).
 The high-level libraries of Curry, e.g., for
