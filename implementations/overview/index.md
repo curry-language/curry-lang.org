@@ -85,6 +85,42 @@ Therefore, KiCS2 has been used to deploy various applications.
 <section>
 :::md:max-w-3xl
 
+## KMCC
+
+:::
+</section>
+<section>
+:::md:max-w-3xl
+
+[KMCC](https://www.curry-lang.org/kmcc)
+is a Curry compiler and interactive system which
+translates Curry programs into [Haskell](https://www.haskell.org/) programs.
+KMCC supports several search strategies
+(e.g., fair search, depth-first, breadth-first).
+The default strategy is a _fair search strategy_
+which performs concurrent evaluations of non-deterministic choices.
+In particular, the strategy is _operationally complete_,
+i.e., it always computes a value if it exists according to the
+declarative interpretation of the Curry program.
+For instance, KMCC computes a value to the following
+non-deterministic choice between three expressions,
+where the leftmost and rightmost are non-terminating:
+
+    KMCC Interactive Environment ...
+    Prelude> length [1..] ? 42 ? length [1..]
+    42
+
+Due to the use of the [Glasgow Haskell Compiler](http://www.haskell.org/ghc)
+to generate executables,
+the compilation is often slower than PAKCS but the
+generated executables run much faster.
+
+
+:::
+</section>
+<section>
+:::md:max-w-3xl
+
 ## Curry2Go
 
 :::
