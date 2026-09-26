@@ -54,6 +54,7 @@ These packages can immediately be downloaded or installed when CPM is installed 
 CPM is already part of recent distributions of the Curry systems
 [PAKCS](https://www.curry-lang.org/pakcs/) (Version 1.15.0 or higher),
 [KiCS2](https://www.curry-lang.org/kics2/) (Version 0.6.0 or higher),
+[KMCC](https://www.curry-lang.org/kmcc/) (Version 0.6.0 or higher),
 and
 [Curry2Go](https://www.curry-lang.org/curry2go/).
 If you have some older version of PAKCS or KiCS2, you can also
